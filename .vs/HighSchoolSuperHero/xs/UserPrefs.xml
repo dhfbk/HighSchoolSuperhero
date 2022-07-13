@@ -1,0 +1,31 @@
+﻿<Properties StartupConfiguration="{4346DB2B-D09D-6AB2-00CD-650BE3AA5F1C}|">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/StreamingAssets/config.txt">
+    <Files>
+      <File FileName="Assets/Scripts/Utilities/API.cs" Line="538" Column="57" />
+      <File FileName="Assets/StreamingAssets/config.txt" Line="1" Column="1" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="HighSchoolSuperHero" expanded="True">
+            <Node name="Assets" expanded="True">
+              <Node name="Scripts" expanded="True">
+                <Node name="Utilities" expanded="True" />
+              </Node>
+              <Node name="StreamingAssets" expanded="True">
+                <Node name="config.txt" selected="True" />
+              </Node>
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="59a30ba9-2dbc-42fa-a3c7-6a88972f25af" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+</Properties>
