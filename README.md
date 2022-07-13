@@ -11,7 +11,7 @@ Done!
 
 <h2>The Configuration file</h2>
 The <i>config.txt</i> file is located under StreamingAssets both in the project and the final build. The file must stay in this folder in order to be editable after building the project.
-
+```
 {
 	"guest":"true", //if guest is true, no API is called.
 	"api":"final", //this should remain as it is.
@@ -19,7 +19,7 @@ The <i>config.txt</i> file is located under StreamingAssets both in the project 
 	"url":"https://apiurl", //Insert the api url. The default api url is already configured.
 	"useLocalDatasets":"false" //You can decide to use local sentences (under StreamingAssets/dialogues.txt or graffiti.txt) instead of the API ones.
 }
-
+```
 <h2>The API</h2>
 All changes to the API calls and systems should be made inside the script API.cs located under Assets/Scripts/Utilities. Note:
 <ul>
