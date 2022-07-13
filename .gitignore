@@ -2,6 +2,7 @@
 .collab
 .collabignore
 .plastic
+.vs
 .vsconfig
 .vsconfig.private.0
 Library/
