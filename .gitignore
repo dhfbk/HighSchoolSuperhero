@@ -14,4 +14,4 @@ app.config
 ignore.conf
 Temp/
 obj
-
+mono_crash*
