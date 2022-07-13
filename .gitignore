@@ -12,4 +12,5 @@ UserSettings/
 app.config
 ignore.conf
 Temp/
+obj
 
