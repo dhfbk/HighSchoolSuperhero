@@ -11,4 +11,5 @@ Unity.2D.Tilemap.Editor.csproj
 UserSettings/
 app.config
 ignore.conf
+Temp/
 
