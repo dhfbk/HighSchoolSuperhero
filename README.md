@@ -1,5 +1,4 @@
 # HighSchoolSuperhero
-High School Superhero
 
 <h2>Opening the project</h2>
 <ol>
@@ -12,3 +11,7 @@ Done!
 
 <h2>The Configuration file</h2>
 The <i>config.txt</i> file is located under StreamingAssets both in the project and the final build. The file must stay in this folder in order to be editable after building the project.
+
+<h2>API</h2>
+All changes to the API should be made inside the script API.cs located under Assets/Scripts/Utilities.
+All changes should be made inside the coroutines identified by type IEnumerator or by a "C" at the end of the method signatures.
