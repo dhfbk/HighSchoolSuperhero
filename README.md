@@ -13,12 +13,11 @@ Done!
 The <i>config.txt</i> file is located under StreamingAssets both in the project and the final build. The file must stay in this folder in order to be editable after building the project.
 
 <ul>
-	<li>"guest":"true"
-		if guest is true, no API is called.</li>
-<li>"api":"final", //this should remain as it is.</li>
-<li>"collectibles":"true", //this changes an option that makes the annotation mechanics rely on limited resources.</li>
-	<li>"url":"https://apiurl", //Insert the api url. The default api url is already configured.</li>
-<li>"useLocalDatasets":"false" //You can decide to use local sentences (under StreamingAssets/dialogues.txt or graffiti.txt) instead of the API ones.</li>
+	<li>"guest":"true" - if guest is true, no API is called.</li>
+<li>"api":"final" - this should remain as it is.</li>
+<li>"collectibles":"true" - this changes an option that makes the annotation mechanics rely on limited resources.</li>
+	<li>"url":"https://apiurl" - Insert the api url. The default api url is already configured.</li>
+<li>"useLocalDatasets":"false" - You can decide to use local sentences (under StreamingAssets/dialogues.txt or graffiti.txt) instead of the API ones.</li>
 	</ul>
 
 <h2>The API</h2>
