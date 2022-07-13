@@ -1,0 +1,1987 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: edccff82e98bce1468ec6167150deb40, type: 3}
+  m_Name: DialogueManager
+  m_EditorClassIdentifier: Assembly-CSharp::DialogueManagerScriptableObject
+  turns:
+  - counterSpeech To be fair, the OFSTED report is more concerned with lack of enforcement
+    and less about focussing on the practice of any particular faith.
+  - counterSpeech While this story is presented as an 'Islamic issue', the OFSTED
+    report refers to 'countless' faith schools still that still illegally maintain
+    gender segregation - my guess is this is a cross-faith practice and not exclusive
+    to Islamic faith schools.
+  - counterSpeech The quoted report refers to 'countless faith schools' that illegally
+    maintain gender segregation. Isn't it more accurate to frame this as a matter
+    of lack of resources for enforcement, rather than presenting the story as an 'Islamic
+    issue'?
+  - counterSpeech Gender segregation in faith schools is clearly a negative, but hardly
+    exclusive to some Islamic schools. I was 15 before I attended mixed classes, but
+    then, this was regarded as normal in the 1960's \/ 70's. The issue is really,
+    if we are to allow faith based education, we need effective mechanisms to uphold
+    standards, and legal requirements.
+  - counterSpeech We need to work together to eradicate CSE once and for all. Individuals
+    are the problem, it does not come from any religion, biased media attempting to
+    scapegoat is being blind to the whole truth.
+  - counterSpeech Grooming gangs like those in Rochdale and Huddersfield have been
+    rightfully convicted. Does that look like police collusion to you?
+  - counterSpeech No they are not - prove this?
+  - counterSpeech The only cover up I remember was in the Catholic Church, but we
+    remember that the actions of individuals do not reflect on the whole.
+  - counterSpeech Good job the police are so effective at catching and prosecuting
+    non-Muslim sex-offenders and protecting their victims. Oh, wait.
+  - counterSpeech The only reason these gangs exist in the first place is because
+    they do not have an institution like the BBC or the Church to shield them.
+  - counterSpeech The only traitors are the conspiracy theorists who spread this kind
+    of misinformation.
+  - counterSpeech The only cover up that happens in the media is of the positive stories
+    about Muslims, extremist actions are the only ones ever highlighted.
+  - counterSpeech Is this true? Where is your source?
+  - counterSpeech The BBC also neglects to report on many violent or terrorist far-right
+    extremist and Islamophobic crimes. What is your point?
+  - counterSpeech Mate, the media is constantly biased against Muslims and tries to
+    make them out to be the enemy. What we hardly ever see is the many more positive
+    stories.
+  - counterSpeech I thought we'd stopped exporting our convicted criminals last century.
+    Now you advocate exporting people wihtout a trial or a conviction.
+  - counterSpeech I think the government has a very good understanding of who should
+    be deported and members of the public should leave this type of decisions to them?
+  - counterSpeech If they were violent they would have been punished too. Why do you
+    think someone of a certain religion is automatically guilty?
+  - counterSpeech In fact, the government deports those criminals back to their countries.
+  - counterSpeech What happened to the good old British values of stuff like 'tolerance'
+    and 'respect for the rule of law' - what you are suggesting sounds like mob rule,
+    vigilante action and people running around with burning torches?
+  - counterSpeech Are you suggesting to commit a crime? There are courts for punishment
+    and if the crowd does the punishment itself, you will become criminals.
+  - counterSpeech The ones who deserved to be punished, were punished. If others are
+    innocent, clearly they do not deserve to be penalized?
+  - counterSpeech Who are 'all them violent muslims'? Are you sure you are proficient
+    to judge who's guilty and who's not?
+  - counterSpeech An entire faith? Really? Can you not see how ignorant this is?
+  - counterSpeech Are you blaming all community for the action of a few? Doesn't seem
+    very fair does it?
+  - counterSpeech Could you mind your language? You are insulting millions of people
+    who are Muslims. Isis are war criminals, but why are you equaling them with all
+    Muslims?
+  - counterSpeech The truth is the worldwide Muslims denounce ISIS and its violence.
+    Plus, many Muslims are the victims of ISIS. According to <The Guardian>, 'Isis
+    regularly publishes a hit-list of global Muslim leaders in its online magazine,
+    which certainly helps to explain why Muslims from Syria and Iraq may want to migrate
+    to countries like Australia.'.
+  - counterSpeech Positive news stories*.
+  - counterSpeech Surely it is our 'actions' that make us criminals, not whichever
+    faith we folow, whether than be by choice or tradition or culture?
+  - counterSpeech This is not true. How can you say this about an entire faith?
+  - counterSpeech Muslims are also average and decent British citizens? Repatriate?
+  - counterSpeech Saying that all people of certain religion are violent criminals
+    does not make sense at all.
+  - counterSpeech Can I suggest that the deportation of up to 3 million people, a
+    large proportion of whom were born in the UK does not reflect 'our values' in
+    the way I understand them.
+  - Bullo1 Ah un saggio di danza
+  - Bullo1 Tu
+  - Bullo1 Tu che sei un maschio
+  - "Bullo1 No \xE8 da femmine"
+  - Bullo1 Poi me lo immagino con i leggins
+  - "Bullo1 E il tut\xF9"
+  - Bullo1 Tu in punte
+  - Bullo1 Ma vai a fae calcio femminuccia che non sei altro
+  - Bullo1 Ovvio
+  - Bullo1 !!!!!
+  - Bullo1 Ma poi con chi con altre femmine
+  - Bullo1 Tra l'altro femmine come te
+  - Bullo1 Si e tu vai a giocare a rugby
+  - Bullo1 Stessa cosa
+  - "Bullo1 Che danza non \xE8 da maschi"
+  - Bullo1 Ovvio
+  - "Bullo1 Sei cos\xEC effemminato che intorno a te ci sono pi\xF9 finocchi che in
+    un orto"
+  - Bullo1 Anche io
+  - Bullo1 Ma per ridere e prenderlo in giro
+  - "Bullo1 Far\xF2 stampare Delle magliette con te in tut\xF9"
+  - Bullo1 Ad avere noi che lo insultiamo?
+  - Bullo1 Direi di si
+  - "Bullo1 Ma se \xE8 Gay"
+  - Bullo1 Dallo spalto si vedono solo ragazze
+  - Bullo1 Compreso lei
+  - "Bullo1 Niente stiamo solo dicendo la verit\xE0"
+  - Bullo1 Si invece
+  - Bullo1 Ma noi verremmo
+  - Bullo1 Con i nostri bei cori
+  - Bullo1 Cosa
+  - Bullo1 ???
+  - Bullo1 Perfetto
+  - Bullo1 Vedremo quanto sei brava enrica
+  - Bullo1 Si
+  - Bullo1 Ovvio
+  - "SupportoBullo1\u202C Ovvio"
+  - "SupportoBullo1\u202C Che finocchietto"
+  - "SupportoBullo1\u202C Ti credi figo solo pk sai fare quella cazzo di danza"
+  - "SupportoBullo1\u202C Grande Bullo2"
+  - "SupportoBullo1\u202C Faresti meglio a morire"
+  - Bullo1 Si bufu hai finito quell'allenamento
+  - "Bullo1 Ma Vittima non \xE8 una femmina \xE8 una ballerina"
+  - "Bullo1 Vittima \xE8 cos\xEC poco maschio che se si sposa il parroco lo dichiara
+    moglie e moglie"
+  - Bullo1 Oooooook
+  - Bullo1 Ooooooo
+  - "Bullo1 Non mi entrerebbe il tut\xF9 perch\xE9 io il coso c'\xE8 la ho"
+  - "Bullo1 Cos\xEC divento obeso anche io"
+  - Bullo1 Anche no
+  - Bullo1 !!!!
+  - "SupportoBullo1\u202C Pk"
+  - "SupportoBullo1\u202C Pk"
+  - "SupportoBullo1\u202C Se \xEA uno sfigato"
+  - "SupportoBullo1\u202C No"
+  - "SupportoBullo1\u202C Tu non mi dai ordini"
+  - "SupportoBullo1\u202C No"
+  - "SupportoBullo1\u202C Vittima e uno sfigato frocio"
+  - "SupportoBullo1\u202C No"
+  - "SupportoBullo1\u202C \u200EIMG-20180222-WA0001.jpg (file allegato)"
+  - "SupportoBullo1\u202C Questo \xE8 Vittima"
+  - Bullo1 Ciao
+  - Bullo1 Come state????
+  - Bullo1 Ciao
+  - "Bullo1 Ahahah principessina, se vengo \xE8 solo per vederti in ridicolo davanti
+    a tutti!"
+  - "Bullo1 Ahahaha, anche solo il fatto che un maschio faccia danza classica...\U0001F602"
+  - Bullo1 Il fatto che tu sia maschio, e anche uno sfigato!
+  - Bullo1 Non sei "un ballerino". Sei una femminuccia, vergognati.
+  - "Bullo1 Non mi interessa\U0001F643"
+  - "Bullo1 Perch\xE9 stai sulle palle a tutti, non sono l'unico a dirlo..."
+  - Bullo1 Ahahah vedi?
+  - Bullo1 Ma impara l'italiano, dislessico inutile
+  - "Bullo1 Non \xE8 il suo caso"
+  - "SupportoBullo1 Gia Bullo1 hai ragione\U0001F44D\U0001F60E"
+  - SupportoBullo1 Ha ha brava
+  - Bullo1 Anche tu sei uno sfigato, ma come pochi!!
+  - SupportoBullo1 Bravodicibene Bullo1
+  - SupportoBullo1 Hahahah
+  - Bullo1 Lo so lo so
+  - Bullo1 Tanto non ti caga nessuno
+  - "Bullo1 \"Non vi volevo\", ma stai zitto che se fosse per noi saresti gi\xE0 sotto
+    terra."
+  - "Bullo1 Se non vuoi pi\xF9 vederci ucciditi..."
+  - SupportoBullo1 Vai Bullo1 sei un grande
+  - "Bullo1 Ma perch\xE9 appoggiate sto sifgato"
+  - SupportoBullo1 No nn lo so continua cosi Bullo1
+  - SupportoBullo1 Gia faqifo
+  - SupportoBullo1 Ops fa schifo
+  - SupportoBullo1 A chi ti riferisci?
+  - SupportoBullo1 Io da quando ne avevo 1.5
+  - Bullo1 Mi piacerebbe solo pestarti
+  - SupportoBullo1 Ahah
+  - SupportoBullo1 Caccacacca
+  - SupportoBullo1 Ahahahahahahahahahahahahahah
+  - SupportoBullo1 Gia lo sono da quando sono nato
+  - Bullo1 Tu sei simpatico come una sprangate sui denti
+  - SupportoBullo1 Hahah
+  - SupportoBullo1 O come la giunta sotto la scarpa
+  - "SupportoBullo1 Come il mio ahahaha\U0001F602\U0001F602\U0001F602\U0001F602\U0001F923\U0001F923\U0001F923\U0001F923\U0001F643\U0001F643\U0001F643\U0001F618"
+  - SupportoBullo1 Hahahahahahahahahahahaha
+  - "Bullo1 Uno sfigato, proprio come te!\U0001F609"
+  - "SupportoBullo1 Secondo me l'unica cosa bella \xE8 il teletabbies"
+  - SupportoBullo1 Ok
+  - SupportoBullo1 Ritroverai il cell pieno
+  - Bullo1 Vai vai, magari non tornare.
+  - SupportoBullo1 Ahahahahahahahahahahgiahahahahah
+  - Bullo1 Ma chissenefrega. Non rovineremo la tua passione, ma rovineremo la tua
+    vita!
+  - "Bullo1 Anche perch\xE9 non ti caga nessuno"
+  - Bullo1 Tu non sei mai stato amico di nessuno
+  - "Bullo1 Io ci sto tutti i giorni sul palco\U0001F609\U0001F618"
+  - Bullo1 Ahhahaha finochietto
+  - Bullo1 Ma non interessi a nessuno, rifugiati nel mondo dei sogni, ti rimane solo
+    quello, sfigato inutile!
+  - Bullo1 Ma stai zitto sfigato
+  - Bullo1 Vai fare le prove per poi?
+  - Bullo1 Non concluderai mai niente nella vita.
+  - Bullo1 Sei un impiastro
+  - "Bullo1 Io diventer\xF2 quello che tu non puoi neanche immaginare"
+  - Bullo1 Tu non diventerai famoso
+  - Bullo1 Sfigato inutile
+  - "Bullo1 \u200ETu mentre balli"
+  - Bullo1 Io so menarti
+  - Bullo1 Meglio di no
+  - Bullo1 Potresti finire male
+  - Bullo1 Ma non dire cazzate
+  - Bullo1 Ma lo sfigato?
+  - Bullo1 Parla pure, sfigato
+  - Bullo1 Ma stai zitto
+  - Bullo1 Piangi tu, se ti prendo. NON OSARE DIRLO A NESSUNO, sfigato!
+  - Bullo1 Sei nato
+  - Bullo1 Ma che schifo
+  - Bullo1 Come te
+  - Bullo1 Meglio.
+  - SupportoBullo1 Gia proprio cosi
+  - "SupportoBullo1 A dir la verit\xE0 \xE8 qualcos'altro"
+  - SupportoBullo1 No qualcuno altro
+  - SupportoBullo1 Cosa cosa?
+  - "SupportoBullo1 Questo messaggio \xE8 stato eliminato"
+  - "SupportoBullo1 Nn intendo niente\U0001F923"
+  - Bullo1 Parlane con chi ti pare
+  - Bullo1 Ti rideranno in faccia
+  - "Bullo1 Scarti della societ\xE0"
+  - Bullo1 Ma che cazzo me ne frega
+  - Bullo1 Ti affogo nelle sabbie mobili
+  - Bullo1 Sfigato
+  - Bullo1 Sfigato, ogni volta che parli a qualcuno nel modo iniziano a sanguinare
+    le orecchie
+  - "Bullo1 S\xEC, uno sfigato"
+  - Bullo1 "Tuo figlio" Sei talmente brutto che neanche un palo della luce farebbe
+    un figlio con te...
+  - "Bullo1 S\xEC invece"
+  - Bullo1 Sfigato
+  - Bullo1 Ma stai zitto
+  - Bullo1 Che sei talmente brutto che neanche una supposta ti si incula
+  - "Bullo1 Ah, perch\xE9 le tue prese da altri sfigato come te?"
+  - "Bullo1 Perch\xE9 lo segui"
+  - Bullo1 Poi io ci parlo anche con te
+  - Bullo1 Non vali neanche le calorie che brucio scrivendoti
+  - SupportoBullo1 Verone
+  - SupportoBullo1 Bullo1
+  - "SupportoBullo1 La supposta ahahaha\U0001F923\U0001F923\U0001F923\U0001F923\U0001F602\U0001F602\U0001F602\U0001F602"
+  - Bullo1 Hey sfigatello! Come va?
+  - SupportoBullo1 Ciao
+  - counterSpeech provona
+  - Bullo1 Ma chi ci vuole venire che quando balli sembri un ippopotamo
+  - "Bullo1 Gi\xE0"
+  - "Bullo1 Cos\xEC vi rendete ridicoli pure voi"
+  - "Bullo1 Ma quando mai la danza pu\xF2 piacere"
+  - Bullo1 Spero che ti spacchi la schiena
+  - Bullo1 Certo come no
+  - "Bullo1 Gi\xE0"
+  - Bullo1 E comunque la danza non serve a niente
+  - Bullo1 Grande SupportoBullo2
+  - "Bullo1 \U0001F44E\U0001F3FBla danza\U0001F92E\U0001F922"
+  - Bullo1 Si come peggior ballerino
+  - Bullo1 Infatti come la danza che e cattiva
+  - Bullo1 La danza serve solo per rendersi ridicoli davanti al pubblico
+  - Bullo1 Ancora con questa arte
+  - Bullo1 Anzi il cane balla meglio di lui
+  - Bullo1 Ma ignorante sarai tu
+  - Bullo1 Ok
+  - Bullo1 Ma quali sono i nuovi ruoli
+  - "Bullo1 Esatto fai cagare \U0001F4A9"
+  - "Bullo1 Manco fossi gay \U0001F595\U0001F3FB\U0001F602\U0001F602\U0001F602"
+  - "Bullo1 \U0001F926\U0001F3FB\u200D\u2640"
+  - "Bullo1 Ma cosa lo supporti\U0001F926\U0001F3FB\u200D\u2640"
+  - Bullo1 Hahah
+  - Bullo1 Si intromette anche questa
+  - Bullo1 Per te
+  - Bullo1 Non mi importa niente di te e la tua danza
+  - SupportoBullo1 Ma dai! Chi pensi che venga a vedere il tuo stupido balletto! Non
+    ce ne frega niente!
+  - SupportoBullo1 Ma chi ti ha chiesto qualcosa?
+  - SupportoBullo1 Stai zitta
+  - SupportoBullo1 Chi credi di essere a difendere uno sfigato!!!
+  - SupportoBullo1 NORMALE TU!? ma per favore... a parte l'aspetto fisico no  hai
+    niente di normale
+  - SupportoBullo1 Be a sentire come parli mi pare proprio di si!
+  - SupportoBullo1 Saremmo noi gli idioti? Per me non hai capito un cazzo della vita!
+  - Bullo1 Ti piacciono i maschi?
+  - Bullo1 Io ho provato
+  - "Bullo1 Per un maschio non \xE8 il massimo"
+  - "Bullo1 Poverino dai lasciamolo allenare per il saggio,ma tanto far\xE0 schifo
+    comunque"
+  - "Bullo1 Ma datti una calmata tuuuu gey di \U0001F4A9"
+  - "Bullo1 Ma seh te credo bellissima che fa vomitare \U0001F92E"
+  - SupportoBullo1 Sei una merda percheeee i compiti me li fai tu!
+  - SupportoBullo1 Okay?
+  - Bullo1 Devi andare da tua madre che lei si fa tutti sti compiti del cazzo
+  - "SupportoBullo1 Gi\xE0"
+  - Bullo1 Secchio.... Dovevi fare la spia..... Sfigato
+  - Bullo1 Brutto sfigato..... Non me ne frega.... Fatti i c***i tuoi
+  - Bullo1 Appena ti becco fuori da scuola! te la ficco in bocca la sigaretta
+  - "Bullo1 Sei solo un secchio, non hai amici, e fai schifo ooooo!!!\U0001F621\U0001F621\U0001F621\U0001F621"
+  - SupportoBullo1 La smettete di prendere in giro Vittima
+  - "Bullo1 Cosa vuoi tu non lo conosci nemmeno,siete tutti \xE8 due sfigati cronici\U0001F602\U0001F913\U0001F913\U0001F913\U0001F913\U0001F913"
+  - SupportoBullo1 Avete rotto
+  - SupportoBullo1 Non va bene
+  - "SupportoBullo1 Vittima a detto solo la verit\xE0"
+  - SupportoBullo1 Hai ragione
+  - SupportoBullo1 Non sono affari tuoi
+  - "SupportoBullo1 Te n\xE9 in porta spione"
+  - SupportoBullo1 Ecco ai ragione
+  - SupportoBullo1 Lo sanno
+  - SupportoBullo1 Ma volevano solo scherzare
+  - "SupportoBullo1 Ecco continua cos\xEC"
+  - SupportoBullo1 Haaaaaa
+  - Bullo1 Ma stai zitta... Pure tu secchiona
+  - SupportoBullo1 No Non sono affari tuoi
+  - SupportoBullo1 Hai capito?
+  - SupportoBullo1 SupportoVittima2 stai zitta
+  - SupportoBullo1 Ti beccheremo fuori scuola
+  - SupportoBullo1 SupportoVittima2 fatti i affari tuoi
+  - SupportoBullo1 Ok
+  - "SupportoBullo1 Io studio pi\xF9 di t\xE8,tu cosa studi,studi le parolacce perch\xE9
+    non le sai"
+  - SupportoBullo1 Si ti sta bene
+  - SupportoBullo1 Anche noi faremo la spia
+  - "SupportoBullo1 Sapete perch\xE9 Vittima a dei bei voti perch\xE9 lui va a guardare
+    le domande per essere capace a rispondere alle risposte delle verifiche"
+  - SupportoBullo1 Ai proprio ragione
+  - "SupportoBullo1 Fai prima andartene (''spione'')\U0001F61C"
+  - SupportoBullo1 Ho i due fidanzatini si aiutano
+  - SupportoBullo1 Si
+  - SupportoBullo1 Sai scrivere
+  - SupportoBullo1 Allora cose quel ''caso''
+  - SupportoBullo1 SupportoVittima2 cosa volevi scrivere
+  - SupportoBullo1 O forse Non sai scrivere
+  - SupportoBullo1 Cosa dici sfigata
+  - SupportoBullo1 Ma vai a casa
+  - SupportoBullo1 Ho si intromette il fidanzato
+  - SupportoBullo1 SupportoVittima3 stai zitta
+  - SupportoBullo1 Cosa ridi
+  - SupportoBullo1 SupportoVittima2 stai zitto
+  - "SupportoBullo1 Ma tu sei gi\xE0 una \U0001F4A9"
+  - SupportoBullo1 ti stai sbagliando ti stai sbagliando
+  - SupportoBullo1 L'ho fatto apposta
+  - "SupportoBullo1 L'ho scritto apposta cos\xEC il tuo fidanzatino lo capir\xE0"
+  - SupportoBullo1 SupportoBullo2 ti fai trattare cosi
+  - SupportoBullo1 Scusa o sbagliato
+  - SupportoBullo1 Hai rotto
+  - SupportoBullo1 Testa vuota
+  - "SupportoBullo1 Parla la pi\xF9 magra della classe\U0001F642"
+  - SupportoBullo1 Ho sai scrivere
+  - SupportoBullo1 Che voto hai in Italiano Non sufficiente
+  - "SupportoBullo1 Almeno prendo voti pi\xF9 alti"
+  - SupportoBullo1 Scusate Vittima che fine a fatto
+  - "SupportoBullo1 Non a scritto pi\xF9 niente"
+  - "Bullo1 Infatti \xE8 un gatto aggrappato alle palle\U0001F602\U0001F602\U0001F913\U0001F913"
+  - SupportoBullo1 Ai perfettamente ragione
+  - SupportoBullo1 Ma stai li
+  - SupportoBullo1 Ma cosa dici
+  - "SupportoBullo1 Non \xE8 vero"
+  - Bullo1 Ma stai zitta....
+  - SupportoBullo1 Grande
+  - SupportoBullo1 Tu devi stare zitta
+  - SupportoBullo1 Si
+  - SupportoBullo1 Infatti
+  - "SupportoBullo1 SupportoVittima2 ma cosa aiuti uno spione,che forse un giorno
+    ti potr\xE0 fare la spia"
+  - SupportoBullo1 Ma se a fatto la spia ai suoi compagni di classe
+  - SupportoBullo1 Anche tu
+  - SupportoBullo1 Si,lo prendevi in giro
+  - SupportoBullo1 L' anno scorso
+  - SupportoBullo1 Ma vai a ridere da un'altra parte
+  - SupportoBullo1 Inffati
+  - SupportoBullo1 SupportoVittima2 lo sai che Vittima e andato a spifferare che tu
+    prendi brutti voti in inglese
+  - SupportoBullo1 Ma stai zitto
+  - SupportoBullo1 Stai zitto
+  - SupportoBullo1 Cosa ridi
+  - SupportoBullo1 Ma chi te la chiesto
+  - SupportoBullo1 Ma stai zitta
+  - SupportoBullo1 Ma stai zitta mister (Non sufficiente)
+  - "SupportoBullo1 Gi\xE0"
+  - Bullo1 Che scemo che eri su quel video
+  - Bullo1 Non sai manco fare una flessione e ora ti metti a ballare
+  - Bullo1 Ma va!!!
+  - "Bullo1 Be ovvio sofi lui \xE8 il re degli sfigati"
+  - Bullo1 Un cesso vivente
+  - "Bullo1 Be lui che \xE8"
+  - Bullo1 Be a noi no
+  - Bullo1 Ma stai zitto tu sfigato
+  - "SupportoBullo1 Haha \xE9 gi\xE0"
+  - Bullo1 A si con i vostri amici sfigati che
+  - Bullo1 Non sanno amnco tirare un pugno
+  - Bullo1 Manco*
+  - Bullo1 Ci vogliono tirare i libri
+  - Bullo1 A si i dizionari
+  - SupportoBullo1 Almeno non sembriamo un elefante
+  - "SupportoBullo1 Wow l'italiano \xE9 molto presente qui"
+  - SupportoBullo1 P..? P.. cosa petto? Pettinatura?
+  - "SupportoBullo1 \xC9 inutile che cancelli"
+  - SupportoBullo1 O come Pagliaccio?
+  - Bullo1 Si come Vittima
+  - Bullo1 Vittima
+  - "SupportoBullo1 Quello lo \xE9 il tuo amico Vittima"
+  - "SupportoBullo1 Haha mi hai preceduta\U0001F602"
+  - SupportoBullo1 Oo ma tu che vuoi?!!
+  - SupportoBullo1 Cerchi le botte come il tuo amico?!
+  - Bullo1 Appena incontro Vittima lo riempio di botte
+  - Bullo1 SupportoVittima2 non iniziare
+  - Bullo1 Lesbiche a chi
+  - Bullo1 Ecco cosa sei
+  - "Bullo1 No \xE8 la\U0001F4A9 di una\U0001F404"
+  - SupportoBullo1 Beh balli male e sei uno sfigato quindi
+  - "SupportoBullo1 Pi\xF9 carini di te di sicuro"
+  - SupportoBullo1 Ma ti sei visto ballare??!
+  - Bullo1 No aspe non solo balla
+  - "Bullo1 Si \xE8 mai visto allo specchio"
+  - SupportoBullo1 No di certo pk si rompono  tutti appena si prova a specchiare
+  - Bullo1 Ballare
+  - Bullo1 Giaaa
+  - Bullo1 Noi invidiosi di te
+  - Bullo1 Ahhahahah
+  - "Bullo1 Ma val\xE1"
+  - SupportoBullo1 Ovvio ahah
+  - SupportoBullo1 Di uno sfigato come lui poi
+  - Bullo1 Guarda stiamo morendo dall'invidia sai
+  - Bullo1 A vederti morirebbero tutti
+  - Bullo1 Oddio a leggere i tuoi messaggi mi sto sentendo male
+  - Bullo1 Voi raga?
+  - "SupportoBullo1 Oddio non sai nemmeno come si scrive sfigato, musica.ly si scrive\U0001F644"
+  - SupportoBullo1 Uuuuhh adesso fa dalla prof a lamentarsi e a dire che i compagni
+    lo prendono in giro! Ma fammi il favore bocia di merda, che non sai fare altro
+    che lamentarti
+  - SupportoBullo1 E allora?! Se balli come un elefante incinto noi non possiamo farci
+    niente logico che se lo pubblichi anche le offese capisci che te le pigli per
+    un motivo
+  - "SupportoBullo1 Era l\xEC cosa dovevamo fare?"
+  - "SupportoBullo1 Ma se era sulla pagina home che cavolo dovevamo fare! Se poi tu
+    ti muovi come un elefante \xE9 un altro discorso"
+  - SupportoBullo1 Ma che amico, dai che li fa solo pk si sente in colpa siccome nessuno
+    ti caga
+  - "SupportoBullo1 Wow ok io mi metto nei *PAGNI* degli altri per\xF2 prima spiegami
+    che cosa sono"
+  - SupportoBullo1 Sente?
+  - SupportoBullo1 Ommioddio nessuno sta parlando pk stiamo scrivendo quindi....
+  - "SupportoBullo1 C'\xE8 mi copi le battute ma che degrado"
+  - "SupportoBullo1 Si ma tu stai parlando o scrivendo?! E gli altri? Questa \xE9
+    una chat"
+  - SupportoBullo1 Ah no?!
+  - SupportoBullo1 Se proprio come il tuo amico
+  - SupportoBullo1 Io non sto mica parlando eh
+  - SupportoBullo1 Io sto scrivendo se non te ne accorgi
+  - SupportoBullo1 Appunto
+  - SupportoBullo1 Allora non sto parlando genio!
+  - SupportoBullo1 Si ma non parlano!!!! E se si io nel frattempo non sto parlando
+  - SupportoBullo1 Ma non sai fare altro che prendere le frasi degli altri?!
+  - SupportoBullo1 Tu non le hai mai avute quindi..
+  - SupportoBullo1 Senti sei capace di scrivere una cosa con un qualche significato
+    capibile oppure dobbiamo aspettare ancora molto
+  - SupportoBullo1 Ma gli affari tuoi mai no?!
+  - SupportoBullo1 Eh??? Ripeto, cela fai a scrivere qualcosa con un senso?
+  - SupportoBullo1 Si molti uno dei miei problemi sei tu!
+  - "SupportoBullo1 Se non sapessi leggere non avrei letto ci\xF2 che hai scritto"
+  - SupportoBullo1 Si come no dai ma fammi il favore che hai anche sbagliato il verbo
+  - SupportoBullo1 Se vuoi ti presto un dizionario
+  - SupportoBullo1 Ne siamo sicuri?!
+  - Bullo1 Bravo
+  - Bullo1 !!!
+  - Bullo1 Sai sei bravissimo ad fare la spia
+  - Bullo1 Ok ma sono affari nostri
+  - Bullo1 Ok?
+  - Bullo1 Ma levati che quello la non sa fare altro solo rompere
+  - Bullo1 Non dire zitta alla mia amica
+  - Bullo1 Se no
+  - Bullo1 Hahahaa
+  - Bullo1 Tu
+  - Bullo1 Ma tua mamma sta zitta
+  - Bullo1 Va la va
+  - Bullo1 Ma sono agfari miei e suoi
+  - Bullo1 Impara a scrivere prima
+  - Bullo1 Ooo poverino
+  - Bullo1 Deve venire la fatina della pace
+  - Bullo1 A diffenderlo
+  - Bullo1 Chiedi a tua sorella se non so fare altro
+  - "SupportoBullo1 \xC8 tu sai solo parlare quando non serve!"
+  - Bullo1 Vai
+  - Bullo1 A si noi la facciamo per questa volta ma voi siete idioti a prescindere
+  - SupportoBullo1 Esatto
+  - SupportoBullo1 Chi te lo dice?
+  - Bullo1 Minchia se avessi preso da me non saresti qui
+  - Bullo1 Io a te ti spacco di schiaffi
+  - "SupportoBullo1 Sisi studia che cos\xEC impari a scrivere"
+  - Bullo1 Ce sembri un uomo
+  - Bullo1 Lo so
+  - "SupportoBullo1 Si infatti lo \xE8"
+  - "Bullo1 \xC8 per questo che sei nata"
+  - Bullo1 Ha parlato
+  - SupportoBullo1 Ma tu fai schifo!
+  - Bullo1 Ma cosa guardarti allo specchio ti farebbe schifo ma dipo un po ci prendo
+    l abitudine e ci riderai sopra
+  - Bullo1 Per non vederti
+  - Bullo1 Si
+  - Bullo1 Cela vediamo dopo perceh ho una vita spciale IO
+  - Bullo1 Ti infilero i denti cosi infondo per la gola i denti che ti toccera usare
+    lo spazzolino per il culo per tirarli fuori
+  - SupportoBullo1 Secchiona!!
+  - Bullo1 Ooo scusa ho usato pare troppo pesanti i bimbi poi si traumatizzato
+  - "SupportoBullo1 \U0001F602hai paura \xE8?"
+  - SupportoBullo1 Tacchinardi spiumata
+  - SupportoBullo1 Tacchina
+  - Bullo1 Infatti le battute di tua mamma fanno ridere
+  - "Bullo1 \u26AB la tua faccia dipo che ti avr\xF2 messo le mani afdosso"
+  - SupportoBullo1 Si ma lei ti ha detto tutte e 2
+  - Bullo1 Per quanto sei cessa credevo che ti cagassi in bocca
+  - SupportoBullo1 Meglio essere bidoni che secchioni
+  - SupportoBullo1 Io credo di si
+  - Bullo1 Dai raga poveri bimbi
+  - SupportoBullo1 Anche tua noi
+  - Bullo1 Si ok ma tu nel tuo dizionario hai solo queste parole
+  - Bullo1 Si dai che ho da fare
+  - SupportoBullo1 Certo!!
+  - SupportoBullo1 Sempre
+  - SupportoBullo1 Che simpatica
+  - SupportoBullo1 Sembri un registratore rotto!!
+  - "SupportoBullo1 \xC8 tu come una buffa sulla mano"
+  - SupportoBullo1 Hai finito di  copiare le battute da internet!!
+  - SupportoBullo1 Sisi
+  - "Bullo1 S\xEC sono tossico E infatti sono dipendente da tua madre"
+  - "SupportoBullo1 \U0001F602\U0001F602che ridere"
+  - "Bullo1 S\xEC tua madre si mette in ginocchio poi punta in alto con le mani per
+    prendermi le palle"
+  - SupportoBullo1 Che ne sai tu
+  - "SupportoBullo1 Cmq resta il fatto che Vittima \xE8 uno spione"
+  - SupportoBullo1 Ma state zitti secchi/bidoni
+  - "SupportoBullo1 Sono una femmina\U0001F913\U0001F913"
+  - SupportoBullo1 Studi tanto e non sai neanche capire la differenza tra maschi e
+    femmine!!
+  - SupportoBullo1 Ma dai state zitti
+  - Bullo1 Raga se vi intromette peggio per VOI perche pocchio voi e anche lui quindi
+  - "Bullo1 Questa vasta scelta di diffonderlo \xE8 come la vostra vita cio\xE8 inutile"
+  - SupportoBullo1 E noi siamo con lui
+  - SupportoBullo1 Quindi siamo in tre conto tre babbuini
+  - Bullo1 Che bambini che siete
+  - Bullo1 Anzi specchio riflesso
+  - Bullo1 Ma crescete
+  - Bullo1 Se no
+  - "SupportoBullo1 Vediamo gioved\xEC a scuola"
+  - "Bullo1 Sono affari nostri di cosa facciamo per\xF2 tu hai sbagliato ed ci saranno
+    dell brutte conssenguemze"
+  - Bullo1 No
+  - Bullo1 Sto solo dicendo che ci saranno delle conseguenze
+  - "SupportoBullo1 Neanche noi sopportiamo pi\xF9 voi"
+  - Bullo1 Ma tranquilla tanto da domani non ci daranno piu fastidio
+  - Bullo1 Ah
+  - "SupportoBullo1 Ha perch\xE9 se no?"
+  - Bullo1 Mi fai ridere
+  - Bullo1 Soprattutto quando ti guardo in faccia
+  - "Bullo1 Per\xF2 al inizio mi sono spaventato a vederti ma poi ci ho fatto l abitudine"
+  - Bullo1 Bau bau
+  - "Bullo1 Eh sai com \xE8 non so abbaiare per farmi comprendere"
+  - "SupportoBullo1 \U0001F602\U0001F913fate solo ridere"
+  - SupportoBullo1 Hahaha peccato che la nostra faccia ha davanti uno specchio!
+  - Bullo1 Ma non avete qualcos altro da fare apparte rompere a noi
+  - Bullo1 E
+  - "SupportoBullo1 Cmq Vittima \xE8 veramente un ignorante perch\xE9 non sa cosa
+    gli accadr\xE0 domani"
+  - SupportoBullo1 Scusa se il traduttore mi corregge i nomi!!
+  - SupportoBullo1 Vediamo....
+  - SupportoBullo1 Ok allora vediamo domani
+  - SupportoBullo1 Sorpresa...
+  - Bullo1 Giocare a calcio
+  - Bullo1 E suonare
+  - Bullo1 Lo so.che lo fai hai preso da tua madre se giochi come le da vestita immagina
+    dopo
+  - SupportoBullo1 Non direi proprio
+  - "Bullo1 Se uno \xE8 piu grosso nom credo"
+  - SupportoBullo1 Esatto e soprattutto se sono in tre
+  - Bullo1 In 4 non dimendicare mattia
+  - "SupportoBullo1 Tu Vittima non dici niente \xE8....hai paura\U0001F913"
+  - "SupportoBullo1 E allora perch\xE9 non risponde?"
+  - Bullo1 Avete iniziato voi a rispondere
+  - Bullo1 Anche tu sembri dio sceso in terra ma non lo dico se no bestemierei
+  - "SupportoBullo1 Comunque anche voi state parlando al posto di Vittima ...poverino
+    non si sa difendere.....\U0001F62D\U0001F62D\U0001F62D"
+  - SupportoBullo1 Sisi intanto sei tu e Vittima quelli che piangono sempre..
+  - SupportoBullo1 Quindi Vittima continua a non rispondere.....
+  - SupportoBullo1 Non ho chiesto a te
+  - "SupportoBullo1 Si ma non ho chiesto a te perch\xE9 per me non esisti"
+  - "SupportoBullo1 Vittima \xE8 uno spione!!"
+  - SupportoBullo1 ?
+  - SupportoBullo1 Allora sei d'accordo con noi nerd
+  - "SupportoBullo1 Non \xE8 vero \xE8 solo un cretino spione secchione"
+  - SupportoBullo1 Parere tuo noila pensiamo diversamente
+  - SupportoBullo1 Se la lui non avesse fatto al spia saremo tutti a posto
+  - SupportoBullo1 Ma stai zitta che lo abbiamo minacciato anche oggi quel maiale
+  - SupportoBullo1 Sisi infatti! Tu continua a crederci
+  - "SupportoBullo1 Gi\xE0"
+  - SupportoBullo1 Fai schifo ciccione!
+  - Bullo1 Ballerino provetto vai ad amici sicuramente ti prenderanno hahahahhahahaa
+  - Bullo1 Poi i tuoi musical.ly hahahahag
+  - "Bullo1 Impara prima di fare le cose che fai pi\xF9 bella figura"
+  - "Bullo1 Gi\xE0 hahahhaha"
+  - "SupportoBullo1 \xC8 abbastanza preoccupante che non sappia fare nemmeno una capriola
+    hahaha"
+  - "Bullo1 Gi\xE0"
+  - Bullo1 Come lui!
+  - Bullo1 Anni 90 hahahahaha
+  - SupportoBullo1 Quanto mangia quello al giorno hahaha
+  - SupportoBullo1 Che quando va al Mc Donald lo svuota hahah
+  - "Bullo1 Dovrebbe essere segnalato quel musical.ly da quanto \xE8 brutto hahahaha"
+  - Bullo1 Hahahahah
+  - Bullo1 E tu dovresti imparare a fare le cose prima di postarle
+  - Bullo1 Ti ho chiesto di parlare?
+  - Bullo1 Zitto elefante
+  - Bullo1 Ma tu che vuoi?
+  - Bullo1 Ti ho chiesto di parlare?
+  - Bullo1 Tu puoi insegnargli a fare i musical.ly e a fare ginnastica.
+  - Bullo1 Allora cosa parli?
+  - Bullo1 Zitto lo dici a tuo fratello
+  - Bullo1 Non lo lasciamo stare.
+  - Bullo1 Ma tua mamma bulletta
+  - Bullo1 A noi*
+  - "Bullo1 Sar\xE0 meglio che ti sia ben chiaro senn\xF2 ti faccio vedere io come
+    ti \xE8 ben chiaro"
+  - Bullo1 Poi vedremo
+  - "Bullo1 Pi\xF9 guardi il tuo musical.ly pi\xF9 rido"
+  - Bullo1 Non lo lasciamo stare
+  - Bullo1 Chi sei tu per dirmi le cose che devo fare?
+  - Bullo1 Mi fate solo ridere hahahhahahaha
+  - "Bullo1 E tu bamboccio non scrivi pi\xF9?"
+  - Bullo1 NON LO LASCIAMO STARE
+  - Bullo1 Non lasceremo stare nemmeno te se continui
+  - Bullo1 Impara l'italiano
+  - Bullo1 E tu bamboccio impara a fare i musical.ly e ginnastica hahaha
+  - Bullo1 Non mi pare
+  - "Bullo1 Parlado, \xE8 questo l'italiano che sai? Hahhaha"
+  - Bullo1 Allora imparalo meglio
+  - Bullo1 Mi sa che non ascolti
+  - Bullo1 O ma lo capisci che non lo lasciamo stare?
+  - Bullo1 Bambocci
+  - Bullo1 Dai vai a giocare con le bambole
+  - "Bullo1 Allora sar\xE0 meglio che lo capisci"
+  - Bullo1 Puahahhaha
+  - "Bullo1 Senn\xF2?"
+  - Bullo1 Zitta oca
+  - Bullo1 Nei guai ci andrai tu
+  - "Bullo1 Invece lo dico a te!\U0001F60C"
+  - Bullo1 Gallina
+  - Bullo1 Ti ci metto io nei guai!
+  - "SupportoBullo1 SupportoVittima1 stai zitta! Questa volta non hai voce in capitolo...
+    hai visto il suo musical.ly? \xC8 un ciccione di merda nient\u2019altro"
+  - SupportoBullo1 Invidiosa? io? di quel ciccione? non credo proprio
+  - Bullo1 Invidiosi di che?
+  - Bullo1 Di avere tanta ciccia?
+  - Bullo1 Ma no grazie hahahha
+  - Bullo1 Tu nemmeno quello
+  - Bullo1 Pure tu adesso?
+  - Bullo1 Zitta oca
+  - Bullo1 Ma tu
+  - "Bullo1 Ti stiamo dando dei consigli \U0001F937\U0001F3FC\u200D\u2640"
+  - Bullo1 Prego
+  - Bullo1 Non sa fare nemmeno ginnastica,sembra un bisonte quando corre!
+  - "SupportoBullo1 L\u2019unica cosa che non sa fare? C\u2019\xE8 una lista lunga
+    3 km di tutti i suoi difetti tra cui musical.ly e ginnastica"
+  - "SupportoBullo1 Eh gi\xE0"
+  - SupportoBullo1 Ecco
+  - "SupportoBullo1 \xC8 gi\xE0 abbastanza che esiste..."
+  - Bullo1 Zitta tu
+  - "Bullo1 Nessuno ti ha chiesto nulla infatti \U0001F937\U0001F3FC\u200D\u2640"
+  - "Bullo1 Lei pu\xF2 parlare tu no"
+  - Bullo1 Allora chiudi il becco
+  - Bullo1 Stai zitta tu che dici tanto di sprecare parole con noi.
+  - Bullo1 Chiudi la bocca.
+  - Bullo1 Hai imparato a fare i musical.ly?
+  - Bullo1 Ahahahahah
+  - SupportoBullo1 Mah non credo proprio
+  - SupportoBullo1 Hahaha
+  - "SupportoBullo1 \xC8 ancora un elefante"
+  - Bullo1 Dimagrisci elefante
+  - Bullo1 Iscriviti in palestra invece che perdere tempo a studiare!
+  - "SupportoBullo1 Ma quanto sfigato pu\xF2 essere quel cesso hahah"
+  - Bullo1 Appena vedo il cesso mi viene in mente Vittima hahaha
+  - Bullo1 Chi vi ha chiesto cosa?
+  - Bullo1 Evidentemente non ci vedono bene hahahha
+  - Bullo1 L'ho trovato per caso.
+  - "Bullo1 \xC8 stato il caso pi\xF9 brutto della mia vita."
+  - Bullo1 Non mi interessa un grassone di merda
+  - Bullo1 Faccio quello che voglio.
+  - Bullo1 Cazzo ridi?
+  - Bullo1 Cazzo ridi?
+  - "Bullo1 Vittima \xE8 quelli che piange."
+  - Bullo1 Centra
+  - Bullo1 Non mi sto arrampicano da nessuna parte sei che ti attacchi alle palle
+  - "SupportoBullo1 Ridi ridi che poi mercoled\xEC piangerai"
+  - SupportoBullo1 Goditi questi giorni
+  - SupportoBullo1 SupportoVittima2 tappati quella cazzo di bocca
+  - SupportoBullo1 Sul serio difendi quel bisonte?
+  - Bullo1 Mi fai ridere hahahhaa
+  - SupportoBullo1 Quello*
+  - SupportoBullo1 Impara a scrivere
+  roles:
+  - "Marco\r"
+  - "Marco\r"
+  - "Marco\r"
+  - "Marco\r"
+  - "Marco\r"
+  - "Marco\r"
+  - "Marco\r"
+  - "Marco\r"
+  - "Marco\r"
+  - "Marco\r"
+  - "Marco\r"
+  - "Marco\r"
+  - "Marco\r"
+  - "Marco\r"
+  - "Marco\r"
+  - "Marco\r"
+  - "Marco\r"
+  - "Marco\r"
+  - "Marco\r"
+  - "Marco\r"
+  - "Marco\r"
+  - "Marco\r"
+  - "Marco\r"
+  - "Marco\r"
+  - "Marco\r"
+  - "Marco\r"
+  - "Marco\r"
+  - "Marco\r"
+  - "Marco\r"
+  - "Marco\r"
+  - "Marco\r"
+  - "Marco\r"
+  - "Marco\r"
+  - "Paolo\r"
+  - "Paolo\r"
+  - "Paolo\r"
+  - "Paolo\r"
+  - "Paolo\r"
+  - "Paolo\r"
+  - "Paolo\r"
+  - "Paolo\r"
+  - "Paolo\r"
+  - "Paolo\r"
+  - "Paolo\r"
+  - "Paolo\r"
+  - "Paolo\r"
+  - "Paolo\r"
+  - "Paolo\r"
+  - "Paolo\r"
+  - "Paolo\r"
+  - "Paolo\r"
+  - "Paolo\r"
+  - "Paolo\r"
+  - "Paolo\r"
+  - "Paolo\r"
+  - "Paolo\r"
+  - "Paolo\r"
+  - "Paolo\r"
+  - "Paolo\r"
+  - "Paolo\r"
+  - "Paolo\r"
+  - "Paolo\r"
+  - "Paolo\r"
+  - "Paolo\r"
+  - "Paolo\r"
+  - "Paolo\r"
+  - "Paolo\r"
+  - "Paolo\r"
+  - "Luca\r"
+  - "Luca\r"
+  - "Luca\r"
+  - "Luca\r"
+  - "Luca\r"
+  - "Paolo\r"
+  - "Paolo\r"
+  - "Paolo\r"
+  - "Paolo\r"
+  - "Paolo\r"
+  - "Paolo\r"
+  - "Paolo\r"
+  - "Paolo\r"
+  - "Paolo\r"
+  - "Luca\r"
+  - "Luca\r"
+  - "Luca\r"
+  - "Luca\r"
+  - "Luca\r"
+  - "Luca\r"
+  - "Luca\r"
+  - "Luca\r"
+  - "Luca\r"
+  - "Luca\r"
+  - "Paolo\r"
+  - "Paolo\r"
+  - "Paolo\r"
+  - "Paolo\r"
+  - "Paolo\r"
+  - "Paolo\r"
+  - "Paolo\r"
+  - "Paolo\r"
+  - "Paolo\r"
+  - "Paolo\r"
+  - "Paolo\r"
+  - "Paolo\r"
+  - "Luca\r"
+  - "Luca\r"
+  - "Paolo\r"
+  - "Luca\r"
+  - "Luca\r"
+  - "Paolo\r"
+  - "Paolo\r"
+  - "Paolo\r"
+  - "Paolo\r"
+  - "Luca\r"
+  - "Paolo\r"
+  - "Luca\r"
+  - "Luca\r"
+  - "Luca\r"
+  - "Luca\r"
+  - "Luca\r"
+  - "Paolo\r"
+  - "Luca\r"
+  - "Luca\r"
+  - "Luca\r"
+  - "Luca\r"
+  - "Paolo\r"
+  - "Luca\r"
+  - "Luca\r"
+  - "Luca\r"
+  - "Luca\r"
+  - "Paolo\r"
+  - "Luca\r"
+  - "Luca\r"
+  - "Luca\r"
+  - "Paolo\r"
+  - "Luca\r"
+  - "Paolo\r"
+  - "Paolo\r"
+  - "Paolo\r"
+  - "Paolo\r"
+  - "Paolo\r"
+  - "Paolo\r"
+  - "Paolo\r"
+  - "Paolo\r"
+  - "Paolo\r"
+  - "Paolo\r"
+  - "Paolo\r"
+  - "Paolo\r"
+  - "Paolo\r"
+  - "Paolo\r"
+  - "Paolo\r"
+  - "Paolo\r"
+  - "Paolo\r"
+  - "Paolo\r"
+  - "Paolo\r"
+  - "Paolo\r"
+  - "Paolo\r"
+  - "Paolo\r"
+  - "Paolo\r"
+  - "Paolo\r"
+  - "Paolo\r"
+  - "Paolo\r"
+  - "Luca\r"
+  - "Luca\r"
+  - "Luca\r"
+  - "Luca\r"
+  - "Luca\r"
+  - "Luca\r"
+  - "Paolo\r"
+  - "Paolo\r"
+  - "Paolo\r"
+  - "Paolo\r"
+  - "Paolo\r"
+  - "Paolo\r"
+  - "Paolo\r"
+  - "Paolo\r"
+  - "Paolo\r"
+  - "Paolo\r"
+  - "Paolo\r"
+  - "Paolo\r"
+  - "Paolo\r"
+  - "Paolo\r"
+  - "Paolo\r"
+  - "Paolo\r"
+  - "Paolo\r"
+  - "Luca\r"
+  - "Luca\r"
+  - "Luca\r"
+  - "Paolo\r"
+  - "Luca\r"
+  - "Marco\r"
+  - "Paolo\r"
+  - "Paolo\r"
+  - "Paolo\r"
+  - "Paolo\r"
+  - "Paolo\r"
+  - "Paolo\r"
+  - "Paolo\r"
+  - "Paolo\r"
+  - "Paolo\r"
+  - "Paolo\r"
+  - "Paolo\r"
+  - "Paolo\r"
+  - "Paolo\r"
+  - "Paolo\r"
+  - "Paolo\r"
+  - "Paolo\r"
+  - "Paolo\r"
+  - "Paolo\r"
+  - "Paolo\r"
+  - "Paolo\r"
+  - "Paolo\r"
+  - "Paolo\r"
+  - "Paolo\r"
+  - "Paolo\r"
+  - "Paolo\r"
+  - "Paolo\r"
+  - "Luca\r"
+  - "Luca\r"
+  - "Luca\r"
+  - "Luca\r"
+  - "Luca\r"
+  - "Luca\r"
+  - "Luca\r"
+  - "Paolo\r"
+  - "Paolo\r"
+  - "Paolo\r"
+  - "Paolo\r"
+  - "Paolo\r"
+  - "Paolo\r"
+  - "Luca\r"
+  - "Luca\r"
+  - "Paolo\r"
+  - "Luca\r"
+  - "Paolo\r"
+  - "Paolo\r"
+  - "Paolo\r"
+  - "Paolo\r"
+  - "Luca\r"
+  - "Paolo\r"
+  - "Luca\r"
+  - "Luca\r"
+  - "Luca\r"
+  - "Luca\r"
+  - "Luca\r"
+  - "Luca\r"
+  - "Luca\r"
+  - "Luca\r"
+  - "Luca\r"
+  - "Luca\r"
+  - "Luca\r"
+  - "Paolo\r"
+  - "Luca\r"
+  - "Luca\r"
+  - "Luca\r"
+  - "Luca\r"
+  - "Luca\r"
+  - "Luca\r"
+  - "Luca\r"
+  - "Luca\r"
+  - "Luca\r"
+  - "Luca\r"
+  - "Luca\r"
+  - "Luca\r"
+  - "Luca\r"
+  - "Luca\r"
+  - "Luca\r"
+  - "Luca\r"
+  - "Luca\r"
+  - "Luca\r"
+  - "Luca\r"
+  - "Luca\r"
+  - "Luca\r"
+  - "Luca\r"
+  - "Luca\r"
+  - "Luca\r"
+  - "Luca\r"
+  - "Luca\r"
+  - "Luca\r"
+  - "Luca\r"
+  - "Luca\r"
+  - "Luca\r"
+  - "Luca\r"
+  - "Luca\r"
+  - "Luca\r"
+  - "Luca\r"
+  - "Luca\r"
+  - "Luca\r"
+  - "Luca\r"
+  - "Luca\r"
+  - "Paolo\r"
+  - "Luca\r"
+  - "Luca\r"
+  - "Luca\r"
+  - "Luca\r"
+  - "Paolo\r"
+  - "Luca\r"
+  - "Luca\r"
+  - "Luca\r"
+  - "Luca\r"
+  - "Luca\r"
+  - "Luca\r"
+  - "Luca\r"
+  - "Luca\r"
+  - "Luca\r"
+  - "Luca\r"
+  - "Luca\r"
+  - "Luca\r"
+  - "Luca\r"
+  - "Luca\r"
+  - "Luca\r"
+  - "Luca\r"
+  - "Luca\r"
+  - "Luca\r"
+  - "Luca\r"
+  - "Paolo\r"
+  - "Paolo\r"
+  - "Paolo\r"
+  - "Paolo\r"
+  - "Paolo\r"
+  - "Paolo\r"
+  - "Paolo\r"
+  - "Paolo\r"
+  - "Luca\r"
+  - "Paolo\r"
+  - "Paolo\r"
+  - "Paolo\r"
+  - "Paolo\r"
+  - "Paolo\r"
+  - "Luca\r"
+  - "Luca\r"
+  - "Luca\r"
+  - "Luca\r"
+  - "Luca\r"
+  - "Paolo\r"
+  - "Paolo\r"
+  - "Luca\r"
+  - "Luca\r"
+  - "Luca\r"
+  - "Luca\r"
+  - "Paolo\r"
+  - "Paolo\r"
+  - "Paolo\r"
+  - "Paolo\r"
+  - "Paolo\r"
+  - "Luca\r"
+  - "Luca\r"
+  - "Luca\r"
+  - "Paolo\r"
+  - "Paolo\r"
+  - "Luca\r"
+  - "Paolo\r"
+  - "Paolo\r"
+  - "Paolo\r"
+  - "Paolo\r"
+  - "Paolo\r"
+  - "Luca\r"
+  - "Luca\r"
+  - "Paolo\r"
+  - "Paolo\r"
+  - "Paolo\r"
+  - "Paolo\r"
+  - "Luca\r"
+  - "Luca\r"
+  - "Luca\r"
+  - "Luca\r"
+  - "Luca\r"
+  - "Luca\r"
+  - "Luca\r"
+  - "Luca\r"
+  - "Luca\r"
+  - "Luca\r"
+  - "Luca\r"
+  - "Luca\r"
+  - "Luca\r"
+  - "Luca\r"
+  - "Luca\r"
+  - "Luca\r"
+  - "Luca\r"
+  - "Luca\r"
+  - "Luca\r"
+  - "Luca\r"
+  - "Luca\r"
+  - "Luca\r"
+  - "Luca\r"
+  - "Luca\r"
+  - "Luca\r"
+  - "Luca\r"
+  - "Luca\r"
+  - "Luca\r"
+  - "Paolo\r"
+  - "Paolo\r"
+  - "Paolo\r"
+  - "Paolo\r"
+  - "Paolo\r"
+  - "Paolo\r"
+  - "Paolo\r"
+  - "Paolo\r"
+  - "Paolo\r"
+  - "Paolo\r"
+  - "Paolo\r"
+  - "Paolo\r"
+  - "Paolo\r"
+  - "Paolo\r"
+  - "Paolo\r"
+  - "Paolo\r"
+  - "Paolo\r"
+  - "Paolo\r"
+  - "Luca\r"
+  - "Paolo\r"
+  - "Paolo\r"
+  - "Luca\r"
+  - "Luca\r"
+  - "Paolo\r"
+  - "Paolo\r"
+  - "Luca\r"
+  - "Paolo\r"
+  - "Paolo\r"
+  - "Luca\r"
+  - "Paolo\r"
+  - "Paolo\r"
+  - "Luca\r"
+  - "Paolo\r"
+  - "Paolo\r"
+  - "Paolo\r"
+  - "Paolo\r"
+  - "Paolo\r"
+  - "Luca\r"
+  - "Paolo\r"
+  - "Luca\r"
+  - "Luca\r"
+  - "Luca\r"
+  - "Paolo\r"
+  - "Paolo\r"
+  - "Luca\r"
+  - "Paolo\r"
+  - "Luca\r"
+  - "Luca\r"
+  - "Paolo\r"
+  - "Luca\r"
+  - "Paolo\r"
+  - "Paolo\r"
+  - "Luca\r"
+  - "Luca\r"
+  - "Luca\r"
+  - "Luca\r"
+  - "Luca\r"
+  - "Luca\r"
+  - "Luca\r"
+  - "Paolo\r"
+  - "Luca\r"
+  - "Paolo\r"
+  - "Luca\r"
+  - "Luca\r"
+  - "Luca\r"
+  - "Luca\r"
+  - "Luca\r"
+  - "Luca\r"
+  - "Paolo\r"
+  - "Paolo\r"
+  - "Luca\r"
+  - "Luca\r"
+  - "Paolo\r"
+  - "Paolo\r"
+  - "Paolo\r"
+  - "Paolo\r"
+  - "Luca\r"
+  - "Paolo\r"
+  - "Paolo\r"
+  - "Paolo\r"
+  - "Luca\r"
+  - "Paolo\r"
+  - "Paolo\r"
+  - "Luca\r"
+  - "Paolo\r"
+  - "Paolo\r"
+  - "Paolo\r"
+  - "Paolo\r"
+  - "Paolo\r"
+  - "Luca\r"
+  - "Luca\r"
+  - "Paolo\r"
+  - "Paolo\r"
+  - "Luca\r"
+  - "Luca\r"
+  - "Luca\r"
+  - "Luca\r"
+  - "Luca\r"
+  - "Paolo\r"
+  - "Paolo\r"
+  - "Paolo\r"
+  - "Luca\r"
+  - "Paolo\r"
+  - "Luca\r"
+  - "Paolo\r"
+  - "Luca\r"
+  - "Luca\r"
+  - "Paolo\r"
+  - "Paolo\r"
+  - "Luca\r"
+  - "Luca\r"
+  - "Luca\r"
+  - "Luca\r"
+  - "Luca\r"
+  - "Luca\r"
+  - "Luca\r"
+  - "Luca\r"
+  - "Luca\r"
+  - "Luca\r"
+  - "Luca\r"
+  - "Luca\r"
+  - "Luca\r"
+  - "Luca\r"
+  - "Luca\r"
+  - "Paolo\r"
+  - "Paolo\r"
+  - "Paolo\r"
+  - "Paolo\r"
+  - "Luca\r"
+  - "Paolo\r"
+  - "Paolo\r"
+  - "Paolo\r"
+  - "Luca\r"
+  - "Luca\r"
+  - "Paolo\r"
+  - "Paolo\r"
+  - "Paolo\r"
+  - "Paolo\r"
+  - "Paolo\r"
+  - "Paolo\r"
+  - "Paolo\r"
+  - "Paolo\r"
+  - "Paolo\r"
+  - "Paolo\r"
+  - "Paolo\r"
+  - "Paolo\r"
+  - "Paolo\r"
+  - "Paolo\r"
+  - "Paolo\r"
+  - "Paolo\r"
+  - "Paolo\r"
+  - "Paolo\r"
+  - "Paolo\r"
+  - "Paolo\r"
+  - "Paolo\r"
+  - "Paolo\r"
+  - "Paolo\r"
+  - "Paolo\r"
+  - "Paolo\r"
+  - "Paolo\r"
+  - "Paolo\r"
+  - "Paolo\r"
+  - "Paolo\r"
+  - "Paolo\r"
+  - "Paolo\r"
+  - "Paolo\r"
+  - "Paolo\r"
+  - "Paolo\r"
+  - "Paolo\r"
+  - "Paolo\r"
+  - "Paolo\r"
+  - "Paolo\r"
+  - "Paolo\r"
+  - "Luca\r"
+  - "Luca\r"
+  - "Paolo\r"
+  - "Paolo\r"
+  - "Paolo\r"
+  - "Paolo\r"
+  - "Paolo\r"
+  - "Paolo\r"
+  - "Paolo\r"
+  - "Paolo\r"
+  - "Paolo\r"
+  - "Paolo\r"
+  - "Luca\r"
+  - "Luca\r"
+  - "Luca\r"
+  - "Luca\r"
+  - "Paolo\r"
+  - "Paolo\r"
+  - "Paolo\r"
+  - "Paolo\r"
+  - "Paolo\r"
+  - "Paolo\r"
+  - "Paolo\r"
+  - "Paolo\r"
+  - "Luca\r"
+  - "Luca\r"
+  - "Luca\r"
+  - "Paolo\r"
+  - "Paolo\r"
+  - "Luca\r"
+  - "Paolo\r"
+  - "Paolo\r"
+  - "Paolo\r"
+  - "Paolo\r"
+  - "Paolo\r"
+  - "Paolo\r"
+  - "Paolo\r"
+  - "Paolo\r"
+  - "Paolo\r"
+  - "Paolo\r"
+  - "Paolo\r"
+  - "Paolo\r"
+  - "Luca\r"
+  - "Luca\r"
+  - "Luca\r"
+  - "Luca\r"
+  - "Paolo\r"
+  - "Luca\r"
+  - "Luca\r"
+  lines:
+  - To be fair, the OFSTED report is more concerned with lack of enforcement and less
+    about focussing on the practice of any particular faith.
+  - While this story is presented as an 'Islamic issue', the OFSTED report refers
+    to 'countless' faith schools still that still illegally maintain gender segregation
+    - my guess is this is a cross-faith practice and not exclusive to Islamic faith
+    schools.
+  - The quoted report refers to 'countless faith schools' that illegally maintain
+    gender segregation. Isn't it more accurate to frame this as a matter of lack of
+    resources for enforcement, rather than presenting the story as an 'Islamic issue'?
+  - Gender segregation in faith schools is clearly a negative, but hardly exclusive
+    to some Islamic schools. I was 15 before I attended mixed classes, but then, this
+    was regarded as normal in the 1960's \/ 70's. The issue is really, if we are to
+    allow faith based education, we need effective mechanisms to uphold standards,
+    and legal requirements.
+  - We need to work together to eradicate CSE once and for all. Individuals are the
+    problem, it does not come from any religion, biased media attempting to scapegoat
+    is being blind to the whole truth.
+  - Grooming gangs like those in Rochdale and Huddersfield have been rightfully convicted.
+    Does that look like police collusion to you?
+  - No they are not - prove this?
+  - The only cover up I remember was in the Catholic Church, but we remember that
+    the actions of individuals do not reflect on the whole.
+  - Good job the police are so effective at catching and prosecuting non-Muslim sex-offenders
+    and protecting their victims. Oh, wait.
+  - The only reason these gangs exist in the first place is because they do not have
+    an institution like the BBC or the Church to shield them.
+  - The only traitors are the conspiracy theorists who spread this kind of misinformation.
+  - The only cover up that happens in the media is of the positive stories about Muslims,
+    extremist actions are the only ones ever highlighted.
+  - Is this true? Where is your source?
+  - The BBC also neglects to report on many violent or terrorist far-right extremist
+    and Islamophobic crimes. What is your point?
+  - Mate, the media is constantly biased against Muslims and tries to make them out
+    to be the enemy. What we hardly ever see is the many more positive stories.
+  - I thought we'd stopped exporting our convicted criminals last century. Now you
+    advocate exporting people wihtout a trial or a conviction.
+  - I think the government has a very good understanding of who should be deported
+    and members of the public should leave this type of decisions to them?
+  - If they were violent they would have been punished too. Why do you think someone
+    of a certain religion is automatically guilty?
+  - In fact, the government deports those criminals back to their countries.
+  - What happened to the good old British values of stuff like 'tolerance' and 'respect
+    for the rule of law' - what you are suggesting sounds like mob rule, vigilante
+    action and people running around with burning torches?
+  - Are you suggesting to commit a crime? There are courts for punishment and if the
+    crowd does the punishment itself, you will become criminals.
+  - The ones who deserved to be punished, were punished. If others are innocent, clearly
+    they do not deserve to be penalized?
+  - Who are 'all them violent muslims'? Are you sure you are proficient to judge who's
+    guilty and who's not?
+  - An entire faith? Really? Can you not see how ignorant this is?
+  - Are you blaming all community for the action of a few? Doesn't seem very fair
+    does it?
+  - Could you mind your language? You are insulting millions of people who are Muslims.
+    Isis are war criminals, but why are you equaling them with all Muslims?
+  - The truth is the worldwide Muslims denounce ISIS and its violence. Plus, many
+    Muslims are the victims of ISIS. According to <The Guardian>, 'Isis regularly
+    publishes a hit-list of global Muslim leaders in its online magazine, which certainly
+    helps to explain why Muslims from Syria and Iraq may want to migrate to countries
+    like Australia.'.
+  - Positive news stories*.
+  - Surely it is our 'actions' that make us criminals, not whichever faith we folow,
+    whether than be by choice or tradition or culture?
+  - This is not true. How can you say this about an entire faith?
+  - Muslims are also average and decent British citizens? Repatriate?
+  - Saying that all people of certain religion are violent criminals does not make
+    sense at all.
+  - Can I suggest that the deportation of up to 3 million people, a large proportion
+    of whom were born in the UK does not reflect 'our values' in the way I understand
+    them.
+  - Ah un saggio di danza
+  - Tu
+  - Tu che sei un maschio
+  - "No \xE8 da femmine"
+  - Poi me lo immagino con i leggins
+  - "E il tut\xF9"
+  - Tu in punte
+  - Ma vai a fae calcio femminuccia che non sei altro
+  - Ovvio
+  - '!!!!!'
+  - Ma poi con chi con altre femmine
+  - Tra l'altro femmine come te
+  - Si e tu vai a giocare a rugby
+  - Stessa cosa
+  - "Che danza non \xE8 da maschi"
+  - Ovvio
+  - "Sei cos\xEC effemminato che intorno a te ci sono pi\xF9 finocchi che in un orto"
+  - Anche io
+  - Ma per ridere e prenderlo in giro
+  - "Far\xF2 stampare Delle magliette con te in tut\xF9"
+  - Ad avere noi che lo insultiamo?
+  - Direi di si
+  - "Ma se \xE8 Gay"
+  - Dallo spalto si vedono solo ragazze
+  - Compreso lei
+  - "Niente stiamo solo dicendo la verit\xE0"
+  - Si invece
+  - Ma noi verremmo
+  - Con i nostri bei cori
+  - Cosa
+  - ???
+  - Perfetto
+  - Vedremo quanto sei brava enrica
+  - Si
+  - Ovvio
+  - Ovvio
+  - Che finocchietto
+  - Ti credi figo solo pk sai fare quella cazzo di danza
+  - Grande Bullo2
+  - Faresti meglio a morire
+  - Si bufu hai finito quell'allenamento
+  - "Ma Vittima non \xE8 una femmina \xE8 una ballerina"
+  - "Vittima \xE8 cos\xEC poco maschio che se si sposa il parroco lo dichiara moglie
+    e moglie"
+  - Oooooook
+  - Ooooooo
+  - "Non mi entrerebbe il tut\xF9 perch\xE9 io il coso c'\xE8 la ho"
+  - "Cos\xEC divento obeso anche io"
+  - Anche no
+  - '!!!!'
+  - Pk
+  - Pk
+  - "Se \xEA uno sfigato"
+  - No
+  - Tu non mi dai ordini
+  - No
+  - Vittima e uno sfigato frocio
+  - No
+  - IMG-20180222-WA0001.jpg (file allegato)
+  - "Questo \xE8 Vittima"
+  - Ciao
+  - Come state????
+  - Ciao
+  - "Ahahah principessina, se vengo \xE8 solo per vederti in ridicolo davanti a tutti!"
+  - Ahahaha, anche solo il fatto che un maschio faccia danza classica...
+  - Il fatto che tu sia maschio, e anche uno sfigato!
+  - Non sei "un ballerino". Sei una femminuccia, vergognati.
+  - Non mi interessa
+  - "Perch\xE9 stai sulle palle a tutti, non sono l'unico a dirlo..."
+  - Ahahah vedi?
+  - Ma impara l'italiano, dislessico inutile
+  - "Non \xE8 il suo caso"
+  - "Gia Paolo\r hai ragione"
+  - Ha ha brava
+  - Anche tu sei uno sfigato, ma come pochi!!
+  - "Bravodicibene Paolo\r"
+  - Hahahah
+  - Lo so lo so
+  - Tanto non ti caga nessuno
+  - "\"Non vi volevo\", ma stai zitto che se fosse per noi saresti gi\xE0 sotto terra."
+  - "Se non vuoi pi\xF9 vederci ucciditi..."
+  - "Vai Paolo\r sei un grande"
+  - "Ma perch\xE9 appoggiate sto sifgato"
+  - "No nn lo so continua cosi Paolo\r"
+  - Gia faqifo
+  - Ops fa schifo
+  - A chi ti riferisci?
+  - Io da quando ne avevo 1.5
+  - Mi piacerebbe solo pestarti
+  - Ahah
+  - Caccacacca
+  - Ahahahahahahahahahahahahahah
+  - Gia lo sono da quando sono nato
+  - Tu sei simpatico come una sprangate sui denti
+  - Hahah
+  - O come la giunta sotto la scarpa
+  - Come il mio ahahaha
+  - Hahahahahahahahahahahaha
+  - Uno sfigato, proprio come te!
+  - "Secondo me l'unica cosa bella \xE8 il teletabbies"
+  - Ok
+  - Ritroverai il cell pieno
+  - Vai vai, magari non tornare.
+  - Ahahahahahahahahahahgiahahahahah
+  - Ma chissenefrega. Non rovineremo la tua passione, ma rovineremo la tua vita!
+  - "Anche perch\xE9 non ti caga nessuno"
+  - Tu non sei mai stato amico di nessuno
+  - Io ci sto tutti i giorni sul palco
+  - Ahhahaha finochietto
+  - Ma non interessi a nessuno, rifugiati nel mondo dei sogni, ti rimane solo quello,
+    sfigato inutile!
+  - Ma stai zitto sfigato
+  - Vai fare le prove per poi?
+  - Non concluderai mai niente nella vita.
+  - Sei un impiastro
+  - "Io diventer\xF2 quello che tu non puoi neanche immaginare"
+  - Tu non diventerai famoso
+  - Sfigato inutile
+  - Tu mentre balli
+  - Io so menarti
+  - Meglio di no
+  - Potresti finire male
+  - Ma non dire cazzate
+  - Ma lo sfigato?
+  - Parla pure, sfigato
+  - Ma stai zitto
+  - Piangi tu, se ti prendo. NON OSARE DIRLO A NESSUNO, sfigato!
+  - Sei nato
+  - Ma che schifo
+  - Come te
+  - Meglio.
+  - Gia proprio cosi
+  - "A dir la verit\xE0 \xE8 qualcos'altro"
+  - No qualcuno altro
+  - Cosa cosa?
+  - "Questo messaggio \xE8 stato eliminato"
+  - Nn intendo niente
+  - Parlane con chi ti pare
+  - Ti rideranno in faccia
+  - "Scarti della societ\xE0"
+  - Ma che cazzo me ne frega
+  - Ti affogo nelle sabbie mobili
+  - Sfigato
+  - Sfigato, ogni volta che parli a qualcuno nel modo iniziano a sanguinare le orecchie
+  - "S\xEC, uno sfigato"
+  - '"Tuo figlio" Sei talmente brutto che neanche un palo della luce farebbe un figlio
+    con te...'
+  - "S\xEC invece"
+  - Sfigato
+  - Ma stai zitto
+  - Che sei talmente brutto che neanche una supposta ti si incula
+  - "Ah, perch\xE9 le tue prese da altri sfigato come te?"
+  - "Perch\xE9 lo segui"
+  - Poi io ci parlo anche con te
+  - Non vali neanche le calorie che brucio scrivendoti
+  - Verone
+  - "Paolo\r"
+  - La supposta ahahaha
+  - Hey sfigatello! Come va?
+  - Ciao
+  - provona
+  - Ma chi ci vuole venire che quando balli sembri un ippopotamo
+  - "Gi\xE0"
+  - "Cos\xEC vi rendete ridicoli pure voi"
+  - "Ma quando mai la danza pu\xF2 piacere"
+  - Spero che ti spacchi la schiena
+  - Certo come no
+  - "Gi\xE0"
+  - E comunque la danza non serve a niente
+  - Grande SupportoBullo2
+  - la danza
+  - Si come peggior ballerino
+  - Infatti come la danza che e cattiva
+  - La danza serve solo per rendersi ridicoli davanti al pubblico
+  - Ancora con questa arte
+  - Anzi il cane balla meglio di lui
+  - Ma ignorante sarai tu
+  - Ok
+  - Ma quali sono i nuovi ruoli
+  - 'Esatto fai cagare '
+  - 'Manco fossi gay '
+  - "\u2640"
+  - "Ma cosa lo supporti\u2640"
+  - Hahah
+  - Si intromette anche questa
+  - Per te
+  - Non mi importa niente di te e la tua danza
+  - Ma dai! Chi pensi che venga a vedere il tuo stupido balletto! Non ce ne frega
+    niente!
+  - Ma chi ti ha chiesto qualcosa?
+  - Stai zitta
+  - Chi credi di essere a difendere uno sfigato!!!
+  - NORMALE TU!? ma per favore... a parte l'aspetto fisico no  hai niente di normale
+  - Be a sentire come parli mi pare proprio di si!
+  - Saremmo noi gli idioti? Per me non hai capito un cazzo della vita!
+  - Ti piacciono i maschi?
+  - Io ho provato
+  - "Per un maschio non \xE8 il massimo"
+  - "Poverino dai lasciamolo allenare per il saggio,ma tanto far\xE0 schifo comunque"
+  - 'Ma datti una calmata tuuuu gey di '
+  - 'Ma seh te credo bellissima che fa vomitare '
+  - Sei una merda percheeee i compiti me li fai tu!
+  - Okay?
+  - Devi andare da tua madre che lei si fa tutti sti compiti del cazzo
+  - "Gi\xE0"
+  - Secchio.... Dovevi fare la spia..... Sfigato
+  - Brutto sfigato..... Non me ne frega.... Fatti i c***i tuoi
+  - Appena ti becco fuori da scuola! te la ficco in bocca la sigaretta
+  - Sei solo un secchio, non hai amici, e fai schifo ooooo!!!
+  - La smettete di prendere in giro Vittima
+  - "Cosa vuoi tu non lo conosci nemmeno,siete tutti \xE8 due sfigati cronici"
+  - Avete rotto
+  - Non va bene
+  - "Vittima a detto solo la verit\xE0"
+  - Hai ragione
+  - Non sono affari tuoi
+  - "Te n\xE9 in porta spione"
+  - Ecco ai ragione
+  - Lo sanno
+  - Ma volevano solo scherzare
+  - "Ecco continua cos\xEC"
+  - Haaaaaa
+  - Ma stai zitta... Pure tu secchiona
+  - No Non sono affari tuoi
+  - Hai capito?
+  - SupportoVittima2 stai zitta
+  - Ti beccheremo fuori scuola
+  - SupportoVittima2 fatti i affari tuoi
+  - Ok
+  - "Io studio pi\xF9 di t\xE8,tu cosa studi,studi le parolacce perch\xE9 non le sai"
+  - Si ti sta bene
+  - Anche noi faremo la spia
+  - "Sapete perch\xE9 Vittima a dei bei voti perch\xE9 lui va a guardare le domande
+    per essere capace a rispondere alle risposte delle verifiche"
+  - Ai proprio ragione
+  - Fai prima andartene (''spione'')
+  - Ho i due fidanzatini si aiutano
+  - Si
+  - Sai scrivere
+  - Allora cose quel ''caso''
+  - SupportoVittima2 cosa volevi scrivere
+  - O forse Non sai scrivere
+  - Cosa dici sfigata
+  - Ma vai a casa
+  - Ho si intromette il fidanzato
+  - SupportoVittima3 stai zitta
+  - Cosa ridi
+  - SupportoVittima2 stai zitto
+  - "Ma tu sei gi\xE0 una "
+  - ti stai sbagliando ti stai sbagliando
+  - L'ho fatto apposta
+  - "L'ho scritto apposta cos\xEC il tuo fidanzatino lo capir\xE0"
+  - SupportoBullo2 ti fai trattare cosi
+  - Scusa o sbagliato
+  - Hai rotto
+  - Testa vuota
+  - "Parla la pi\xF9 magra della classe"
+  - Ho sai scrivere
+  - Che voto hai in Italiano Non sufficiente
+  - "Almeno prendo voti pi\xF9 alti"
+  - Scusate Vittima che fine a fatto
+  - "Non a scritto pi\xF9 niente"
+  - "Infatti \xE8 un gatto aggrappato alle palle"
+  - Ai perfettamente ragione
+  - Ma stai li
+  - Ma cosa dici
+  - "Non \xE8 vero"
+  - Ma stai zitta....
+  - Grande
+  - Tu devi stare zitta
+  - Si
+  - Infatti
+  - "SupportoVittima2 ma cosa aiuti uno spione,che forse un giorno ti potr\xE0 fare
+    la spia"
+  - Ma se a fatto la spia ai suoi compagni di classe
+  - Anche tu
+  - Si,lo prendevi in giro
+  - L' anno scorso
+  - Ma vai a ridere da un'altra parte
+  - Inffati
+  - SupportoVittima2 lo sai che Vittima e andato a spifferare che tu prendi brutti
+    voti in inglese
+  - Ma stai zitto
+  - Stai zitto
+  - Cosa ridi
+  - Ma chi te la chiesto
+  - Ma stai zitta
+  - Ma stai zitta mister (Non sufficiente)
+  - "Gi\xE0"
+  - Che scemo che eri su quel video
+  - Non sai manco fare una flessione e ora ti metti a ballare
+  - Ma va!!!
+  - "Be ovvio sofi lui \xE8 il re degli sfigati"
+  - Un cesso vivente
+  - "Be lui che \xE8"
+  - Be a noi no
+  - Ma stai zitto tu sfigato
+  - "Haha \xE9 gi\xE0"
+  - A si con i vostri amici sfigati che
+  - Non sanno amnco tirare un pugno
+  - Manco*
+  - Ci vogliono tirare i libri
+  - A si i dizionari
+  - Almeno non sembriamo un elefante
+  - "Wow l'italiano \xE9 molto presente qui"
+  - P..? P.. cosa petto? Pettinatura?
+  - "\xC9 inutile che cancelli"
+  - O come Pagliaccio?
+  - Si come Vittima
+  - Vittima
+  - "Quello lo \xE9 il tuo amico Vittima"
+  - Haha mi hai preceduta
+  - Oo ma tu che vuoi?!!
+  - Cerchi le botte come il tuo amico?!
+  - Appena incontro Vittima lo riempio di botte
+  - SupportoVittima2 non iniziare
+  - Lesbiche a chi
+  - Ecco cosa sei
+  - "No \xE8 la di una"
+  - Beh balli male e sei uno sfigato quindi
+  - "Pi\xF9 carini di te di sicuro"
+  - Ma ti sei visto ballare??!
+  - No aspe non solo balla
+  - "Si \xE8 mai visto allo specchio"
+  - No di certo pk si rompono  tutti appena si prova a specchiare
+  - Ballare
+  - Giaaa
+  - Noi invidiosi di te
+  - Ahhahahah
+  - "Ma val\xE1"
+  - Ovvio ahah
+  - Di uno sfigato come lui poi
+  - Guarda stiamo morendo dall'invidia sai
+  - A vederti morirebbero tutti
+  - Oddio a leggere i tuoi messaggi mi sto sentendo male
+  - Voi raga?
+  - Oddio non sai nemmeno come si scrive sfigato, musica.ly si scrive
+  - Uuuuhh adesso fa dalla prof a lamentarsi e a dire che i compagni lo prendono in
+    giro! Ma fammi il favore bocia di merda, che non sai fare altro che lamentarti
+  - E allora?! Se balli come un elefante incinto noi non possiamo farci niente logico
+    che se lo pubblichi anche le offese capisci che te le pigli per un motivo
+  - "Era l\xEC cosa dovevamo fare?"
+  - "Ma se era sulla pagina home che cavolo dovevamo fare! Se poi tu ti muovi come
+    un elefante \xE9 un altro discorso"
+  - Ma che amico, dai che li fa solo pk si sente in colpa siccome nessuno ti caga
+  - "Wow ok io mi metto nei *PAGNI* degli altri per\xF2 prima spiegami che cosa sono"
+  - Sente?
+  - Ommioddio nessuno sta parlando pk stiamo scrivendo quindi....
+  - "C'\xE8 mi copi le battute ma che degrado"
+  - "Si ma tu stai parlando o scrivendo?! E gli altri? Questa \xE9 una chat"
+  - Ah no?!
+  - Se proprio come il tuo amico
+  - Io non sto mica parlando eh
+  - Io sto scrivendo se non te ne accorgi
+  - Appunto
+  - Allora non sto parlando genio!
+  - Si ma non parlano!!!! E se si io nel frattempo non sto parlando
+  - Ma non sai fare altro che prendere le frasi degli altri?!
+  - Tu non le hai mai avute quindi..
+  - Senti sei capace di scrivere una cosa con un qualche significato capibile oppure
+    dobbiamo aspettare ancora molto
+  - Ma gli affari tuoi mai no?!
+  - Eh??? Ripeto, cela fai a scrivere qualcosa con un senso?
+  - Si molti uno dei miei problemi sei tu!
+  - "Se non sapessi leggere non avrei letto ci\xF2 che hai scritto"
+  - Si come no dai ma fammi il favore che hai anche sbagliato il verbo
+  - Se vuoi ti presto un dizionario
+  - Ne siamo sicuri?!
+  - Bravo
+  - '!!!'
+  - Sai sei bravissimo ad fare la spia
+  - Ok ma sono affari nostri
+  - Ok?
+  - Ma levati che quello la non sa fare altro solo rompere
+  - Non dire zitta alla mia amica
+  - Se no
+  - Hahahaa
+  - Tu
+  - Ma tua mamma sta zitta
+  - Va la va
+  - Ma sono agfari miei e suoi
+  - Impara a scrivere prima
+  - Ooo poverino
+  - Deve venire la fatina della pace
+  - A diffenderlo
+  - Chiedi a tua sorella se non so fare altro
+  - "\xC8 tu sai solo parlare quando non serve!"
+  - Vai
+  - A si noi la facciamo per questa volta ma voi siete idioti a prescindere
+  - Esatto
+  - Chi te lo dice?
+  - Minchia se avessi preso da me non saresti qui
+  - Io a te ti spacco di schiaffi
+  - "Sisi studia che cos\xEC impari a scrivere"
+  - Ce sembri un uomo
+  - Lo so
+  - "Si infatti lo \xE8"
+  - "\xC8 per questo che sei nata"
+  - Ha parlato
+  - Ma tu fai schifo!
+  - Ma cosa guardarti allo specchio ti farebbe schifo ma dipo un po ci prendo l abitudine
+    e ci riderai sopra
+  - Per non vederti
+  - Si
+  - Cela vediamo dopo perceh ho una vita spciale IO
+  - Ti infilero i denti cosi infondo per la gola i denti che ti toccera usare lo spazzolino
+    per il culo per tirarli fuori
+  - Secchiona!!
+  - Ooo scusa ho usato pare troppo pesanti i bimbi poi si traumatizzato
+  - "hai paura \xE8?"
+  - Tacchinardi spiumata
+  - Tacchina
+  - Infatti le battute di tua mamma fanno ridere
+  - "\u26AB la tua faccia dipo che ti avr\xF2 messo le mani afdosso"
+  - Si ma lei ti ha detto tutte e 2
+  - Per quanto sei cessa credevo che ti cagassi in bocca
+  - Meglio essere bidoni che secchioni
+  - Io credo di si
+  - Dai raga poveri bimbi
+  - Anche tua noi
+  - Si ok ma tu nel tuo dizionario hai solo queste parole
+  - Si dai che ho da fare
+  - Certo!!
+  - Sempre
+  - Che simpatica
+  - Sembri un registratore rotto!!
+  - "\xC8 tu come una buffa sulla mano"
+  - Hai finito di  copiare le battute da internet!!
+  - Sisi
+  - "S\xEC sono tossico E infatti sono dipendente da tua madre"
+  - che ridere
+  - "S\xEC tua madre si mette in ginocchio poi punta in alto con le mani per prendermi
+    le palle"
+  - Che ne sai tu
+  - "Cmq resta il fatto che Vittima \xE8 uno spione"
+  - Ma state zitti secchi/bidoni
+  - Sono una femmina
+  - Studi tanto e non sai neanche capire la differenza tra maschi e femmine!!
+  - Ma dai state zitti
+  - Raga se vi intromette peggio per VOI perche pocchio voi e anche lui quindi
+  - "Questa vasta scelta di diffonderlo \xE8 come la vostra vita cio\xE8 inutile"
+  - E noi siamo con lui
+  - Quindi siamo in tre conto tre babbuini
+  - Che bambini che siete
+  - Anzi specchio riflesso
+  - Ma crescete
+  - Se no
+  - "Vediamo gioved\xEC a scuola"
+  - "Sono affari nostri di cosa facciamo per\xF2 tu hai sbagliato ed ci saranno dell
+    brutte conssenguemze"
+  - No
+  - Sto solo dicendo che ci saranno delle conseguenze
+  - "Neanche noi sopportiamo pi\xF9 voi"
+  - Ma tranquilla tanto da domani non ci daranno piu fastidio
+  - Ah
+  - "Ha perch\xE9 se no?"
+  - Mi fai ridere
+  - Soprattutto quando ti guardo in faccia
+  - "Per\xF2 al inizio mi sono spaventato a vederti ma poi ci ho fatto l abitudine"
+  - Bau bau
+  - "Eh sai com \xE8 non so abbaiare per farmi comprendere"
+  - fate solo ridere
+  - Hahaha peccato che la nostra faccia ha davanti uno specchio!
+  - Ma non avete qualcos altro da fare apparte rompere a noi
+  - E
+  - "Cmq Vittima \xE8 veramente un ignorante perch\xE9 non sa cosa gli accadr\xE0
+    domani"
+  - Scusa se il traduttore mi corregge i nomi!!
+  - Vediamo....
+  - Ok allora vediamo domani
+  - Sorpresa...
+  - Giocare a calcio
+  - E suonare
+  - Lo so.che lo fai hai preso da tua madre se giochi come le da vestita immagina
+    dopo
+  - Non direi proprio
+  - "Se uno \xE8 piu grosso nom credo"
+  - Esatto e soprattutto se sono in tre
+  - In 4 non dimendicare mattia
+  - "Tu Vittima non dici niente \xE8....hai paura"
+  - "E allora perch\xE9 non risponde?"
+  - Avete iniziato voi a rispondere
+  - Anche tu sembri dio sceso in terra ma non lo dico se no bestemierei
+  - Comunque anche voi state parlando al posto di Vittima ...poverino non si sa difendere.....
+  - Sisi intanto sei tu e Vittima quelli che piangono sempre..
+  - Quindi Vittima continua a non rispondere.....
+  - Non ho chiesto a te
+  - "Si ma non ho chiesto a te perch\xE9 per me non esisti"
+  - "Vittima \xE8 uno spione!!"
+  - '?'
+  - Allora sei d'accordo con noi nerd
+  - "Non \xE8 vero \xE8 solo un cretino spione secchione"
+  - Parere tuo noila pensiamo diversamente
+  - Se la lui non avesse fatto al spia saremo tutti a posto
+  - Ma stai zitta che lo abbiamo minacciato anche oggi quel maiale
+  - Sisi infatti! Tu continua a crederci
+  - "Gi\xE0"
+  - Fai schifo ciccione!
+  - Ballerino provetto vai ad amici sicuramente ti prenderanno hahahahhahahaa
+  - Poi i tuoi musical.ly hahahahag
+  - "Impara prima di fare le cose che fai pi\xF9 bella figura"
+  - "Gi\xE0 hahahhaha"
+  - "\xC8 abbastanza preoccupante che non sappia fare nemmeno una capriola hahaha"
+  - "Gi\xE0"
+  - Come lui!
+  - Anni 90 hahahahaha
+  - Quanto mangia quello al giorno hahaha
+  - Che quando va al Mc Donald lo svuota hahah
+  - "Dovrebbe essere segnalato quel musical.ly da quanto \xE8 brutto hahahaha"
+  - Hahahahah
+  - E tu dovresti imparare a fare le cose prima di postarle
+  - Ti ho chiesto di parlare?
+  - Zitto elefante
+  - Ma tu che vuoi?
+  - Ti ho chiesto di parlare?
+  - Tu puoi insegnargli a fare i musical.ly e a fare ginnastica.
+  - Allora cosa parli?
+  - Zitto lo dici a tuo fratello
+  - Non lo lasciamo stare.
+  - Ma tua mamma bulletta
+  - A noi*
+  - "Sar\xE0 meglio che ti sia ben chiaro senn\xF2 ti faccio vedere io come ti \xE8
+    ben chiaro"
+  - Poi vedremo
+  - "Pi\xF9 guardi il tuo musical.ly pi\xF9 rido"
+  - Non lo lasciamo stare
+  - Chi sei tu per dirmi le cose che devo fare?
+  - Mi fate solo ridere hahahhahahaha
+  - "E tu bamboccio non scrivi pi\xF9?"
+  - NON LO LASCIAMO STARE
+  - Non lasceremo stare nemmeno te se continui
+  - Impara l'italiano
+  - E tu bamboccio impara a fare i musical.ly e ginnastica hahaha
+  - Non mi pare
+  - "Parlado, \xE8 questo l'italiano che sai? Hahhaha"
+  - Allora imparalo meglio
+  - Mi sa che non ascolti
+  - O ma lo capisci che non lo lasciamo stare?
+  - Bambocci
+  - Dai vai a giocare con le bambole
+  - "Allora sar\xE0 meglio che lo capisci"
+  - Puahahhaha
+  - "Senn\xF2?"
+  - Zitta oca
+  - Nei guai ci andrai tu
+  - Invece lo dico a te!
+  - Gallina
+  - Ti ci metto io nei guai!
+  - "SupportoVittima1 stai zitta! Questa volta non hai voce in capitolo... hai visto
+    il suo musical.ly? \xC8 un ciccione di merda nient\u2019altro"
+  - Invidiosa? io? di quel ciccione? non credo proprio
+  - Invidiosi di che?
+  - Di avere tanta ciccia?
+  - Ma no grazie hahahha
+  - Tu nemmeno quello
+  - Pure tu adesso?
+  - Zitta oca
+  - Ma tu
+  - "Ti stiamo dando dei consigli \u2640"
+  - Prego
+  - Non sa fare nemmeno ginnastica,sembra un bisonte quando corre!
+  - "L\u2019unica cosa che non sa fare? C\u2019\xE8 una lista lunga 3 km di tutti
+    i suoi difetti tra cui musical.ly e ginnastica"
+  - "Eh gi\xE0"
+  - Ecco
+  - "\xC8 gi\xE0 abbastanza che esiste..."
+  - Zitta tu
+  - "Nessuno ti ha chiesto nulla infatti \u2640"
+  - "Lei pu\xF2 parlare tu no"
+  - Allora chiudi il becco
+  - Stai zitta tu che dici tanto di sprecare parole con noi.
+  - Chiudi la bocca.
+  - Hai imparato a fare i musical.ly?
+  - Ahahahahah
+  - Mah non credo proprio
+  - Hahaha
+  - "\xC8 ancora un elefante"
+  - Dimagrisci elefante
+  - Iscriviti in palestra invece che perdere tempo a studiare!
+  - "Ma quanto sfigato pu\xF2 essere quel cesso hahah"
+  - Appena vedo il cesso mi viene in mente Vittima hahaha
+  - Chi vi ha chiesto cosa?
+  - Evidentemente non ci vedono bene hahahha
+  - L'ho trovato per caso.
+  - "\xC8 stato il caso pi\xF9 brutto della mia vita."
+  - Non mi interessa un grassone di merda
+  - Faccio quello che voglio.
+  - Cazzo ridi?
+  - Cazzo ridi?
+  - "Vittima \xE8 quelli che piange."
+  - Centra
+  - Non mi sto arrampicano da nessuna parte sei che ti attacchi alle palle
+  - "Ridi ridi che poi mercoled\xEC piangerai"
+  - Goditi questi giorni
+  - SupportoVittima2 tappati quella cazzo di bocca
+  - Sul serio difendi quel bisonte?
+  - Mi fai ridere hahahhaa
+  - Quello*
+  - Impara a scrivere

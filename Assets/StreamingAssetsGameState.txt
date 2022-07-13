@@ -1,0 +1,1 @@
+{"id":"","playerPos":{"x":0.0,"y":0.0,"z":0.0},"level":1,"exp":0.0,"crystals":0,"soap":100.0,"battery":0,"playerParts":[],"saveableObjects":[]}

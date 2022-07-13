@@ -1,0 +1,66 @@
+<?xml version="1.0"?>
+<ArrayOfSqlAnnotatedSentence xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <SqlAnnotatedSentence>
+    <id>79</id>
+    <tokens>Alessandro,è,un,grande,partitore.</tokens>
+    <annotations>0,0,0,0,1</annotations>
+    <timePerToken>0.6052</timePerToken>
+    <task>G-R</task>
+  </SqlAnnotatedSentence>
+</ArrayOfSqlAnnotatedSentence>
+<SqlAnnotatedSentence>
+  <id>120</id>
+  <tokens>Ho,incontrato,Lorenzo,e,Giorgia.</tokens>
+  <annotations>0,0,0,0,0</annotations>
+  <timePerToken>4.6686</timePerToken>
+  <task>G-r</task>
+</SqlAnnotatedSentence>
+<SqlAnnotatedSentence>
+  <id>120</id>
+  <tokens>Ho,incontrato,Lorenzo,e,Giorgia.</tokens>
+  <annotations>0,0,0,0,0</annotations>
+  <timePerToken>11.597</timePerToken>
+  <task>G-r</task>
+</SqlAnnotatedSentence>
+<SqlAnnotatedSentence>
+  <id>120</id>
+  <tokens>Sei,anche,brutto,e,grasso</tokens>
+  <annotations>0,0,0,0,0</annotations>
+  <timePerToken>4.377</timePerToken>
+  <task>G-r</task>
+</SqlAnnotatedSentence>
+<SqlAnnotatedSentence>
+  <id>120</id>
+  <tokens>Sei,anche,brutto,e,grasso</tokens>
+  <annotations>0,0,0,0,0</annotations>
+  <timePerToken>2.9058</timePerToken>
+  <task>G-r</task>
+</SqlAnnotatedSentence>
+<SqlAnnotatedSentence>
+  <id>120</id>
+  <tokens>Ho,incontrato,Lorenzo,e,Giorgia.</tokens>
+  <annotations>0,0,0,0,0</annotations>
+  <timePerToken>0.133</timePerToken>
+  <task>G-R</task>
+</SqlAnnotatedSentence>
+<SqlAnnotatedSentence>
+  <id>33</id>
+  <tokens>La,mia,lettura,preferita,era,la,Divina,Commedia.</tokens>
+  <annotations>0,0,0,0,0,0,0,0</annotations>
+  <timePerToken>0.27625</timePerToken>
+  <task>G-R</task>
+</SqlAnnotatedSentence>
+<SqlAnnotatedSentence>
+  <id>120</id>
+  <tokens>Già,finiti</tokens>
+  <annotations>0,0</annotations>
+  <timePerToken>0.2995</timePerToken>
+  <task>G-r</task>
+</SqlAnnotatedSentence>
+<SqlAnnotatedSentence>
+  <id>120</id>
+  <tokens>Già,finiti</tokens>
+  <annotations>1,1</annotations>
+  <timePerToken>1.733</timePerToken>
+  <task>G-R</task>
+</SqlAnnotatedSentence>

@@ -1,0 +1,38 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7c3efb8f0fb7a1b4e90f019c63e82b85, type: 3}
+  m_Name: Scientist2
+  m_EditorClassIdentifier: 
+  engLines:
+  - Here is what I have prepared for you.
+  - It is a mind reader! You can attach it to your smartphone and it works perfectly
+    with it.
+  - Use it to dissuade the bullies from using offensive language. You can change
+    what they say!
+  - But there's more.
+  - Here is a special sponge!
+  - You can use it to erase the offensive words from graffiti around the town.
+  - Can you see the blue bar at the top left corner of the screen?
+  - It tells you how safe a certain environment in the town is at the moment!
+  - Try to keep it full!
+  itaLines:
+  - Ecco il dispositivo che ho creato.
+  - E' un leggimente! Puoi associarlo al tuo smartphone per farli funzionare insieme.
+  - Usalo per dissuadere i bulli dall'usare linguaggio offensivo. Puoi cambiare quello
+    che stanno per dire!
+  - "Ma c'\xE8 dell'altro."
+  - Ecco una spugna speciale!
+  - "Puoi usarla per cancellare le parole offensive dai murales che trovi per la
+    citt\xE0."
+  - Vedi la barra blu nell'angolo in alto a sinistra?
+  - "Dice quanto \xE8 sicura una certa zona della citt\xE0."
+  - Cerca di farla restare piena!

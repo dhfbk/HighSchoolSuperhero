@@ -1,0 +1,78 @@
+{
+"scientist" : {
+  "dialogueLines": [
+   {
+      "id": "0",
+      "lines": [
+        "Hey, are you awake?",
+        "Come to my place, I have something to show you.",
+        "Hurry up!"
+      ]
+    },
+    {
+      "id": "1",
+      "lines": [
+        "Hello! Nice to see you!",
+        "Do you remember about our little graffiti problems? I have been working on a new device!",
+        "Please, come in."
+      ]
+    },
+    {
+      "id": "2",
+      "lines": [
+        "Here is what I have prepared for you.",
+        "It is a mind reader! You can attach it to your smartphone and it works perfectly with it.",
+        "Use it to dissuade the bullies from using offensive language. You can change what they say!",
+        "But there's more.",
+        "Here is a special sponge!",
+        "You can use it to erase the offensive words from graffiti around the town.",
+        "Can you see the blue bar at the top left corner of the screen?",
+        "It tells you how safe a certain environment in the town is at the moment!",
+        "Try to keep it full!"
+      ]
+    },
+    {
+      "id": "3",
+      "lines": [
+        "Go now, there's a lot to do!",
+        "You remember the basic controls right?",
+        "WASD to move, E to interact, Spacebar to jump, M to open the map and Esc to open the menu!",
+        "Face the garage door and press E to exit!"
+      ]
+    }
+  ]
+},
+"trappedStudent":{
+"dialogueLines": [ 
+    { 
+      "id": "0", 
+      "lines": [ 
+        "Finally!", 
+        "Some bully thought it would be fun to lock me inside this locker.", 
+        "Thank you for saving me!" 
+        ] 
+    }
+  ]
+},
+"questNPC":{
+    "dialogueLines": 
+    [
+        {
+            "id":"0",
+            "lines": [
+                "Hey, you! May I ask for a little help?",
+                "Some hooligans have been writing graffiti all around the area.",
+                "Will you help me cleaning up this mess?"
+            ]
+        },
+        {
+            "id":"1",
+            "lines": [
+                "Thanks for helping me out!",
+                "I thought you'd like some crystals.",
+                "Have a nice day!"
+            ]
+        }
+    ]
+}
+}

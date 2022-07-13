@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 000ecf128cfdad740b3e09c1120538f0, type: 3}
+  m_Name: Soap
+  m_EditorClassIdentifier: 
+  icon: {fileID: 21300000, guid: 4d6443feb7414ad439c731058d9eead4, type: 3}
+  name: Soap x50
+  amount: 50
+  price: 5
+  engDescription: A special type of soap. Use it to change the graffiti.
+  itaDescription: Un sapone speciale. Usalo per modificare i murales.
+  level: 0

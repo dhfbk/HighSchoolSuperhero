@@ -1,0 +1,100 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!78 &1
+TagManager:
+  serializedVersion: 2
+  tags:
+  - Token
+  - BullySpawn
+  - VictimSpawn
+  - ModelHair
+  - ModelShirt
+  - ModelPants
+  - ModelShoes
+  - ModelGlasses
+  - ModelEyeL
+  - ModelBody
+  - EditButton
+  - ModelEyeR
+  - Slider
+  - Graffiti
+  - ThinkCloud
+  - UI
+  - ModelMouth
+  - MsgBox
+  - TreeTall
+  - Slot
+  - SlotS
+  - UICamera
+  - CameraPivot
+  - InputField
+  - Battery
+  - GraffitiBoard
+  - ProgressPercentage
+  - Notifications
+  - GraffitiToken
+  - Bully
+  - Victim
+  - LoadingText
+  - Line
+  - Terminal
+  - ScooterBar
+  - GoalArea
+  - TriggerArea
+  - ModelLenses
+  - Node
+  - Car
+  - NPC
+  - Zebra
+  - Quest
+  - MultipleChoiceItem
+  - ItemToggle
+  - QuestionnaireItem
+  - InputFieldItem
+  - MapArea1
+  - MapArea2
+  - MapArea3
+  - MapArea4
+  - MapArea5
+  - MapArea0
+  - Scooter
+  layers:
+  - Default
+  - TransparentFX
+  - Ignore Raycast
+  - 
+  - Water
+  - UI
+  - 
+  - 
+  - PostProcessing
+  - Wall
+  - Player
+  - TreeTall
+  - PlayerGhost
+  - Graffiti
+  - Terrain
+  - GraffitiToken
+  - Gizmos
+  - Gate
+  - LowFurniture
+  - Locker
+  - Door
+  - Erase
+  - Crystal
+  - NPC
+  - CarTriggerArea
+  - 2DGraffitiBG
+  - Priority
+  - PlayerTouchPlane
+  - Dialogue
+  - Invisible
+  - 
+  - 
+  m_SortingLayers:
+  - name: Default
+    uniqueID: 0
+    locked: 0
+  - name: DropDown
+    uniqueID: 1271780377
+    locked: 0

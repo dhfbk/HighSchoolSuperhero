@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<ArrayOfSqlAnnotatedSentence xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <SqlAnnotatedSentence>
+    <id>120</id>
+    <tokens>Già,finiti</tokens>
+    <annotations>1,1</annotations>
+    <timePerToken>1.2355</timePerToken>
+    <task>G-r</task>
+  </SqlAnnotatedSentence>
+</ArrayOfSqlAnnotatedSentence>
+<SqlAnnotatedSentence>
+  <id>127</id>
+  <tokens>Tommaso,corre,in,camera.</tokens>
+  <annotations>0,0,0,0</annotations>
+  <timePerToken>0.4775</timePerToken>
+  <task>G-r</task>
+</SqlAnnotatedSentence>
+<SqlAnnotatedSentence>
+  <id>120</id>
+  <tokens>Mattia,prese,il,tumore.</tokens>
+  <annotations>1,1,1,1</annotations>
+  <timePerToken>3.54325</timePerToken>
+  <task>G-R</task>
+</SqlAnnotatedSentence>

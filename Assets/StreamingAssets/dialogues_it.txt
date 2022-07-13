@@ -1,0 +1,79 @@
+{
+"scientist" : {
+  "dialogueLines": [
+    {
+      "id": "0",
+      "lines": [
+        "Ehi, sei in piedi?",
+        "Vieni da me, ho qualcosa da mostrarti.",
+        "Sbrigati!"
+      ]
+    },
+    {
+      "id": "1",
+      "lines": [
+        "Ciao! Felice di rivederti!",
+        "Ti ricordi dei nostri problemi coi bulli? Dovremmo intervenire.",
+        "Ho lavorato a un nuovo dispositivo elettronico!",
+        "Entra pure, così ti racconto tutto."
+      ]
+    },
+    {
+      "id": "2",
+      "lines": [
+        "Ecco il dispositivo che ho creato.",
+        "E' un leggimente! Puoi associarlo al tuo smartphone per farli funzionare insieme.",
+        "Usalo per dissuadere i bulli dall'usare linguaggio offensivo. Puoi cambiare quello che stanno per dire!",
+        "Ma c'è dell'altro.",
+        "Ecco una spugna speciale!",
+        "Puoi usarla per cancellare le parole offensive dai murales che trovi per la città.",
+        "Vedi la barra blu nell'angolo in alto a sinistra?",
+        "Dice quanto è sicura una certa zona della città.",
+        "Cerca di farla restare piena!"
+      ]
+    },
+    {
+      "id": "3",
+      "lines": [
+        "Va' ora, c'è parecchio lavoro da fare!",
+        "Ti ricordi come si fanno le azioni di base, vero?",
+        "WASD per muoversi, E per interagire, Spazio per saltare, M per aprire la mappa ed Esc per aprire il menu!",
+        "Rivolgiti verso la porta del garage e premi E per uscire!"
+      ]
+    }
+  ]
+},
+"trappedStudent":{
+    "dialogueLines": [ 
+        { 
+            "id": "0", 
+            "lines": [ 
+                    "Finalmente! Grazie di avermi liberato!",
+                    "Un bullo si è divertito a chiudermi dentro.", 
+                    "Grazie per il tuo intervento!" 
+            ] 
+        }
+    ]
+},
+"questNPC":{
+    "dialogueLines": 
+    [
+        {
+            "id":"0",
+            "lines": [
+                "Ehi, tu! Posso chiederti un favore?",
+                "Alcuni vandali hanno riempito la zona di murales.",
+                "Mi daresti una mano a cancellarli?"
+            ]
+        },
+        {
+            "id":"1",
+            "lines": [
+                "Grazie per l'aiuto!",
+                "Ho pensato che ti avrebbero fatto comodo alcuni cristalli.",
+                "Buona giornata!"
+            ]
+        }
+    ]
+}
+}

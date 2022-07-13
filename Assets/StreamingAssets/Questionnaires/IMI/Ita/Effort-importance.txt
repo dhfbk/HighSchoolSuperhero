@@ -1,0 +1,5 @@
+01. Mi sono impegnato molto in questa attività.
+02. Non ho fatto il possibile per svolgere questa attività al meglio.
+03. Ho fatto del mio meglio in questa attività.
+04. Per me era importante fare bene questo task.
+05. Non ho dedicato molte energie a questa attività.

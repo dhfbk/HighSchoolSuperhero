@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<EditorVocab xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <hat>Cappello</hat>
+  <hair>Capelli</hair>
+  <chest>Busto</chest>
+  <shoes>Scarpe</shoes>
+  <glasses>Occhiali</glasses>
+  <eyes>Occhi</eyes>
+  <body>Corpo</body>
+  <pants>Pantaloni</pants>
+  <done>Fatto, fammi vedere!</done>
+  <confirm>Conferma</confirm>
+  <create>Crea il tuo personaggio!</create>
+</EditorVocab>

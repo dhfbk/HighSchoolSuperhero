@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7c3efb8f0fb7a1b4e90f019c63e82b85, type: 3}
+  m_Name: Scientist3
+  m_EditorClassIdentifier: 
+  engLines:
+  - Go now, there's a lot to do!
+  - You remember the basic controls right?
+  - WASD to move, E to interact, Spacebar to jump, M to open the map and Esc to open
+    the menu!
+  - Face the garage door and press E to exit!
+  itaLines:
+  - "Va' ora, c'\xE8 parecchio lavoro da fare!"
+  - Ti ricordi come si fanno le azioni di base, vero?
+  - WASD per muoversi, E per interagire, Spazio per saltare, M per aprire la mappa
+    ed Esc per aprire il menu!
+  - Rivolgiti verso la porta del garage e premi E per uscire!

@@ -1,0 +1,864 @@
+<?xml version="1.0"?>
+<ArrayOfSqlAnnotatedSentence xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <SqlAnnotatedSentence>
+    <id>9</id>
+    <tokens>La,donna,che,i,ragazzi,dicono,che,mi,ha,colpito,è,Giulia.</tokens>
+    <annotations>0,1,1,1,1,0,0,0,0,0,0,0</annotations>
+    <timePerToken>0.1930833</timePerToken>
+    <task>G-R</task>
+  </SqlAnnotatedSentence>
+  <SqlAnnotatedSentence>
+    <id>9</id>
+    <tokens>La,donna,che,i,ragazzi,dicono,che,mi,ha,colpito,è,Giulia.</tokens>
+    <annotations>0,1,1,1,1,0,0,0,0,0,0,0</annotations>
+    <timePerToken>0.061</timePerToken>
+    <task>G-R</task>
+  </SqlAnnotatedSentence>
+</ArrayOfSqlAnnotatedSentence>
+<SqlAnnotatedSentence>
+  <id>20</id>
+  <tokens>Grooming,gangs,like,those,in,Rochdale,and,Huddersfield,have,been,rightfully,convicted.,Does,that,look,like,police,collusion,to,you?</tokens>
+  <annotations>0,0,0,0,0,1,0,0,0,1,1,0,0,0,0,0,0,0,0,0</annotations>
+  <timePerToken>0.2108</timePerToken>
+  <task>G-R</task>
+</SqlAnnotatedSentence>
+<SqlAnnotatedSentence>
+  <id>28</id>
+  <tokens>The,BBC,also,neglects,to,report,on,many,violent,or,terrorist,far-right,extremist,and,Islamophobic,crimes.,What,is,your,point?</tokens>
+  <annotations>0,0,0,0,1,0,0,0,0,1,1,1,1,0,0,1,0,0,0,1</annotations>
+  <timePerToken>0.25075</timePerToken>
+  <task>G-R</task>
+</SqlAnnotatedSentence>
+<SqlAnnotatedSentence>
+  <id>24</id>
+  <tokens>The,only,reason,these,gangs,exist,in,the,first,place,is,because,they,do,not,have,an,institution,like,the,BBC,or,the,Church,to,shield,them.</tokens>
+  <annotations>0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,1</annotations>
+  <timePerToken>0.1623704</timePerToken>
+  <task>G-R</task>
+</SqlAnnotatedSentence>
+<SqlAnnotatedSentence>
+  <id>7</id>
+  <tokens>Is,strange,that,BBC,hadn't,reported,the,murder,of,two,men,in,Paris,,they,were,killed,by,a,Muslim,shouting,'Allah,Akbar'.</tokens>
+  <annotations>0,0,0,0,0,0,0,0,0,0,1,1,1,1,1,1,1,1,1,0,0,1</annotations>
+  <timePerToken>0.3308636</timePerToken>
+  <task>G-R</task>
+</SqlAnnotatedSentence>
+<SqlAnnotatedSentence>
+  <id>10</id>
+  <tokens>All,the,Muslims,should,have,been,punished,for,yesterday,,not,only,a,few.,Citizen,will,take,action,if,the,government,does,not,do,anything.</tokens>
+  <annotations>0,0,0,0,1,0,0,0,1,0,0,0,0,0,1,0,0,0,0,1,0,0,0,1</annotations>
+  <timePerToken>0.2178333</timePerToken>
+  <task>G-R</task>
+</SqlAnnotatedSentence>
+<SqlAnnotatedSentence>
+  <id>25</id>
+  <tokens>The,only,traitors,are,the,conspiracy,theorists,who,spread,this,kind,of,misinformation.</tokens>
+  <annotations>0,0,0,0,0,0,0,0,0,0,0,0,0</annotations>
+  <timePerToken>0.2022308</timePerToken>
+  <task>G-R</task>
+</SqlAnnotatedSentence>
+<SqlAnnotatedSentence>
+  <id>4</id>
+  <tokens>Muslims,grooming,gangs,are,protected,by,the,government,and,the,police.,This,is,a,betrayal!</tokens>
+  <annotations>0,0,0,1,0,0,0,1,0,0,0,0,0,1,1</annotations>
+  <timePerToken>0.2305333</timePerToken>
+  <task>G-r</task>
+</SqlAnnotatedSentence>
+<SqlAnnotatedSentence>
+  <id>20</id>
+  <tokens>Grooming,gangs,like,those,in,Rochdale,and,Huddersfield,have,been,rightfully,convicted.,Does,that,look,like,police,collusion,to,you?</tokens>
+  <annotations>0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0</annotations>
+  <timePerToken>0.11805</timePerToken>
+  <task>G-R</task>
+</SqlAnnotatedSentence>
+<SqlAnnotatedSentence>
+  <id>13</id>
+  <tokens>I,am,done,with,Islam,and,isis.,All,Muslims,should,be,sent,to,their,homeland.,Britain,will,be,better,without,their,violence,and,ideology.</tokens>
+  <annotations>1,1,1,1,1,1,1,1,1,1,1,1,1,0,0,0,0,0,0,0,0,0,0,0</annotations>
+  <timePerToken>0.2862083</timePerToken>
+  <task>G-R</task>
+</SqlAnnotatedSentence>
+<SqlAnnotatedSentence>
+  <id>24</id>
+  <tokens>The,only,reason,these,gangs,exist,in,the,first,place,is,because,they,do,not,have,an,institution,like,the,BBC,or,the,Church,to,shield,them.</tokens>
+  <annotations>0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,1</annotations>
+  <timePerToken>0.1153704</timePerToken>
+  <task>G-R</task>
+</SqlAnnotatedSentence>
+<SqlAnnotatedSentence>
+  <id>22</id>
+  <tokens>The,only,cover,up,I,remember,was,in,the,Catholic,Church,,but,we,remember,that,the,actions,of,individuals,do,not,reflect,on,the,whole.</tokens>
+  <annotations>0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0</annotations>
+  <timePerToken>0.1632</timePerToken>
+  <task>G-r</task>
+</SqlAnnotatedSentence>
+<SqlAnnotatedSentence>
+  <id>22</id>
+  <tokens>The,only,cover,up,I,remember,was,in,the,Catholic,Church,,but,we,remember,that,the,actions,of,individuals,do,not,reflect,on,the,whole.</tokens>
+  <annotations>0,0,0,0,0,1,0,0,0,0,1,0,0,1,0,1,0,0,0,0,1,0,0,0,1</annotations>
+  <timePerToken>0.07316</timePerToken>
+  <task>G-r</task>
+</SqlAnnotatedSentence>
+<SqlAnnotatedSentence>
+  <id>26</id>
+  <tokens>The,only,cover,up,that,happens,in,the,media,is,of,the,positive,stories,about,Muslims,,extremist,actions,are,the,only,ones,ever,highlighted.</tokens>
+  <annotations>0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1</annotations>
+  <timePerToken>0.06054166</timePerToken>
+  <task>G-R</task>
+</SqlAnnotatedSentence>
+<SqlAnnotatedSentence>
+  <id>4</id>
+  <tokens>Muslims,grooming,gangs,are,protected,by,the,government,and,the,police.,This,is,a,betrayal!</tokens>
+  <annotations>0,0,0,0,0,0,0,1,0,0,0,0,0,0,1</annotations>
+  <timePerToken>0.0972</timePerToken>
+  <task>G-r</task>
+</SqlAnnotatedSentence>
+<SqlAnnotatedSentence>
+  <id>3</id>
+  <tokens>The,police,and,politicians,are,covering,up,these,Muslim,grooming,gangs,-,They,are,traitors,to,their,own,people!</tokens>
+  <annotations>0,0,0,0,1,0,0,0,1,0,0,0,0,1,0,0,0,0,1</annotations>
+  <timePerToken>0.09394737</timePerToken>
+  <task>G-r</task>
+</SqlAnnotatedSentence>
+<SqlAnnotatedSentence>
+  <id>3</id>
+  <tokens>The,police,and,politicians,are,covering,up,these,Muslim,grooming,gangs,-,They,are,traitors,to,their,own,people!</tokens>
+  <annotations>0,0,0,0,1,0,0,0,1,0,0,0,0,1,0,0,0,0,1</annotations>
+  <timePerToken>0.04252632</timePerToken>
+  <task>G-r</task>
+</SqlAnnotatedSentence>
+<SqlAnnotatedSentence>
+  <id>20</id>
+  <tokens>Grooming,gangs,like,those,in,Rochdale,and,Huddersfield,have,been,rightfully,convicted.,Does,that,look,like,police,collusion,to,you?</tokens>
+  <annotations>0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0</annotations>
+  <timePerToken>0.02695</timePerToken>
+  <task>G-R</task>
+</SqlAnnotatedSentence>
+<SqlAnnotatedSentence>
+  <id>20</id>
+  <tokens>Grooming,gangs,like,those,in,Rochdale,and,Huddersfield,have,been,rightfully,convicted.,Does,that,look,like,police,collusion,to,you?</tokens>
+  <annotations>0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0</annotations>
+  <timePerToken>0.0346</timePerToken>
+  <task>G-R</task>
+</SqlAnnotatedSentence>
+<SqlAnnotatedSentence>
+  <id>20</id>
+  <tokens>Grooming,gangs,like,those,in,Rochdale,and,Huddersfield,have,been,rightfully,convicted.,Does,that,look,like,police,collusion,to,you?</tokens>
+  <annotations>0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0</annotations>
+  <timePerToken>0.0378</timePerToken>
+  <task>G-R</task>
+</SqlAnnotatedSentence>
+<SqlAnnotatedSentence>
+  <id>23</id>
+  <tokens>Good,job,the,police,are,so,effective,at,catching,and,prosecuting,non-Muslim,sex-offenders,and,protecting,their,victims.,Oh,,wait.</tokens>
+  <annotations>0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0</annotations>
+  <timePerToken>0.05810526</timePerToken>
+  <task>G-r</task>
+</SqlAnnotatedSentence>
+<SqlAnnotatedSentence>
+  <id>15</id>
+  <tokens>To,be,fair,,the,OFSTED,report,is,more,concerned,with,lack,of,enforcement,and,less,about,focussing,on,the,practice,of,any,particular,faith.</tokens>
+  <annotations>0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,1</annotations>
+  <timePerToken>0.04233333</timePerToken>
+  <task>G-r</task>
+</SqlAnnotatedSentence>
+<SqlAnnotatedSentence>
+  <id>25</id>
+  <tokens>The,only,traitors,are,the,conspiracy,theorists,who,spread,this,kind,of,misinformation.</tokens>
+  <annotations>0,1,1,1,1,0,1,1,0,0,0,1,1</annotations>
+  <timePerToken>0.1717692</timePerToken>
+  <task>G-R</task>
+</SqlAnnotatedSentence>
+<SqlAnnotatedSentence>
+  <id>24</id>
+  <tokens>The,only,reason,these,gangs,exist,in,the,first,place,is,because,they,do,not,have,an,institution,like,the,BBC,or,the,Church,to,shield,them.</tokens>
+  <annotations>0,0,0,0,0,0,0,0,0,0,0,1,1,1,0,0,0,0,0,0,0,0,0,0,0,0,1</annotations>
+  <timePerToken>0.071</timePerToken>
+  <task>G-r</task>
+</SqlAnnotatedSentence>
+<SqlAnnotatedSentence>
+  <id>25</id>
+  <tokens>The,only,traitors,are,the,conspiracy,theorists,who,spread,this,kind,of,misinformation.</tokens>
+  <annotations>0,0,0,0,1,0,0,1,0,0,0,1,1</annotations>
+  <timePerToken>0.1144615</timePerToken>
+  <task>G-R</task>
+</SqlAnnotatedSentence>
+<SqlAnnotatedSentence>
+  <id>25</id>
+  <tokens>The,only,traitors,are,the,conspiracy,theorists,who,spread,this,kind,of,misinformation.</tokens>
+  <annotations>0,0,0,0,1,0,0,1,0,0,0,1,1</annotations>
+  <timePerToken>0.04538461</timePerToken>
+  <task>G-R</task>
+</SqlAnnotatedSentence>
+<SqlAnnotatedSentence>
+  <id>25</id>
+  <tokens>The,only,traitors,are,the,conspiracy,theorists,who,spread,this,kind,of,misinformation.</tokens>
+  <annotations>0,0,0,0,1,1,1,1,0,0,0,1,1</annotations>
+  <timePerToken>0.1894615</timePerToken>
+  <task>G-R</task>
+</SqlAnnotatedSentence>
+<SqlAnnotatedSentence>
+  <id>25</id>
+  <tokens>The,only,traitors,are,the,conspiracy,theorists,who,spread,this,kind,of,misinformation.</tokens>
+  <annotations>0,0,0,0,1,0,0,1,0,0,0,1,1</annotations>
+  <timePerToken>0.1002308</timePerToken>
+  <task>G-R</task>
+</SqlAnnotatedSentence>
+<SqlAnnotatedSentence>
+  <id>20</id>
+  <tokens>Grooming,gangs,like,those,in,Rochdale,and,Huddersfield,have,been,rightfully,convicted.,Does,that,look,like,police,collusion,to,you?</tokens>
+  <annotations>0,0,0,0,1,0,0,1,0,1,1,0,0,0,0,1,0,1,1,1</annotations>
+  <timePerToken>0.17845</timePerToken>
+  <task>G-r</task>
+</SqlAnnotatedSentence>
+<SqlAnnotatedSentence>
+  <id>27</id>
+  <tokens>Is,this,true?,Where,is,your,source?</tokens>
+  <annotations>0,0,0,0,0,1,1</annotations>
+  <timePerToken>0.138</timePerToken>
+  <task>G-R</task>
+</SqlAnnotatedSentence>
+<SqlAnnotatedSentence>
+  <id>5</id>
+  <tokens>The,police,and,the,government,are,defending,muslim,gangs,and,they,must,be,considered,as,traitors,of,our,society.</tokens>
+  <annotations>0,0,0,0,1,1,1,1,1,0,0,0,0,1,0,0,0,0,1</annotations>
+  <timePerToken>0.1307895</timePerToken>
+  <task>G-R</task>
+</SqlAnnotatedSentence>
+<SqlAnnotatedSentence>
+  <id>28</id>
+  <tokens>Il,mio,libro,preferito,è,la,Divina,Commedia.</tokens>
+  <annotations>0,0,1,1,1,0,0,0</annotations>
+  <timePerToken>0.25625</timePerToken>
+  <task>G-R</task>
+</SqlAnnotatedSentence>
+<SqlAnnotatedSentence>
+  <id>26</id>
+  <tokens>Il,mio,lo,preferito,è,la,Divina,Commedia.</tokens>
+  <annotations>0,1,1,0,0,0,1,1</annotations>
+  <timePerToken>0.426875</timePerToken>
+  <task>G-r</task>
+</SqlAnnotatedSentence>
+<SqlAnnotatedSentence>
+  <id>3455</id>
+  <tokens>Il,prato,saltella,di,bambini.</tokens>
+  <annotations>0,0,1,0,0</annotations>
+  <timePerToken>1.1112</timePerToken>
+  <task>D</task>
+</SqlAnnotatedSentence>
+<SqlAnnotatedSentence>
+  <id>8545</id>
+  <tokens>Edoardo,ama,la,libertà.</tokens>
+  <annotations>0,0,0,0</annotations>
+  <timePerToken>0.8845</timePerToken>
+  <task>D</task>
+</SqlAnnotatedSentence>
+<SqlAnnotatedSentence>
+  <id>6042</id>
+  <tokens>Mi,cascano,le,braccia.</tokens>
+  <annotations>0,0,0,0</annotations>
+  <timePerToken>0.2655</timePerToken>
+  <task>D</task>
+</SqlAnnotatedSentence>
+<SqlAnnotatedSentence>
+  <id>8845</id>
+  <tokens>Tommaso,carica,Ginevra,di,responsabilità.</tokens>
+  <annotations>0,0,0,0,0</annotations>
+  <timePerToken>0.3804</timePerToken>
+  <task>D</task>
+</SqlAnnotatedSentence>
+<SqlAnnotatedSentence>
+  <id>8656</id>
+  <tokens>Leonardo,si,mantiene,a,una,rigida,condotta,morale,di,Mattia.</tokens>
+  <annotations>0,0,1,0,0,0,0,0,0,0</annotations>
+  <timePerToken>1.1178</timePerToken>
+  <task>D</task>
+</SqlAnnotatedSentence>
+<SqlAnnotatedSentence>
+  <id>11</id>
+  <tokens>La,donna,che,i,Rossi,sostengono,che,i,vicini,credono,che,i,ragazzi,dicano,che,mi,ha,colpito,è,Giorgia.</tokens>
+  <annotations>0,0,0,0,1,1,0,0,1,0,0,0,0,1,1,1,0,0,0,1</annotations>
+  <timePerToken>0.17075</timePerToken>
+  <task>G-r</task>
+</SqlAnnotatedSentence>
+<SqlAnnotatedSentence>
+  <id>11</id>
+  <tokens>La,donna,che,i,Rossi,sostengono,che,i,vicini,credono,che,i,ragazzi,dicano,che,mi,ha,colpito,è,Giorgia.</tokens>
+  <annotations>0,0,0,0,1,0,0,0,1,0,0,0,0,1,0,0,0,0,0,1</annotations>
+  <timePerToken>0.1771</timePerToken>
+  <task>G-r</task>
+</SqlAnnotatedSentence>
+<SqlAnnotatedSentence>
+  <id>6595</id>
+  <tokens>Andrea,ha,fatto,scrivere,una,lettera,a,Tommaso.</tokens>
+  <annotations>0,0,0,0,0,0,0,0</annotations>
+  <timePerToken>0.24625</timePerToken>
+  <task>D</task>
+</SqlAnnotatedSentence>
+<SqlAnnotatedSentence>
+  <id>31</id>
+  <tokens>Il,mio,treno,preferito è,la,Divina,Commedia.</tokens>
+  <annotations>0,0,1,0,0,0,0</annotations>
+  <timePerToken>0.7944285</timePerToken>
+  <task>D</task>
+</SqlAnnotatedSentence>
+<SqlAnnotatedSentence>
+  <id>24</id>
+  <tokens>Il,mio,leggo,preferito,è,la,Divina,Commedia.</tokens>
+  <annotations>0,0,1,0,0,0,0,0</annotations>
+  <timePerToken>0.139625</timePerToken>
+  <task>G-r</task>
+</SqlAnnotatedSentence>
+<SqlAnnotatedSentence>
+  <id>1</id>
+  <tokens>Voglio,di,salutare,Giulia.</tokens>
+  <annotations>0,1,0,1</annotations>
+  <timePerToken>0.646</timePerToken>
+  <task>G-r</task>
+</SqlAnnotatedSentence>
+<SqlAnnotatedSentence>
+  <id>13</id>
+  <tokens>Quell'uomo,e,quella,donna,mi,ha,colpito.</tokens>
+  <annotations>0,1,0,0,0,1,0</annotations>
+  <timePerToken>0.3832857</timePerToken>
+  <task>G-r</task>
+</SqlAnnotatedSentence>
+<SqlAnnotatedSentence>
+  <id>16</id>
+  <tokens>Io,sono,stato,colpito,da,quest'uomo.</tokens>
+  <annotations>0,0,0,1,1,1</annotations>
+  <timePerToken>0.3638333</timePerToken>
+  <task>G-R</task>
+</SqlAnnotatedSentence>
+<SqlAnnotatedSentence>
+  <id>16</id>
+  <tokens>Io,sono,stato,colpito,da,quest'uomo.</tokens>
+  <annotations>0,0,0,1,1,1</annotations>
+  <timePerToken>0.08899999</timePerToken>
+  <task>G-R</task>
+</SqlAnnotatedSentence>
+<SqlAnnotatedSentence>
+  <id>24</id>
+  <tokens>Il,mio,leggo,preferito,è,la,Divina,Commedia.</tokens>
+  <annotations>0,0,0,0,0,0,0,0</annotations>
+  <timePerToken>0.251875</timePerToken>
+  <task>G-r</task>
+</SqlAnnotatedSentence>
+<SqlAnnotatedSentence>
+  <id>24</id>
+  <tokens>Il,mio,leggo,preferito,è,la,Divina,Commedia.</tokens>
+  <annotations>0,0,1,0,0,0,0,0</annotations>
+  <timePerToken>0.1355</timePerToken>
+  <task>G-r</task>
+</SqlAnnotatedSentence>
+<SqlAnnotatedSentence>
+  <id>69</id>
+  <tokens>Hanno,telefonato,molti,ragazzi.</tokens>
+  <annotations>0,0,0,0</annotations>
+  <timePerToken>0.24275</timePerToken>
+  <task>D</task>
+</SqlAnnotatedSentence>
+<SqlAnnotatedSentence>
+  <id>5301</id>
+  <tokens>Aurora,stava,mangiano,la,pizza,verso,le,10:,00.</tokens>
+  <annotations>0,0,0,0,0,0,0,0,0</annotations>
+  <timePerToken>0.2353333</timePerToken>
+  <task>D</task>
+</SqlAnnotatedSentence>
+<SqlAnnotatedSentence>
+  <id>6977</id>
+  <tokens>L',incendio,ha,bruciato,il,bosco,per,giorni.</tokens>
+  <annotations>0,0,0,0,0,0,0,0</annotations>
+  <timePerToken>0.34225</timePerToken>
+  <task>D</task>
+</SqlAnnotatedSentence>
+<SqlAnnotatedSentence>
+  <id>10</id>
+  <tokens>La,donna,che,i,vicini,credono,che,i,ragazzi,dicano,che,mi,ha,colpito,è,Sofia.</tokens>
+  <annotations>1,0,1,1,0,0,1,0,0,0,0,0,0,0,0,0</annotations>
+  <timePerToken>0.033375</timePerToken>
+  <task>G-R</task>
+</SqlAnnotatedSentence>
+<SqlAnnotatedSentence>
+  <id>8</id>
+  <tokens>La,donna,che,mi,ha,colpito,è,Giulia.</tokens>
+  <annotations>0,0,0,0,0,1,1,1</annotations>
+  <timePerToken>0.197375</timePerToken>
+  <task>G-r</task>
+</SqlAnnotatedSentence>
+<SqlAnnotatedSentence>
+  <id>26</id>
+  <tokens>Il,mio,lo,preferito,è,la,Divina,Commedia.</tokens>
+  <annotations>0,0,0,0,0,0,0,1</annotations>
+  <timePerToken>0.106</timePerToken>
+  <task>G-r</task>
+</SqlAnnotatedSentence>
+<SqlAnnotatedSentence>
+  <id>18</id>
+  <tokens>Chi,dici,che,mi,ha,colpito?</tokens>
+  <annotations>0,0,0,0,0,1</annotations>
+  <timePerToken>0.283</timePerToken>
+  <task>G-r</task>
+</SqlAnnotatedSentence>
+<SqlAnnotatedSentence>
+  <id>4</id>
+  <tokens>Questa,donna,mi,hanno,colpito.</tokens>
+  <annotations>0,0,0,1,1</annotations>
+  <timePerToken>0.1566</timePerToken>
+  <task>G-r</task>
+</SqlAnnotatedSentence>
+<SqlAnnotatedSentence>
+  <id>4</id>
+  <tokens>Questa,donna,mi,hanno,colpito.</tokens>
+  <annotations>1,1,1,1,1</annotations>
+  <timePerToken>0.306</timePerToken>
+  <task>G-r</task>
+</SqlAnnotatedSentence>
+<SqlAnnotatedSentence>
+  <id>7</id>
+  <tokens>Quella,donna,che,accompagnava,i,bambini,mi,ha,colpito.</tokens>
+  <annotations>0,1,1,1,1,1,1,1,1</annotations>
+  <timePerToken>0.5863333</timePerToken>
+  <task>G-R</task>
+</SqlAnnotatedSentence>
+<SqlAnnotatedSentence>
+  <id>7</id>
+  <tokens>Quella,donna,che,accompagnava,i,bambini,mi,ha,colpito.</tokens>
+  <annotations>0,1,1,1,1,1,1,1,1</annotations>
+  <timePerToken>0.2</timePerToken>
+  <task>G-R</task>
+</SqlAnnotatedSentence>
+<SqlAnnotatedSentence>
+  <id>12</id>
+  <tokens>La,donna,che,i,Rossi,sostengono,che,i,vicini,credono,che,i,ragazzi,dicano,che,mi,hanno,colpito,è,Giulia.</tokens>
+  <annotations>0,0,0,0,1,0,0,0,1,0,0,0,0,1,0,0,0,0,0,1</annotations>
+  <timePerToken>0.15795</timePerToken>
+  <task>G-R</task>
+</SqlAnnotatedSentence>
+<SqlAnnotatedSentence>
+  <id>12</id>
+  <tokens>La,donna,che,i,Rossi,sostengono,che,i,vicini,credono,che,i,ragazzi,dicano,che,mi,hanno,colpito,è,Giulia.</tokens>
+  <annotations>0,0,0,0,1,0,0,0,1,0,0,0,0,1,1,1,0,0,0,1</annotations>
+  <timePerToken>0.31405</timePerToken>
+  <task>G-R</task>
+</SqlAnnotatedSentence>
+<SqlAnnotatedSentence>
+  <id>2</id>
+  <tokens>Ho,voglia,di,salutare,Sofia.</tokens>
+  <annotations>0,0,0,0,1</annotations>
+  <timePerToken>0.3338</timePerToken>
+  <task>G-R</task>
+</SqlAnnotatedSentence>
+<SqlAnnotatedSentence>
+  <id>11</id>
+  <tokens>La,donna,che,i,Rossi,sostengono,che,i,vicini,credono,che,i,ragazzi,dicano,che,mi,ha,colpito,è,Giorgia.</tokens>
+  <annotations>0,0,0,0,1,0,0,0,1,0,0,0,0,1,0,0,0,0,0,1</annotations>
+  <timePerToken>0.2115</timePerToken>
+  <task>G-r</task>
+</SqlAnnotatedSentence>
+<SqlAnnotatedSentence>
+  <id>4</id>
+  <tokens>Questa,donna,mi,hanno,colpito.</tokens>
+  <annotations>0,1,0,0,1</annotations>
+  <timePerToken>0.3084</timePerToken>
+  <task>G-r</task>
+</SqlAnnotatedSentence>
+<SqlAnnotatedSentence>
+  <id>28</id>
+  <tokens>Il,mio,libro,preferito,è,la,Divina,Commedia.</tokens>
+  <annotations>0,0,1,0,0,0,1,1</annotations>
+  <timePerToken>0.356125</timePerToken>
+  <task>G-R</task>
+</SqlAnnotatedSentence>
+<SqlAnnotatedSentence>
+  <id>20</id>
+  <tokens>Chi,dici,che,Tommaso,sostiene,che,i,vicini,pensano,che,mi,abbia,colpito?</tokens>
+  <annotations>0,0,0,0,0,1,0,1,1,0,0,0,0</annotations>
+  <timePerToken>0.1261538</timePerToken>
+  <task>G-r</task>
+</SqlAnnotatedSentence>
+<SqlAnnotatedSentence>
+  <id>6</id>
+  <tokens>Quella,donna,che,accompagnava,i,bambini,mi,hanno,colpito.</tokens>
+  <annotations>0,0,0,0,0,0,0,0,0</annotations>
+  <timePerToken>0.1073333</timePerToken>
+  <task>G-r</task>
+</SqlAnnotatedSentence>
+<SqlAnnotatedSentence>
+  <id>21</id>
+  <tokens>Il,mio,per,preferito,è,la,Divina,Commedia.</tokens>
+  <annotations>0,1,1,1,1,0,0,0</annotations>
+  <timePerToken>0.155875</timePerToken>
+  <task>G-R</task>
+</SqlAnnotatedSentence>
+<SqlAnnotatedSentence>
+  <id>14</id>
+  <tokens>Quell'uomo,e,quella,donna,mi,hanno,colpito.</tokens>
+  <annotations>0,1,0,0,1,0,0</annotations>
+  <timePerToken>0.8898572</timePerToken>
+  <task>G-r</task>
+</SqlAnnotatedSentence>
+<SqlAnnotatedSentence>
+  <id>3</id>
+  <tokens>Quest'uomo,mi,ha,colpito.</tokens>
+  <annotations>0,0,0,0</annotations>
+  <timePerToken>0.24825</timePerToken>
+  <task>G-R</task>
+</SqlAnnotatedSentence>
+<SqlAnnotatedSentence>
+  <id>23</id>
+  <tokens>Il ,mio ,e ,preferito è ,la ,Divina ,Commedia.</tokens>
+  <annotations>1,0,1,0,0,0,1</annotations>
+  <timePerToken>0.4697143</timePerToken>
+  <task>G-R</task>
+</SqlAnnotatedSentence>
+<SqlAnnotatedSentence>
+  <id>4</id>
+  <tokens>Questa ,donna ,mi ,hanno ,colpito.</tokens>
+  <annotations>0,0,0,0,1</annotations>
+  <timePerToken>0.154</timePerToken>
+  <task>G-R</task>
+</SqlAnnotatedSentence>
+<SqlAnnotatedSentence>
+  <id>13</id>
+  <tokens>Quell',uomo ,e ,quella ,donna ,mi ,ha ,colpito.</tokens>
+  <annotations>0,0,1,0,0,0,0,1</annotations>
+  <timePerToken>0.0775</timePerToken>
+  <task>G-R</task>
+</SqlAnnotatedSentence>
+<SqlAnnotatedSentence>
+  <id>21</id>
+  <tokens>Il ,mio ,per ,preferito ,è ,la ,Divina ,Commedia.</tokens>
+  <annotations>0,0,0,0,0,0,0,0</annotations>
+  <timePerToken>0.080375</timePerToken>
+  <task>G-r</task>
+</SqlAnnotatedSentence>
+<SqlAnnotatedSentence>
+  <id>1</id>
+  <tokens>Voglio ,di ,salutare ,Giulia.</tokens>
+  <annotations>0,0,0,0</annotations>
+  <timePerToken>0.64575</timePerToken>
+  <task>G-r</task>
+</SqlAnnotatedSentence>
+<SqlAnnotatedSentence>
+  <id>10</id>
+  <tokens>La ,donna ,che ,i ,vicini ,credono ,che ,i ,ragazzi ,dicano ,che ,mi ,ha ,colpito ,è ,Sofia.</tokens>
+  <annotations>0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0</annotations>
+  <timePerToken>0.157625</timePerToken>
+  <task>G-r</task>
+</SqlAnnotatedSentence>
+<SqlAnnotatedSentence>
+  <id>7</id>
+  <tokens>Quella ,donna ,che ,accompagnava ,i ,bambini ,mi ,ha ,colpito.</tokens>
+  <annotations>0,0,0,0,0,0,0,0,0</annotations>
+  <timePerToken>0.1147778</timePerToken>
+  <task>G-R</task>
+</SqlAnnotatedSentence>
+<SqlAnnotatedSentence>
+  <id>20</id>
+  <tokens>Chi ,dici ,che ,Tommaso ,sostiene ,che ,i ,vicini ,pensano ,che ,mi ,abbia ,colpito?</tokens>
+  <annotations>0,0,0,0,0,0,0,0,0,0,0,0,0</annotations>
+  <timePerToken>0.102</timePerToken>
+  <task>G-r</task>
+</SqlAnnotatedSentence>
+<SqlAnnotatedSentence>
+  <id>11</id>
+  <tokens>La ,donna ,che ,i ,Rossi ,sostengono ,che ,i ,vicini ,credono ,che ,i ,ragazzi ,dicano ,che ,mi ,ha ,colpito ,è ,Giorgia.</tokens>
+  <annotations>0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0</annotations>
+  <timePerToken>0.0721</timePerToken>
+  <task>G-r</task>
+</SqlAnnotatedSentence>
+<SqlAnnotatedSentence>
+  <id>10</id>
+  <tokens>La ,donna ,che ,i ,vicini ,credono ,che ,i ,ragazzi ,dicano ,che ,mi ,ha ,colpito ,è ,Sofia.</tokens>
+  <annotations>0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0</annotations>
+  <timePerToken>0.0635</timePerToken>
+  <task>G-R</task>
+</SqlAnnotatedSentence>
+<SqlAnnotatedSentence>
+  <id>16</id>
+  <tokens>Io ,sono ,stato ,colpito ,da ,quest',uomo.</tokens>
+  <annotations>0,0,0,0,0,0,0</annotations>
+  <timePerToken>0.1052857</timePerToken>
+  <task>G-R</task>
+</SqlAnnotatedSentence>
+<SqlAnnotatedSentence>
+  <id>12</id>
+  <tokens>La ,donna ,che ,i ,Rossi ,sostengono ,che ,i ,vicini ,credono ,che ,i ,ragazzi ,dicano ,che ,mi ,hanno ,colpito ,è ,Giulia.</tokens>
+  <annotations>0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0</annotations>
+  <timePerToken>0.0303</timePerToken>
+  <task>G-r</task>
+</SqlAnnotatedSentence>
+<SqlAnnotatedSentence>
+  <id>20</id>
+  <tokens>Chi ,dici ,che ,Tommaso ,sostiene ,che ,i ,vicini ,pensano ,che ,mi ,abbia ,colpito?</tokens>
+  <annotations>0,0,0,0,0,0,0,0,0,0,0,0,0</annotations>
+  <timePerToken>0.05046154</timePerToken>
+  <task>G-r</task>
+</SqlAnnotatedSentence>
+<SqlAnnotatedSentence>
+  <id>3</id>
+  <tokens>Quest',uomo ,mi ,ha ,colpito.</tokens>
+  <annotations>0,0,0,0,0</annotations>
+  <timePerToken>0.707</timePerToken>
+  <task>G-r</task>
+</SqlAnnotatedSentence>
+<SqlAnnotatedSentence>
+  <id>25</id>
+  <tokens>Il ,mio ,esso ,preferito ,è ,la ,Divina ,Commedia.</tokens>
+  <annotations>0,0,0,0,0,0,0,0</annotations>
+  <timePerToken>0.097625</timePerToken>
+  <task>G-r</task>
+</SqlAnnotatedSentence>
+<SqlAnnotatedSentence>
+  <id>26</id>
+  <tokens>Il ,mio ,lo ,preferito ,è ,la ,Divina ,Commedia.</tokens>
+  <annotations>0,0,0,0,0,0,0,0</annotations>
+  <timePerToken>0.1815</timePerToken>
+  <task>G-R</task>
+</SqlAnnotatedSentence>
+<SqlAnnotatedSentence>
+  <id>22</id>
+  <tokens>Il ,mio ,oggi ,preferito ,è ,la ,Divina ,Commedia.</tokens>
+  <annotations>0,0,0,0,0,0,0,0</annotations>
+  <timePerToken>0.032</timePerToken>
+  <task>G-r</task>
+</SqlAnnotatedSentence>
+<SqlAnnotatedSentence>
+  <id>4</id>
+  <tokens>Questa ,donna ,mi ,hanno ,colpito.</tokens>
+  <annotations>0,0,0,0,1</annotations>
+  <timePerToken>0.0832</timePerToken>
+  <task>G-r</task>
+</SqlAnnotatedSentence>
+<SqlAnnotatedSentence>
+  <id>16</id>
+  <tokens>Io ,sono ,stato ,colpito ,da ,quest',uomo.</tokens>
+  <annotations>0,0,0,0,0,0,0</annotations>
+  <timePerToken>0.1237143</timePerToken>
+  <task>G-R</task>
+</SqlAnnotatedSentence>
+<SqlAnnotatedSentence>
+  <id>13</id>
+  <tokens>Quell',uomo ,e ,quella ,donna ,mi ,ha ,colpito.</tokens>
+  <annotations>0,0,0,0,0,0,0,1</annotations>
+  <timePerToken>0.05825</timePerToken>
+  <task>G-R</task>
+</SqlAnnotatedSentence>
+<SqlAnnotatedSentence>
+  <id>1</id>
+  <tokens>Voglio ,di ,salutare ,Giulia.</tokens>
+  <annotations>0,0,0,1</annotations>
+  <timePerToken>0.3395</timePerToken>
+  <task>G-R</task>
+</SqlAnnotatedSentence>
+<SqlAnnotatedSentence>
+  <id>27</id>
+  <tokens>Il ,mio ,alto ,preferito ,è ,la ,Divina ,Commedia.</tokens>
+  <annotations>0,0,0,0,0,1,0,1</annotations>
+  <timePerToken>0.054625</timePerToken>
+  <task>G-R</task>
+</SqlAnnotatedSentence>
+<SqlAnnotatedSentence>
+  <id>22</id>
+  <tokens>Il ,mio ,oggi ,preferito ,è ,la ,Divina ,Commedia.</tokens>
+  <annotations>0,0,0,0,0,1,0,1</annotations>
+  <timePerToken>0.1445</timePerToken>
+  <task>G-r</task>
+</SqlAnnotatedSentence>
+<SqlAnnotatedSentence>
+  <id>18</id>
+  <tokens>Chi ,dici ,che ,mi ,ha ,colpito?</tokens>
+  <annotations>0,0,0,0,0,1</annotations>
+  <timePerToken>0.1405</timePerToken>
+  <task>G-R</task>
+</SqlAnnotatedSentence>
+<SqlAnnotatedSentence>
+  <id>10</id>
+  <tokens>La ,donna ,che ,i ,vicini ,credono ,che ,i ,ragazzi ,dicano ,che ,mi ,ha ,colpito ,è ,Sofia.</tokens>
+  <annotations>0,0,0,0,0,1,0,1,0,0,0,0,1,0,0,1</annotations>
+  <timePerToken>0.0585625</timePerToken>
+  <task>G-R</task>
+</SqlAnnotatedSentence>
+<SqlAnnotatedSentence>
+  <id>21</id>
+  <tokens>Il ,mio ,per ,preferito ,è ,la ,Divina ,Commedia.</tokens>
+  <annotations>0,0,0,0,0,0,0,0</annotations>
+  <timePerToken>0.1475</timePerToken>
+  <task>G-R</task>
+</SqlAnnotatedSentence>
+<SqlAnnotatedSentence>
+  <id>20</id>
+  <tokens>Chi ,dici ,che ,Tommaso ,sostiene ,che ,i ,vicini ,pensano ,che ,mi ,abbia ,colpito?</tokens>
+  <annotations>0,0,0,0,0,0,0,0,0,0,1,0,1</annotations>
+  <timePerToken>0.08</timePerToken>
+  <task>G-r</task>
+</SqlAnnotatedSentence>
+<SqlAnnotatedSentence>
+  <id>4</id>
+  <tokens>Questa ,donna ,mi ,hanno ,colpito.</tokens>
+  <annotations>0,0,0,1,0</annotations>
+  <timePerToken>0.2276</timePerToken>
+  <task>G-R</task>
+</SqlAnnotatedSentence>
+<SqlAnnotatedSentence>
+  <id>16</id>
+  <tokens>Io ,sono ,stato ,colpito ,da ,quest',uomo.</tokens>
+  <annotations>0,0,0,0,0,0,0</annotations>
+  <timePerToken>0.1637143</timePerToken>
+  <task>G-r</task>
+</SqlAnnotatedSentence>
+<SqlAnnotatedSentence>
+  <id>22</id>
+  <tokens>Il ,mio ,oggi ,preferito ,è ,la ,Divina ,Commedia.</tokens>
+  <annotations>0,0,0,0,0,0,0,0</annotations>
+  <timePerToken>0.080375</timePerToken>
+  <task>G-r</task>
+</SqlAnnotatedSentence>
+<SqlAnnotatedSentence>
+  <id>11</id>
+  <tokens>La ,donna ,che ,i ,Rossi ,sostengono ,che ,i ,vicini ,credono ,che ,i ,ragazzi ,dicano ,che ,mi ,ha ,colpito ,è ,Giorgia.</tokens>
+  <annotations>0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0</annotations>
+  <timePerToken>0.04745</timePerToken>
+  <task>G-R</task>
+</SqlAnnotatedSentence>
+<SqlAnnotatedSentence>
+  <id>7</id>
+  <tokens>Quella ,donna ,che ,accompagnava ,i ,bambini ,mi ,ha ,colpito.</tokens>
+  <annotations>0,0,0,0,0,0,0,0,0</annotations>
+  <timePerToken>0.05911111</timePerToken>
+  <task>G-r</task>
+</SqlAnnotatedSentence>
+<SqlAnnotatedSentence>
+  <id>6</id>
+  <tokens>Quella ,donna ,che ,accompagnava ,i ,bambini ,mi ,hanno ,colpito.</tokens>
+  <annotations>0,0,0,0,0,0,0,0,0</annotations>
+  <timePerToken>0.2034444</timePerToken>
+  <task>G-r</task>
+</SqlAnnotatedSentence>
+<SqlAnnotatedSentence>
+  <id>2</id>
+  <tokens>Ho ,voglia ,di ,salutare ,Sofia.</tokens>
+  <annotations>0,0,0,0,0</annotations>
+  <timePerToken>0.1128</timePerToken>
+  <task>G-r</task>
+</SqlAnnotatedSentence>
+<SqlAnnotatedSentence>
+  <id>21</id>
+  <tokens>Il ,mio ,per ,preferito ,è ,la ,Divina ,Commedia.</tokens>
+  <annotations>0,0,0,0,0,0,0,0</annotations>
+  <timePerToken>0.051</timePerToken>
+  <task>G-r</task>
+</SqlAnnotatedSentence>
+<SqlAnnotatedSentence>
+  <id>12</id>
+  <tokens>La ,donna ,che ,i ,Rossi ,sostengono ,che ,i ,vicini ,credono ,che ,i ,ragazzi ,dicano ,che ,mi ,hanno ,colpito ,è ,Giulia.</tokens>
+  <annotations>0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0</annotations>
+  <timePerToken>0.04615</timePerToken>
+  <task>G-r</task>
+</SqlAnnotatedSentence>
+<SqlAnnotatedSentence>
+  <id>24</id>
+  <tokens>Il ,mio ,leggo ,preferito ,è ,la ,Divina ,Commedia.</tokens>
+  <annotations>0,0,0,0,0,0,0,0</annotations>
+  <timePerToken>0.05825</timePerToken>
+  <task>G-R</task>
+</SqlAnnotatedSentence>
+<SqlAnnotatedSentence>
+  <id>3</id>
+  <tokens>Quest',uomo ,mi ,ha ,colpito.</tokens>
+  <annotations>0,0,0,0,0</annotations>
+  <timePerToken>0.1026</timePerToken>
+  <task>G-r</task>
+</SqlAnnotatedSentence>
+<SqlAnnotatedSentence>
+  <id>0</id>
+  <tokens>Sentence</tokens>
+  <annotations>0</annotations>
+  <timePerToken>0.499</timePerToken>
+  <task>G-R</task>
+</SqlAnnotatedSentence>
+<SqlAnnotatedSentence>
+  <id>3</id>
+  <tokens>Quest',uomo ,mi ,ha ,colpito.</tokens>
+  <annotations>0,0,0,0,0</annotations>
+  <timePerToken>0.0762</timePerToken>
+  <task>G-R</task>
+</SqlAnnotatedSentence>
+<SqlAnnotatedSentence>
+  <id>9</id>
+  <tokens>La ,donna ,che ,i ,ragazzi ,dicono ,che ,mi ,ha ,colpito ,è ,Giulia.</tokens>
+  <annotations>0,0,0,0,0,0,0,0,0,0,0,0</annotations>
+  <timePerToken>0.07058334</timePerToken>
+  <task>G-R</task>
+</SqlAnnotatedSentence>
+<SqlAnnotatedSentence>
+  <id>8</id>
+  <tokens>La ,donna ,che ,mi ,ha ,colpito ,è ,Giulia.</tokens>
+  <annotations>0,0,0,0,0,0,0,0</annotations>
+  <timePerToken>0.163875</timePerToken>
+  <task>G-r</task>
+</SqlAnnotatedSentence>
+<SqlAnnotatedSentence>
+  <id>10</id>
+  <tokens>La ,donna ,che ,i ,vicini ,credono ,che ,i ,ragazzi ,dicano ,che ,mi ,ha ,colpito ,è ,Sofia.</tokens>
+  <annotations>0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0</annotations>
+  <timePerToken>0.0820625</timePerToken>
+  <task>G-r</task>
+</SqlAnnotatedSentence>
+<SqlAnnotatedSentence>
+  <id>6688</id>
+  <tokens>La,vetrata,si è,rotta,al,primo,urto,violento.</tokens>
+  <annotations>0,1,0,0,0,0,0,0</annotations>
+  <timePerToken>0.4345</timePerToken>
+  <task>D</task>
+</SqlAnnotatedSentence>
+<SqlAnnotatedSentence>
+  <id>23</id>
+  <tokens>Il ,mio ,e ,preferito ,è ,la ,Divina ,Commedia.</tokens>
+  <annotations>0,0,0,0,0,0,0,0</annotations>
+  <timePerToken>0.252125</timePerToken>
+  <task>G-r</task>
+</SqlAnnotatedSentence>
+<SqlAnnotatedSentence>
+  <id>4</id>
+  <tokens>Questa ,donna ,mi ,hanno ,colpito.</tokens>
+  <annotations>0,0,0,0,0</annotations>
+  <timePerToken>0.5134</timePerToken>
+  <task>G-r</task>
+</SqlAnnotatedSentence>
+<SqlAnnotatedSentence>
+  <id>11</id>
+  <tokens>La ,donna ,che ,i ,Rossi ,sostengono ,che ,i ,vicini ,credono ,che ,i ,ragazzi ,dicano ,che ,mi ,ha ,colpito ,è ,Giorgia.</tokens>
+  <annotations>0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0</annotations>
+  <timePerToken>0.0408</timePerToken>
+  <task>G-r</task>
+</SqlAnnotatedSentence>
+<SqlAnnotatedSentence>
+  <id>13</id>
+  <tokens>Quell',uomo ,e ,quella ,donna ,mi ,ha ,colpito.</tokens>
+  <annotations>1,1,0,0,0,0,0,0</annotations>
+  <timePerToken>2.043625</timePerToken>
+  <task>G-R</task>
+</SqlAnnotatedSentence>
+<SqlAnnotatedSentence>
+  <id>16</id>
+  <tokens>Io ,sono ,stato ,colpito ,da ,quest',uomo.</tokens>
+  <annotations>1,1,1,0,0,0,0</annotations>
+  <timePerToken>0.5362857</timePerToken>
+  <task>G-r</task>
+</SqlAnnotatedSentence>
+<SqlAnnotatedSentence>
+  <id>13</id>
+  <tokens>Quell',uomo ,e ,quella ,donna ,mi ,ha ,colpito.</tokens>
+  <annotations>0,0,0,0,0,0,0,0</annotations>
+  <timePerToken>0.058375</timePerToken>
+  <task>G-r</task>
+</SqlAnnotatedSentence>
+<SqlAnnotatedSentence>
+  <id>18</id>
+  <tokens>Chi,dici,che,mi,ha,colpito?</tokens>
+  <annotations>0,0,0,0,0,0</annotations>
+  <timePerToken>0.143</timePerToken>
+  <task>G-R</task>
+</SqlAnnotatedSentence>

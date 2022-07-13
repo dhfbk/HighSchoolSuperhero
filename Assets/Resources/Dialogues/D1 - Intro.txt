@@ -1,0 +1,6 @@
+Professor#Hey, are you awake?
+NAME#I am now!
+Professor#Come to my place, I have something to show you.
+NAME#Ok, give me one...
+Professor#Hurry up!
+#--COMMUNICATION INTERRUPTED--

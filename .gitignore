@@ -1,0 +1,14 @@
+.DS_Store
+.collab
+.collabignore
+.plastic
+.vsconfig
+.vsconfig.private.0
+Library/
+Logs/
+Unity.2D.Sprite.Editor.csproj
+Unity.2D.Tilemap.Editor.csproj
+UserSettings/
+app.config
+ignore.conf
+

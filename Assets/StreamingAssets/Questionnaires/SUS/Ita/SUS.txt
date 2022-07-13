@@ -1,0 +1,10 @@
+01. Penso che userei questo sistema frequentemente.
+02. Ho trovato il sistema troppo complesso.
+03. Il sistema è facile da usare.
+04. Penso che mi servirebbe l'aiuto di un esperto per riuscire a usare questo sistema.
+05. Trovo che le varie funzioni del sistema siano ben integrate fra loro.
+06. Penso che il sistema abbia troppe incoerenze.
+07. Penso che la maggior parte delle persone imparerebbe a usare questo sistema molto velocemente.
+08. Trovo che il sistema sia complicato da usare.
+09. Mi sentivo molto sicura/o di me nell'usare il sitema.
+10. Ho dovuto imparare un sacco di cose prima di poter usare bene il sistema.

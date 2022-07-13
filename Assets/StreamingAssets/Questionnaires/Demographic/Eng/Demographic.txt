@@ -1,0 +1,6 @@
+01. What country are you from? [inputfield
+02. How old are you? [inputfield
+03. What is your native language? [inputfield
+04. What video games do you play? Write up to three preferences. [inputfield
+05. How often do you play video games? [options=never,once a month,once a week,2/3 times a week,daily
+06. If you play video games, what device do you play on? [options=computer,smartphone,home consoles,portable consoles,none of the above

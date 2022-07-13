@@ -1,0 +1,61 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7c3efb8f0fb7a1b4e90f019c63e82b85, type: 3}
+  m_Name: Scientist2Acc
+  m_EditorClassIdentifier: 
+  engLines:
+  - Here is what I have prepared for you.
+  - It is a mind reader! You can attach it to your smartphone and it works perfectly
+    with it.
+  - Use it to correct the sentences that you find to be grammatically strange. You
+    can change what they say!
+  - But there's more.
+  - Here is a special sponge!
+  - You can use it to erase the incorrect parts from graffiti around the town.
+  - If you cannot make a useful correction, you can always erase the whole message,
+    or just one word, as you prefer!
+  - Can you see the blue bar at the top left corner of the screen?
+  - It tells you how good the language proficiency in the town is at the moment!
+  - Try to keep it full!
+  - If you run out of soap or energy, go to a terminal (T) and buy new resources.
+  - You can find them on your map by pressing M!
+  itaLines:
+  - Ecco il dispositivo che ho creato.
+  - E' un leggimente! Puoi associarlo al tuo smartphone per farli funzionare insieme.
+  - Usalo per correggere le frasi quando ti suonano strane. Puoi cambiare quello
+    che gli studenti stanno per dire!
+  - "Ma c'\xE8 dell'altro. Ecco una spugna speciale! Puoi usarla per cancellare le
+    parti sbagliate dai murales che trovi per la citt\xE0."
+  - Ti starai forse chiedendo quale sia un esempio di frase strana.
+  - Fammici pensare... Trovato!
+  - "\"Paolo ha detto che chiamer\xE0 la mela\"."
+  - "Che dici, non \xE8 il massimo, vero? Forse modificherei o cancellerei \"mela\",
+    per il resto funziona!"
+  - Ma ne esistono di tanti altri tipi, ad esempio "Un aereo dalla decolla pista".
+  - "In questo caso, se chiedi a me, cancellerei \"dalla\" e \"pista\". Un aereo
+    decolla! S\xEC, funziona."
+  - Se non riesci a fare una correzione utile, cancella pure tutta la frase, oppure
+    una sola parola, come preferisci!
+  - "Ricorda: non \xE8 importante che la nuova frase abbia senso! Mi basta vedere
+    che l'hai marcata. Poi ci penso io!"
+  - "In ogni caso, vedi la barra blu nell'angolo in alto a sinistra? Ci dice quanto
+    \xE8 buono l'uso della lingua in una certa zona della citt\xE0."
+  - "Se smetterai di annotare frasi, la qualit\xE0 scender\xE0. Cerca di farla restare
+    piena!"
+  - 'Per riassumere: nei dialoghi puoi modificare le frasi, nei murales puoi solo
+    cancellare quello che non ti piace.'
+  - Per annotare i dialoghi hai bisogno di BATTERIA, per annotare i murales di SAPONE.
+    Non restare senza!
+  - Se resti senza sapone o batteria, vai a un terminale (T) e compra altre risorse.
+  - Ai terminali puoi trovare anche accessori piuttosto interessanti come le Scarpe
+    Razzo e il Deltaplano!
+  - Puoi trovare i Terminali (T) sulla mappa premendo M. Buona fortuna!

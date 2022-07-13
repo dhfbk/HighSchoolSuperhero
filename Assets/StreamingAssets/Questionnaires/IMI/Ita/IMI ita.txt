@@ -1,0 +1,32 @@
+01. Mi sono impegnato molto in questa attività.
+02. Non ho fatto il possibile per svolgere questa attività al meglio.
+03. Ho fatto del mio meglio in questa attività.
+04. Per me era importante fare bene questo task.
+05. Non ho dedicato molte energie a questa attività.
+06. Mi è piaciuto molto svolgere questa attività.
+07. Quest'attività è stata divertente.
+08. L'ho trovata un'attività noiosa.
+09. Quest'attività non ha mantenuto vivo il mio interesse.
+10. Descriverei quest'attività come molto divertente.
+11. Ho trovato quest'attività piuttosto piacevole.
+12. Mentre la facevo, pensavo a quanto mi piaceva quest'attività.
+13. Credo di aver avuto della libertà di scegliere se fare quest'attività.
+14. Mi sono sentita/o come se fare questa attività non fosse una mia scelta.
+15. Non ho potuto scegliere se fare questa attività.
+16. Mi sono sentita/o in dovere di fare quest'attività.
+17. Ho svolto quest'attività perché non avevo altra scelta.
+18. Ho svolto quest'attività perché lo volevo.
+19. Ho svolto quest'attività perché dovevo.
+20. Credo di essere piuttosto brava/o in quest'attività.
+21. Credo di essere svolto quest'attività meglio di altri.
+22. Dopo aver svolto quest'attività per un po', mi è sembrato di essere piuttosto competente.
+23. Sono soddisfatta/o di come ho svolto quest'attività.
+24. Ho svolto quest'attività con grande abilità.
+25. Questa è un'attività che non ho potuto svolgere molto bene.
+26. Non mi sono sentita/o per niente nervoso facendo quest'attività.
+27. Mi sono sentita/o tesa/o facendo quest'attività.
+28. Nello svolgere quest'attività ero molto rilassata/o.
+29. Ero nervosa/o nel fare questa attività.
+30. Mi sono sentita/o sotto pressione nel fare quest'attività.
+
+99. Che attività hai preferito? Murales o Dialoghi?

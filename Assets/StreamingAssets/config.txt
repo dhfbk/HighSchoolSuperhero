@@ -1,0 +1,7 @@
+{
+	"guest":"true",
+	"api":"final",
+	"collectibles":"true",
+	"url":"https://kidactions.fbk.eu/api/",
+	"useLocalDatasets":"false"
+}
