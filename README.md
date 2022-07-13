@@ -9,7 +9,7 @@
 </ol>
 Done!
 
-<h2>The Configuration file</h2>
+<h2>Configuration</h2>
 The <i>config.txt</i> file is located under StreamingAssets both in the project and the final build. The file must stay in this folder in order to be editable after building the project.
 
 <ul>
@@ -19,10 +19,18 @@ The <i>config.txt</i> file is located under StreamingAssets both in the project 
 	<li>"url":"https://apiurl" - Insert the api url. The default api url is already configured.</li>
 <li>"useLocalDatasets":"false" - You can decide to use local sentences (under StreamingAssets/dialogues.txt or graffiti.txt) instead of the API ones.</li>
 	</ul>
+Note: dialogues.txt and graffiti.txt should contain exactly one sentence per line, without any other information.
 
 <h2>The API</h2>
-All changes to the API calls and systems should be made inside the script API.cs located under Assets/Scripts/Utilities. Note:
+All changes to the API calls should be made inside the script API.cs located under Assets/Scripts/Utilities. Note:
 <ul>
 <li>All changes should be made inside the coroutines identified by type IEnumerator or by a "C" at the end of the method signatures.</li>
 <li>Always refer to methods containing "Final". Methods containing "Dev" are backup/obsolete and do not interact with the API url contained in the configuration file.</li>
+</ul>
+
+<h2>Changing the game difficulty</h2>
+<ul>
+<li>Safety bar. The speed of the safety bar can be changed from Unity's inspector inside GameObject SafetyBar. The SafetyBar script contains an exposed field called "Speed".</li>
+<li>Soap bar. The amount of soap that is consumed when erasing can be changed inside the Erase() method in the Graffiti.cs file.</li>
+<li>Points/rewards. The amount of points given for completed annotations can be set inside the Annotate() method either in DialogueInstancer.cs or Graffiti.cs.</li>
 </ul>

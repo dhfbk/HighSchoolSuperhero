@@ -236,7 +236,7 @@ public class Player : MonoBehaviour, IPlayer
     public void SetSafety(float amount) => SafetyBar.CurrentSafety = amount;
     public float GetSoap()=>cameraInterface.soapBar.Soap;
     public float GetMaxSoap()=>cameraInterface.soapBar.max;
-    public void SubtractSoap(int amount)=>cameraInterface.soapBar.Soap -= amount;
+    public void SubtractSoap(float amount)=>cameraInterface.soapBar.Soap -= amount;
     public void AddSoap(int amount)=>cameraInterface.soapBar.Soap += amount;
     public void ShowSoap()=>cameraInterface.soapBar.gameObject.SetActive(true);
     public void HideSoap()=>cameraInterface.soapBar.transform.parent.gameObject.SetActive(false);
