@@ -240,7 +240,7 @@ public class TitleScreen : MonoBehaviour
     public IEnumerator Authenticate(bool demo)
     {
         //Admin
-        if (demo == true || (nickname.text == "admin" && password.text == "15351"))
+        if (demo == true || (nickname.text == "admin" && password.text == "admin"))
         {
             Player.admin = true;
             player.sessionID = "no_session";
