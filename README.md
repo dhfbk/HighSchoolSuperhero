@@ -29,11 +29,25 @@ All changes to the API calls should be made inside the script API.cs located und
 </ul>
 
 <h2>The login system</h2>
-Changes to the login/authentication system should be made inside the Authenticate() coroutine inside the <i>TitleScreen.cs</i> file.
+Changes to the login/authentication system should be made inside the <code>Authenticate()</code> coroutine inside the <i>TitleScreen.cs</i> file.
 
-<h2>Changing the game difficulty</h2>
+<h2>Language and translations</h2>
 <ul>
-<li>Safety bar. The speed of the safety bar can be changed from Unity's inspector inside the GameObject named "SafetyBar". The <i>SafetyBar.cs</i> script contains an exposed field called "Speed".</li>
-<li>Soap bar. The amount of soap that is consumed when erasing can be changed inside the `Erase()` method in the <i>Graffiti.cs</i> file.</li>
-<li>Points/rewards. The amount of points given for completed annotations can be set inside the `Annotate()` method either in <i>DialogueInstancer.cs</i> or Graffiti.cs.</li>
+<li><b>Sample sentences</b>. These sentences should be inteded differently from the ones inside /StreamingAssets/Datasets/. These sentences are for demonstrative purposes only and will be shown when in DEMO mode. These sentences should be put inside a file named sampleSentences_[en/it/fr].txt.</li>
+<li><b>System dialogues</b>. Dialogues between in-game characters are different from the dialogues that are shown for annotation purposes. The system dialogues have to be stored in the /StreamingAssets/ folder and have to be named dialogues_[en/it/fr].txt. The file format is .json.</li>
+<li><b>System messages</b>. System messages contain messages such as "press ESC to exit" and the like. These messages are stored inside /StreamingAssets/ and are named systemMessages_[en/it/fr].txt.</li>
+</ul>
+
+<h2>Changing the game difficulty/accessibility</h2>
+<ul>
+<li><b>Safety bar</b>. The speed of the safety bar can be changed from Unity's inspector inside the GameObject named "SafetyBar". The <i>SafetyBar.cs</i> script contains an exposed field called "Speed".</li>
+<li><b>Soap bar</b>. The amount of soap that is consumed when erasing can be changed inside the <code>Erase()</code> method in the <i>Graffiti.cs</i> file.</li>
+<li><b>Points/rewards</b>. The amount of points given for completed annotations can be set inside the <code>Annotate()</code> method either in <i>DialogueInstancer.cs</i> or <i>Graffiti.cs</i>.</li>
+<li><b>Erasing</b>. The eraser can be made bigger or smaller. In order to change its size, search for the "Erase" prefab in the project window. The prefab can be resized in the Transform component within the Inspector.
+</ul>
+
+<h2>Useful helper methods</h2>
+<ul>
+<li><b>Pop-ups</b>. Show pop-ups with the static method <code>PopUpUtility.Open(FindObjectOfType<CameraInterface>().popUpCanvas, [type], [string], [time]);</code>.
+Just substitute [type] with <code>PopUpType.Error</code>/<code>Warning</code>/<code>Success</code>; [string] with your message; [time] with how many seconds the pop-up should be displayed for. If you leave this at 0, the pop-up will wait for input.</li>
 </ul>
