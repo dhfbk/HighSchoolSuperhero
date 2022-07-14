@@ -3,7 +3,7 @@
 <h2>Opening the project</h2>
 <ol>
   <li>Install Unity Hub.</li>
-  <li>Install Unity 2021.3.3f through Unity Hub. Newer versions may work as well.</li>
+  <li>Install Unity 2021.3.3f through Unity Hub. Newer versions may work as well. If you can't find the right version in Unity Hub, go to the Unity download archive web page.</li>
   <li>Locate the project in your drive and open it. Importing may take up to 5-10 minutes.</li>
   <li>If an empty scene is loaded, just go to File -> Open Scene and navigate to /Assets/Scenes/SampleScene.unity or Main.unity.</li>
 </ol>
@@ -26,16 +26,17 @@ All changes to the API calls should be made inside the script API.cs located und
 <ul>
 <li>All changes should be made inside the coroutines identified by type IEnumerator or by a "C" at the end of the method signatures.</li>
 <li>Always refer to methods containing "Final". Methods containing "Dev" are backup/obsolete and do not interact with the API url contained in the configuration file.</li>
+Current API url: https://kidactions.fbk.eu/api/
 </ul>
 
 <h2>The login system</h2>
-Changes to the login/authentication system should be made inside the <code>Authenticate()</code> coroutine inside the <i>TitleScreen.cs</i> file.
+Changes to the login/authentication system should be made inside the <code>Authenticate()</code> coroutine in the <i>TitleScreen.cs</i> file.
 
 <h2>Language and translations</h2>
 <ul>
 <li><b>Sample sentences</b>. These sentences should be inteded differently from the ones inside /StreamingAssets/Datasets/. These sentences are for demonstrative purposes only and will be shown when in DEMO mode. These sentences should be put inside a file named sampleSentences_[en/it/fr].txt.</li>
 <li><b>System dialogues</b>. Dialogues between in-game characters are different from the dialogues that are shown for annotation purposes. The system dialogues have to be stored in the /StreamingAssets/ folder and have to be named dialogues_[en/it/fr].txt. The file format is .json.</li>
-<li><b>System messages</b>. System messages contain messages such as "press ESC to exit" and the like. These messages are stored inside /StreamingAssets/ and are named systemMessages_[en/it/fr].txt.</li>
+<li><b>System messages</b>. System messages contain messages such as "press ESC to exit" and the like. These messages are stored inside /StreamingAssets/ and are named systemMessages_[en/it/fr].txt. The file format is .json.</li>
 </ul>
 
 <h2>Changing the game difficulty/accessibility</h2>
@@ -48,6 +49,6 @@ Changes to the login/authentication system should be made inside the <code>Authe
 
 <h2>Useful helper methods</h2>
 <ul>
-<li><b>Pop-ups</b>. Show pop-ups with the static method <code>PopUpUtility.Open(FindObjectOfType<CameraInterface>().popUpCanvas, [type], [string], [time]);</code>.
+<li><b>Pop-ups</b>. Show pop-ups with the static method <code>PopUpUtility.Open(FindObjectOfType&lt;CameraInterface&gt;().popUpCanvas, [type], [string], [time]);</code>.
 Just substitute [type] with <code>PopUpType.Error</code>/<code>Warning</code>/<code>Success</code>; [string] with your message; [time] with how many seconds the pop-up should be displayed for. If you leave this at 0, the pop-up will wait for input.</li>
 </ul>
