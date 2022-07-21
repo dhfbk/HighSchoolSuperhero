@@ -302,7 +302,7 @@
     <None Include="Assets/DownloadedAssets/_MK/MKToonFree/Shader/Inc/ShadowCaster/MKToonShadowCasterSetup.cginc" />
     <None Include="Assets/TextMesh Pro/Examples &amp; Extras/Fonts/Anton OFL.txt" />
     <None Include="Assets/StreamingAssets/Questionnaires/SUS/Ita/SUS.txt" />
-    <None Include="Assets/Corp/corp.xml" />
+    <None Include="Assets/GitIgnore/Corp/corp.xml" />
     <None Include="Assets/Parse/Plugins/Unity.Tasks.dll" />
     <None Include="Assets/DownloadedAssets/school/props/a door.obj.txt" />
     <None Include="Assets/StreamingAssets/Questionnaires/IMI/Eng/Perceivede competence.txt" />
@@ -322,7 +322,7 @@
     <None Include="Assets/StreamingAssets/Questionnaires/IMI/Ita/Pressure-tension.txt" />
     <None Include="Assets/Resources/InvisibleMask.shader" />
     <None Include="Assets/Dust.shader" />
-    <None Include="Assets/Corp/corp.txt" />
+    <None Include="Assets/GitIgnore/Corp/corp.txt" />
     <None Include="Assets/TextMesh Pro/Resources/Shaders/TMP_SDF-Surface-Mobile.shader" />
     <None Include="Assets/HUD/Red.shader" />
     <None Include="Assets/DownloadedAssets/_MK/MKToonFree/Shader/Inc/Surface/MKToonSurfaceIO.cginc" />
