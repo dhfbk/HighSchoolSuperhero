@@ -37,16 +37,6 @@ public class StringParts
     public StringParts(Parts parts)
     {
         meshes = new List<string>();
-
-        //hairmats = new List<string>();
-        //shoesmats = new List<string>();
-        //pantsmats = new List<string>();
-        //shirtmats = new List<string>();
-        //glassesmats = new List<string>();
-        //lensesmats = new List<string>();
-        //eyesmats = new List<string>();
-        //bodymats = new List<string>();
-
         meshes.Add(parts.body.GetComponent<SkinnedMeshRenderer>().sharedMesh.name);
         meshes.Add(parts.hair.GetComponent<SkinnedMeshRenderer>().sharedMesh.name);
         meshes.Add(parts.shirt.GetComponent<SkinnedMeshRenderer>().sharedMesh.name);
@@ -56,23 +46,6 @@ public class StringParts
             meshes.Add(parts.glasses.GetComponent<SkinnedMeshRenderer>().sharedMesh.name);
         if (parts.lenses.GetComponent<SkinnedMeshRenderer>().sharedMesh != null)
             meshes.Add(parts.lenses.GetComponent<SkinnedMeshRenderer>().sharedMesh.name);
-
-        //foreach (Material mat in parts.hair.GetComponent<SkinnedMeshRenderer>().materials)
-        //    hairmats.Add(mat.name.Replace(" (Instance)", ""));
-        //foreach (Material mat in parts.body.GetComponent<SkinnedMeshRenderer>().materials)
-        //    bodymats.Add(mat.name.Replace(" (Instance)", ""));
-        //foreach (Material mat in parts.shoes.GetComponent<SkinnedMeshRenderer>().materials)
-        //    shoesmats.Add(mat.name.Replace(" (Instance)", ""));
-        //foreach (Material mat in parts.eyes.GetComponent<SkinnedMeshRenderer>().materials)
-        //    eyesmats.Add(mat.name.Replace(" (Instance)", ""));
-        //foreach (Material mat in parts.shirt.GetComponent<SkinnedMeshRenderer>().materials)
-        //    shirtmats.Add(mat.name.Replace(" (Instance)", ""));
-        //foreach (Material mat in parts.lenses.GetComponent<SkinnedMeshRenderer>().materials)
-        //    lensesmats.Add(mat.name.Replace(" (Instance)", ""));
-        //foreach (Material mat in parts.body.GetComponent<SkinnedMeshRenderer>().materials)
-        //    glassesmats.Add(mat.name.Replace(" (Instance)", ""));
-        //foreach (Material mat in parts.body.GetComponent<SkinnedMeshRenderer>().materials)
-        //    pantsmats.Add(mat.name.Replace(" (Instance)", ""));
     }
 }
 
@@ -116,6 +89,7 @@ public class GameState
     public int level, crystals, battery;
     public float exp, maxexp;
     public float soap, maxSoap;
+    public int likes;
     public bool rocket, glider;
     public List<string> playerShirtMats;
     public List<string> playerPantsMats;
@@ -198,6 +172,7 @@ public class SaveManager : MonoBehaviour
         agent.SetExp(state.exp);
         agent.SetEnergy(state.battery);
         agent.SetCrystals(state.crystals);
+        agent.SetLikes(state.likes);
         agent.graffitiTutorial = state.graffitiTutorial;
         agent.dialogueTutorial = state.dialogueTutorial;
         Graffiti.gameState = state;
@@ -279,47 +254,6 @@ public class SaveManager : MonoBehaviour
 
         parts.shoes.GetComponent<SkinnedMeshRenderer>().sharedMesh = Resources.Load<Mesh>("Parts/Shoes/" + stringParts.meshes[4]);
         parts.shoes.GetComponent<SkinnedMeshRenderer>().materials = new Material[] { Resources.Load<Material>("Materials/Characters") };
-
-        //parts.body.GetComponent<SkinnedMeshRenderer>().sharedMesh = Resources.Load<Mesh>("Parts/Player/" + state.playerParts["body"]);
-        //parts.lenses.GetComponent<SkinnedMeshRenderer>().sharedMesh = Resources.Load<Mesh>("Parts/Lenses/" + stringParts.meshes[4]);
-        //parts.glasses.GetComponent<SkinnedMeshRenderer>().sharedMesh = Resources.Load<Mesh>("Parts/Glasses/" + stringParts.meshes[3]);
-        //parts.glasses.GetComponent<SkinnedMeshRenderer>().materials = new Material[] { Resources.Load<Material>("Materials/Characters") };
-
-        //Materials
-        //List<Material> hairMats = new List<Material>();
-        //foreach (string mat in stringParts.hairmats)
-        //    hairMats.Add(Resources.Load<Material>("Materials/" + mat));
-        //parts.hair.GetComponent<SkinnedMeshRenderer>().materials = hairMats.ToArray();
-
-        //List<Material> shirtMats = new List<Material>();
-        //foreach (string mat in stringParts.shirtmats)
-        //    shirtMats.Add(Resources.Load<Material>("Materials/" + mat));
-        //parts.shirt.GetComponent<SkinnedMeshRenderer>().materials = shirtMats.ToArray();
-
-        //List<Material> shoesMats = new List<Material>();
-        //foreach (string mat in stringParts.shoesmats)
-        //    shoesMats.Add(Resources.Load<Material>("Materials/" + mat));
-        //parts.shoes.GetComponent<SkinnedMeshRenderer>().materials = shoesMats.ToArray();
-
-        //List<Material> pantsMats = new List<Material>();
-        //foreach (string mat in stringParts.pantsmats)
-        //    pantsMats.Add(Resources.Load<Material>("Materials/" + mat));
-        //parts.pants.GetComponent<SkinnedMeshRenderer>().materials = pantsMats.ToArray();
-
-        //List<Material> glassesMats = new List<Material>();
-        //foreach (string mat in stringParts.glassesmats)
-        //    glassesMats.Add(Resources.Load<Material>("Materials/" + mat));
-        //parts.glasses.GetComponent<SkinnedMeshRenderer>().materials = glassesMats.ToArray();
-
-        ////List<Material> lensesMats = new List<Material>();
-        ////foreach (string mat in stringParts.lensesmats)
-        ////    lensesMats.Add(Resources.Load<Material>("Materials/" + mat));
-        ////parts.lenses.GetComponent<SkinnedMeshRenderer>().materials = lensesMats.ToArray();
-
-        //List<Material> bodyMats = new List<Material>();
-        //foreach (string mat in stringParts.bodymats)
-        //    bodyMats.Add(Resources.Load<Material>("Materials/" + mat));
-        //parts.body.GetComponent<SkinnedMeshRenderer>().materials = bodyMats.ToArray();
 
     }
     public static void LoadLook(Parts parts, GameState state)
@@ -507,10 +441,13 @@ public class SaveManager : MonoBehaviour
         state.storyProgress = agent.StoryProgress;
         state.soap = agent.GetSoap();
         state.maxSoap = agent.GetMaxSoap();
+
         state.level = agent.GetLevel();
         state.exp = agent.GetExp();
         state.maxexp = agent.GetMaxExp();
         state.crystals = agent.GetCrystals();
+        state.likes = agent.GetLikes();
+
         state.rocket = agent.ScarpeMolla;
         state.glider = agent.Glider;
         state.playerPos = agent.transform.position;

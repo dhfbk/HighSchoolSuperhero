@@ -132,7 +132,16 @@ public class Player : MonoBehaviour, IPlayer
         }
     }
     private float exp;
-    private float likes;
+    private int likes;
+    public int Likes
+    {
+        get => likes;
+        set
+        {
+            likes = value;
+            UpdateLikes();
+        }
+    }
     private int level;
     public int Level 
     { 
@@ -160,15 +169,6 @@ public class Player : MonoBehaviour, IPlayer
             else
                 exp = value;
             UpdateBar();
-        }
-    }
-    public float Likes
-    {
-        get => likes;
-        set
-        {
-            likes = value;
-            UpdateLikes();
         }
     }
 
@@ -209,10 +209,11 @@ public class Player : MonoBehaviour, IPlayer
         Exp += points;
         UpdateBar();
     }
+    public void SetLikes(int amount) => Likes = amount;
+    public int GetLikes() => likes;
     public void AddLikes(int points)
     {
         Likes += points;
-        UpdateLikes();
     }
     public void UpdateLikes() =>
         cameraInterface.likesText.text = Likes.ToString();
@@ -278,9 +279,6 @@ public class Player : MonoBehaviour, IPlayer
         Agent = this;
         if (!cameraInterface)
             cameraInterface = FindObjectOfType<CameraInterface>();
-        //ObjectState o = new ObjectState(GameObject.Find("Scientist"));
-        //gameState.saveableObjects.Add(o);
-        //gameState.saveableObjects[0].state = "show";
 
     }
 
@@ -360,8 +358,7 @@ public class Player : MonoBehaviour, IPlayer
 
     void OnApplicationQuit()
     {
-        //SaveManager.SaveGameState(this, gameState);
-        //SaveManager.SaveDelegate(this);
+
     }
     public void Initialize(bool load)
     {
@@ -369,15 +366,6 @@ public class Player : MonoBehaviour, IPlayer
         transform.parent = null;
         GetComponent<CharacterCustomizationSetup>().enabled = false;
         GetComponent<Rigidbody>().useGravity = true;
-        //transform.gameObject.layer = 10;
-        //foreach (Transform child in transform)
-        //{
-        //    if (child.tag != "UI")
-        //    {
-        //        child.gameObject.layer = 10;
-        //    }
-        //}
-        //Control.Instance.GetComponent<UpdateAvatar>().Up();
         cameraInterface.audioManager.ChangeBGM(AudioManager.TownMusic);
 
         //Setup cameras
@@ -400,7 +388,6 @@ public class Player : MonoBehaviour, IPlayer
         GetComponent<Movement>().Busy = false;
 
         //Setup control
-        //Movement.Busy = false;
         initialized = true;
 
         //Temporary logger
@@ -411,13 +398,6 @@ public class Player : MonoBehaviour, IPlayer
         {
             SetID(PlayerPrefs.GetString("ID"));
             API.GetSave(this);
-
-            //List<string> list = new List<string>();
-            //list.Add("lol");
-            //list.Add("mah");
-
-            //DialogueLines d = new DialogueLines(list);
-            //print(JsonUtility.ToJson(d));
         }
         else
         {
