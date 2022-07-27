@@ -656,6 +656,7 @@ public class DialogueInstancer : MonoBehaviour, ITriggerable
 
         DialogueInstancer.IncrementIndex();
 
+        SaveManager.SaveGameState(Agent);
         API.PostSave(Agent, false);
     }
 

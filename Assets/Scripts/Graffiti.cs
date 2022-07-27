@@ -297,8 +297,9 @@ public class Graffiti : MonoBehaviour, ITriggerable
                         {
                             if (!clickWasInitiatedInside)
                             {
-                                StartCoroutine(Annotate());
                                 StopAnnotation(Agent);
+                                StartCoroutine(Annotate());
+                                
                             }
                         }
                     }
@@ -319,9 +320,12 @@ public class Graffiti : MonoBehaviour, ITriggerable
 
                     if (Input.GetKeyUp("return"))
                     {
+                        StopAnnotation(Agent);
                         StartCoroutine(Annotate());
                     }
-                    StopAnnotation(Agent);
+                    else
+                        StopAnnotation(Agent);
+
                 }
 
                 if (Input.GetKeyUp(KeyCode.Escape) && Player.condition == Condition.W3D)
@@ -627,6 +631,10 @@ public class Graffiti : MonoBehaviour, ITriggerable
         }
         //Agent.cameraInterface.soapBar.transform.parent.gameObject.SetActive(true);
         agent.playerLogger.StopGraffitiAnnotationSW();
+        
+        agent.playerLog = agent.playerLogger.playerLog;
+        print(agent.playerLog.GraffitiTime);
+
         if (Player.condition == Condition.W3D)
         {
             agent.GetComponent<Movement>().Busy = false;
@@ -651,6 +659,7 @@ public class Graffiti : MonoBehaviour, ITriggerable
     private IEnumerator Annotate()
     {
         Player agent = Agent;
+        print("p" + agent.playerLog.GraffitiTime);
         agent.GetComponent<PlayerLogger>().playerLog.NumberOfAnnotatedGraffiti++;
         List<int> occludedTokens = CalculateOcclusion(tokens);
         float timePerToken = PlayerLogger.CalculateTimePerToken(currentAnnSent.tokens.Count, Agent.playerLogger.GetGraffitiAnnotationTime());
@@ -723,9 +732,12 @@ public class Graffiti : MonoBehaviour, ITriggerable
 
         lastGraffitiID = currentAnnSent.id;
         annotatedIndeces.Add(currentAnnSent.id);
-        
+
         //annotatedGraffitiIndex += 1;
 
+        print("Pl"+agent.playerLogger.playerLog.GraffitiTime);
+        print("p"+agent.playerLog.GraffitiTime);
+        SaveManager.SaveGameState(agent);
         API.PostSave(agent, false);
     }
 

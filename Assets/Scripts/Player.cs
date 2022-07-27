@@ -525,13 +525,19 @@ public class Player : MonoBehaviour, IPlayer
 
     public void ShowGraffitiTutorial()
     {
-        GetComponent<Movement>().Busy = true;
-        StartCoroutine(TaskTutorial(cameraInterface.graffitiTutorialContainer));
+        if (!Player.admin)
+        {
+            GetComponent<Movement>().Busy = true;
+            StartCoroutine(TaskTutorial(cameraInterface.graffitiTutorialContainer));
+        }
     }
     public void ShowDialogueTutorial()
     {
-        GetComponent<Movement>().Busy = true;
-        StartCoroutine(TaskTutorial(cameraInterface.dialogueTutorialContainer));
+        if (!Player.admin)
+        {
+            GetComponent<Movement>().Busy = true;
+            StartCoroutine(TaskTutorial(cameraInterface.dialogueTutorialContainer));
+        }
     }
 
     public void SetAnnotating(bool annotating)
@@ -545,87 +551,88 @@ public class Player : MonoBehaviour, IPlayer
 
     IEnumerator TaskTutorial(GameObject container)
     {
-        noMenu = true;
-        DialogueInstancer.deactivateDialoguesAndGraffiti = true;
-        string type;
-        if (container.name.Contains("Dialogue"))
-        {
-            type = "d";
-            dialogueTutorial = true;
-        }
-        else
-        {
-            type = "g";
-            graffitiTutorial = true;
-        }
-
-        container.gameObject.SetActive(true);
-
-        Image b = container.transform.GetChild(0).GetComponent<Image>();
-        float t = 0;
-        Image[] imgs = container.GetComponentsInChildren<Image>();
-        TextMeshProUGUI[] txts = container.GetComponentsInChildren<TextMeshProUGUI>();
-
-        if (type == "d")
-        {
-            txts[0].text = string.Format(ML.systemMessages.tutorialD0, MultiplatformUtility.PrimaryInteractionKey);
-            txts[1].text = MultiplatformUtility.Mobile ? ML.systemMessages.tutorialD1Tap : ML.systemMessages.tutorialD1;
-            txts[2].text = ML.systemMessages.tutorialD2;
-            txts[3].text = ML.systemMessages.tutorialD3;
-        }
-        else
-        {
-            txts[0].text = string.Format(ML.systemMessages.tutorialG0, MultiplatformUtility.PrimaryInteractionKey);
-            txts[1].text = MultiplatformUtility.Mobile ? ML.systemMessages.tutorialG1Tap : ML.systemMessages.tutorialG1;
-            txts[2].text = ML.systemMessages.tutorialG2;
-        }
-
-        while (t < 1)
-        {
-            b.color = Color.Lerp(new Color(0, 0, 0, 0f), new Color(0, 0, 0, 0.45f), t);
-            t += Time.deltaTime;
-            yield return null;
-        }
-
-        for(int i = 0; i < txts.Length; i++)
-        {
-
-            while (t < 1.2f)
+            noMenu = true;
+            DialogueInstancer.deactivateDialoguesAndGraffiti = true;
+            string type;
+            if (container.name.Contains("Dialogue"))
             {
-                imgs[i+1].color = Color.Lerp(new Color(1, 1, 1, 0), Color.white, t);
-                txts[i].color = Color.Lerp(new Color(1, 1, 1, 0), Color.white, t);
+                type = "d";
+                dialogueTutorial = true;
+            }
+            else
+            {
+                type = "g";
+                graffitiTutorial = true;
+            }
+
+            container.gameObject.SetActive(true);
+
+            Image b = container.transform.GetChild(0).GetComponent<Image>();
+            float t = 0;
+            Image[] imgs = container.GetComponentsInChildren<Image>();
+            TextMeshProUGUI[] txts = container.GetComponentsInChildren<TextMeshProUGUI>();
+
+            if (type == "d")
+            {
+                txts[0].text = string.Format(ML.systemMessages.tutorialD0, MultiplatformUtility.PrimaryInteractionKey);
+                txts[1].text = MultiplatformUtility.Mobile ? ML.systemMessages.tutorialD1Tap : ML.systemMessages.tutorialD1;
+                txts[2].text = ML.systemMessages.tutorialD2;
+                txts[3].text = ML.systemMessages.tutorialD3;
+            }
+            else
+            {
+                txts[0].text = string.Format(ML.systemMessages.tutorialG0, MultiplatformUtility.PrimaryInteractionKey);
+                txts[1].text = MultiplatformUtility.Mobile ? ML.systemMessages.tutorialG1Tap : ML.systemMessages.tutorialG1;
+                txts[2].text = ML.systemMessages.tutorialG2;
+            }
+
+            while (t < 1)
+            {
+                b.color = Color.Lerp(new Color(0, 0, 0, 0f), new Color(0, 0, 0, 0.45f), t);
                 t += Time.deltaTime;
                 yield return null;
             }
-            yield return new WaitForSeconds(0.75f);
-            t = 0;
-        }
 
-        while (!Input.anyKey)
-        {
-            yield return null;
-        }
-
-        t = 0;
-
-        while (t < 1.2f)
-        {
             for (int i = 0; i < txts.Length; i++)
             {
-                imgs[i + 1].color = Color.Lerp(Color.white, new Color(1, 1, 1, 0), t);
-                txts[i].color = Color.Lerp(Color.white, new Color(1, 1, 1, 0), t);
-                t += Time.deltaTime;
+
+                while (t < 1.2f)
+                {
+                    imgs[i + 1].color = Color.Lerp(new Color(1, 1, 1, 0), Color.white, t);
+                    txts[i].color = Color.Lerp(new Color(1, 1, 1, 0), Color.white, t);
+                    t += Time.deltaTime;
+                    yield return null;
+                }
+                yield return new WaitForSeconds(0.75f);
+                t = 0;
             }
-            yield return null;
-        }
+
+            while (!Input.anyKey)
+            {
+                yield return null;
+            }
+
+            t = 0;
+
+            while (t < 1.2f)
+            {
+                for (int i = 0; i < txts.Length; i++)
+                {
+                    imgs[i + 1].color = Color.Lerp(Color.white, new Color(1, 1, 1, 0), t);
+                    txts[i].color = Color.Lerp(Color.white, new Color(1, 1, 1, 0), t);
+                    t += Time.deltaTime;
+                }
+                yield return null;
+            }
+        
 
 
-        container.gameObject.SetActive(false);
-        if (type == "d")
-            cameraInterface.participateButton.GetComponent<ParticipateButton>().Show();
-        GetComponent<Movement>().Busy = false;
-        DialogueInstancer.deactivateDialoguesAndGraffiti = false;
-        noMenu = false;
+            container.gameObject.SetActive(false);
+            if (type == "d")
+                cameraInterface.participateButton.GetComponent<ParticipateButton>().Show();
+            GetComponent<Movement>().Busy = false;
+            DialogueInstancer.deactivateDialoguesAndGraffiti = false;
+            noMenu = false;
     }
 
     public void GameOver()

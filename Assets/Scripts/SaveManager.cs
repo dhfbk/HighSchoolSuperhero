@@ -428,6 +428,10 @@ public class SaveManager : MonoBehaviour
         PlayerLogger pl = agent.GetComponent<PlayerLogger>();
         pl.playerLog.GameTime += pl.gametimesw.ElapsedMilliseconds / 1000f;
         pl.gametimesw.Restart();
+
+        //Transfer from logger to player
+        //agent.playerLog = pl.playerLog;
+
         state.playerLog = pl.playerLog;
 
         state.id = agent.id;
