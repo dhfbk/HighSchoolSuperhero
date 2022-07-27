@@ -155,6 +155,7 @@ public class SaveManager : MonoBehaviour
             agent.name = PlayerPrefs.GetString("Name");
 
         agent.gameState = state;
+        agent.GetComponent<PlayerLogger>().playerLog = state.playerLog;
 
         Player.rCondition = state.rCondition;
 
@@ -164,7 +165,6 @@ public class SaveManager : MonoBehaviour
         agent.questionnaireFilled = state.questionnaireFilled;
         agent.TotalAnnotatedDialogues = state.totalAnnotatedDialogues;
         agent.TotalAnnotatedGraffiti = state.totalAnnotatedGraffiti;
-        agent.GetComponent<PlayerLogger>().playerLog = state.playerLog; //test
         agent.SetMaxSoap(state.maxSoap);
         agent.SetSoap(state.soap);
         agent.SetLevel(state.level);

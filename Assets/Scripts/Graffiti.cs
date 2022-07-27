@@ -577,6 +577,7 @@ public class Graffiti : MonoBehaviour, ITriggerable
     //Button press
     public void StartGraffiti(Player Agent)
     {
+        Agent.GetComponent<PlayerLogger>().playerLog.NumberOfGraffitiActivated++;
         HidePlayer();
         if (Agent != null && DialogueInstancer.deactivateDialoguesAndGraffiti == false)
         {
@@ -650,6 +651,7 @@ public class Graffiti : MonoBehaviour, ITriggerable
     private IEnumerator Annotate()
     {
         Player agent = Agent;
+        agent.GetComponent<PlayerLogger>().playerLog.NumberOfAnnotatedGraffiti++;
         List<int> occludedTokens = CalculateOcclusion(tokens);
         float timePerToken = PlayerLogger.CalculateTimePerToken(currentAnnSent.tokens.Count, Agent.playerLogger.GetGraffitiAnnotationTime());
         string tasktype = Player.rCondition == RCondition.Restricted ? "GR" : "G";

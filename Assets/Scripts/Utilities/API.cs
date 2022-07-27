@@ -399,6 +399,7 @@ public class API : MonoBehaviour
     {
         if (Player.admin)
         {
+            print(JsonUtility.ToJson(agent.gameState));
             print("Demo mode: game was saved only temporarily");
             //PopUpUtility.Open(agent.cameraInterface.popUpCanvas, PopUpType.LocalizedType(agent, PopUpType.Types.warning), "Demo mode: game not saved", 2);
             yield break;
