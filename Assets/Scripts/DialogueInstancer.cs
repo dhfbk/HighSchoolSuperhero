@@ -594,6 +594,7 @@ public class DialogueInstancer : MonoBehaviour, ITriggerable
 
     public static IEnumerator Annotate(Player Agent, string taskType, MonoBehaviour mb)
     {
+        Agent.playerLogger.playerLog.NumberOfAnnotatedSentences++;
         float agreement = 0;
         List<GameObject> tokens = MessageUtility.FindTokens();
         float timePerToken = PlayerLogger.CalculateTimePerToken(tokens.Count, Agent.playerLogger.StopSentenceAnnotationSW());
