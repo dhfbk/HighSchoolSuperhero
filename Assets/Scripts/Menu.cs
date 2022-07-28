@@ -102,6 +102,10 @@ public class Menu : MonoBehaviour
     }
     private void Update()
     {
+        if (Input.GetKeyDown("q"))
+        {
+            TakeMeToTheQuestionnaire(transform.root.GetComponent<CameraInterface>().player);
+        }
         if (API.logged && initiateLoad)
         {
             if (API.isIDRegistered)
@@ -187,7 +191,7 @@ public class Menu : MonoBehaviour
             messaggio = "Eccellente! Hai fatto un lavoro sensazionale!";
 
         string faiIlQuestionario = "Ora per favore dedica 5 minuti del tuo tempo per fare il nostro questionario!";
-        PopUpUtility.Open(cameraInterface.popUpCanvas, PopUpType.Success, "Hai completato l'annotazione di 30 frasi! \n La qualit‡ linguistica della citt‡ Ë " + (int)SafetyBar.CurrentSafety + "/1000. \n" + messaggio + "\n" + faiIlQuestionario, 10);
+        PopUpUtility.Open(cameraInterface.popUpCanvas, PopUpType.Success, "Hai completato l'annotazione di 30 frasi! \n La qualit√† linguistica della citt√†!" + (int)SafetyBar.CurrentSafety + "/1000. \n" + messaggio + "\n" + faiIlQuestionario, 10);
         yield return new WaitForSeconds(10);
         
         cameraInterface.menuCanvas.gameObject.SetActive(false);

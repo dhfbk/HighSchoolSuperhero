@@ -56,42 +56,63 @@ public class Questionnaire : MonoBehaviour
     {
         language = Player.language;
         string dir = Path.Combine(Application.streamingAssetsPath, "Questionnaire.txt");
-        if (LoadUtility.Web)
-        {
+        //if (LoadUtility.Web)
+        //{
             StartCoroutine(LoadQuestionnaires(transform.parent.GetComponent<QuestionnaireSequence>().questionnaireSequence[0]));
-        }
-        else
-        {
-            string language = ML.GetLang(this.language);
-            List<string> items = new List<string>();
-            foreach (string type in types)
-            {
-                foreach (string file in Directory.GetFiles(Path.Combine(Application.streamingAssetsPath, $"Questionnaires/{type}/{language}")))
-                {
-                    if (!file.Contains(".meta"))
-                        items.AddRange(File.ReadAllLines(file));
-                }
-            }
-            //InstantiateItems(items);
-        }
-        List<List<string>> a = new List<List<string>>();
+        //}
+        //else
+        //{
+        //    string language = ML.GetLang(this.language);
+        //    List<string> items = new List<string>();
+        //    foreach (string type in types)
+        //    {
+        //        foreach (string file in Directory.GetFiles(Path.Combine(Application.streamingAssetsPath, $"Questionnaires/{type}/{language}")))
+        //        {
+        //            if (!file.Contains(".meta"))
+        //                items.AddRange(File.ReadAllLines(file));
+        //        }
+        //    }
+        //    //InstantiateItems(items);
+        //}
     }
 
     public IEnumerator LoadQuestionnaires(string type)
     {
-        string url = API.urls.getQuestionnaire;
-        WWWForm form = new WWWForm();
-        form.AddField("Name", type);
-
-        string questionnaireJson ="";
-        using (UnityWebRequest www = UnityWebRequest.Post(url, form))
+        string path = Path.Combine(Application.streamingAssetsPath, $"Questionnaires/{type}/{ML.GetLang(this.language)}/{type}.txt");
+        string file = "";
+        if (path.Contains("://") || path.Contains(":///"))
         {
-            yield return www.SendWebRequest();
-            questionnaireJson = www.downloadHandler.text;
+            using (UnityWebRequest www = UnityWebRequest.Get(path))
+            {
+                yield return www.SendWebRequest();
+
+                if (www.result != UnityWebRequest.Result.ConnectionError)
+                {
+                    file = www.downloadHandler.text;
+                }
+            }
         }
+        else
+        {
+            file = File.ReadAllText(path);
+        }
+        //if (!LoadUtility.Web)
+        //url = API.urls.getQuestionnaire;
+        //WWWForm form = new WWWForm();
+        //form.AddField("Name", type);
 
-        Q q = (Q)JsonUtility.FromJson(questionnaireJson, typeof(Q));
+        //string questionnaireJson ="";
+        //using (UnityWebRequest www = UnityWebRequest.Post(url, form))
+        //{
+        //    yield return www.SendWebRequest();
+        //    questionnaireJson = www.downloadHandler.text;
+        //}
 
+        //Q q = (Q)JsonUtility.FromJson(questionnaireJson, typeof(Q));
+
+        Q q = new Q();
+        q.items = TextToItems(file.Split(new string[] { "\r\n", "\r", "\n" }, StringSplitOptions.RemoveEmptyEntries).ToList());
+        
         QuestionnaireSequence manager = transform.parent.GetComponent<QuestionnaireSequence>();
         task = manager.topicTask[manager.GetCurrentIndex()];
         questionnaire = manager.questionnaireSequence[manager.GetCurrentIndex()];
@@ -101,12 +122,33 @@ public class Questionnaire : MonoBehaviour
 
         if (q.random)
         {
-            q.items = q.items.OrderBy(a => a.question[0].Length).ToList();
+            q.items = q.items.OrderBy(a => a.question.Length).ToList();
         }
 
         InstantiateItems(q);
     }
 
+    private List<QItem> TextToItems(List<string> text)
+    {
+        List<QItem> list = new List<QItem>();
+
+        foreach (string line in text)
+        {
+            QItem item = new QItem(line.Substring(0, line.IndexOf("[")));
+            if (line.Contains("[inputfield"))
+                item.type = QItemType.InputItem;
+            else if (line.Contains("[options="))
+            {
+                item.type = QItemType.MultiItem;
+                item.options = line.Substring(line.IndexOf("=")+1);
+            }
+            else
+                item.type = QItemType.LikertItem;
+            list.Add(item);
+        }
+
+        return list;
+    }
     public void InstantiateItems(Q q)
     {
         foreach (QItem item in q.items)
@@ -114,7 +156,7 @@ public class Questionnaire : MonoBehaviour
             GameObject instantiatedItem = Instantiate(Resources.Load<GameObject>(item.type.ToString()));
             if (item.type == QItemType.MultiItem)
             {
-                List<string> options = item.options[0].Split('|').ToList();
+                List<string> options = item.options.Split(',').ToList();
                 //Instantiate all options
                 foreach (string option in options)
                 {
@@ -131,8 +173,8 @@ public class Questionnaire : MonoBehaviour
             instantiatedItem.transform.localScale = Vector3.one;
 
             int index = (int)Player.language;
-            instantiatedItem.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = item.question[index];
-            instantiatedItem.transform.name = item.question[index];
+            instantiatedItem.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = item.question;
+            instantiatedItem.transform.name = item.question;
             //instantiatedItem.GetComponent<ResetCheckmarks>().instance = instance;
         }
     }
@@ -189,11 +231,22 @@ public class Q
 public enum QItemType { InputItem, MultiItem, LikertItem }
 
 [Serializable]
-public class QItem
+public class QItemML
 {
     public List<string> question;
     public QItemType type;
     public List<string> options;
-    public QItem() { }
-    public QItem(List<string> question, QItemType type, List<string> options = null) { this.question = question; this.type = type; this.options = options; }
+    public QItemML() { }
+    public QItemML(string item) { }
+    public QItemML(List<string> question, QItemType type, List<string> options = null) { this.question = question; this.type = type; this.options = options; }
+}
+
+[Serializable]
+public class QItem
+{
+    public string question;
+    public QItemType type;
+    public string options;
+    public QItem(string text) { this.question = text; type = QItemType.LikertItem; }
+    public QItem(string text, QItemType type) { this.question = text; this.type = type; }
 }
