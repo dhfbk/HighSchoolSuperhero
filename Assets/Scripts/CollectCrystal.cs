@@ -36,7 +36,7 @@ public class CollectCrystal : MonoBehaviour, ISaveable, ITriggerable
             
             if (lastcoroutine != null)
                 StopCoroutine(lastcoroutine);
-            Collect(other.GetComponent<Player>());
+            Collect(other.GetComponentInChildren<Player>());
         }
     }
 

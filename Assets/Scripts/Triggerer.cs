@@ -34,7 +34,7 @@ public class Triggerer : MonoBehaviour
 
     void OnTriggerExit(Collider col)
     {
-        if (col.CompareTag("Player"))
+        if (col.CompareTag("Player") && col.transform.name == "Player")
         {
             triggerScript.TriggerOff();
         }
