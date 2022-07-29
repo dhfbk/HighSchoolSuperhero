@@ -107,6 +107,8 @@ public class GameState
     public User user;
     public List<string> playerParts;
     public List<string> friendParts;
+    public QFilledList questionnaireData;
+
     public GameState()
     {
         annotatedGraffitiIndeces = new List<int>();
@@ -175,6 +177,8 @@ public class SaveManager : MonoBehaviour
         agent.SetLikes(state.likes);
         agent.graffitiTutorial = state.graffitiTutorial;
         agent.dialogueTutorial = state.dialogueTutorial;
+        agent.questionnaireData = state.questionnaireData;
+
         Graffiti.gameState = state;
         DialogueInstancer.uniqueLineIndex = state.dialogueIndex;
 
@@ -459,6 +463,8 @@ public class SaveManager : MonoBehaviour
         state.battery = agent.GetEnergy();
         state.playerParts = new List<string>();
         state.dialogueIndex = DialogueInstancer.uniqueLineIndex;
+
+        state.questionnaireData = agent.questionnaireData;
 
         Parts parts = agent.GetComponent<Parts>();
         state.playerParts.Add(parts.body.GetComponent<SkinnedMeshRenderer>().sharedMesh.name);

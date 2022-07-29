@@ -11,10 +11,16 @@ using UnityEngine.Networking;
 using System;
 
 [Serializable]
+public class QFilledList
+{
+    public List<QFilled> qlist;
+    public QFilledList() { qlist = new List<QFilled>(); }
+    public QFilledList(List<QFilled> list) { qlist = list; }
+}
+
+[Serializable]
 public class QFilled
 {
-    public string id;
-    public string task;
     public string questionnaire;
     public List<QResponse> entries;
 
@@ -22,9 +28,8 @@ public class QFilled
     {
         entries = new List<QResponse>();
     }
-    public QFilled(string id, string type)
+    public QFilled(string type)
     {
-        this.id = id;
         this.questionnaire = type;
         entries = new List<QResponse>();
     }
@@ -182,7 +187,6 @@ public class Questionnaire : MonoBehaviour
     public QFilled FindValues()
     {
         QFilled qfilled = new QFilled();
-        qfilled.task = task;
         qfilled.questionnaire = questionnaire;
         foreach (Transform child in content.transform)
         {

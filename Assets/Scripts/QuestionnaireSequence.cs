@@ -31,7 +31,12 @@ public class QuestionnaireSequence : MonoBehaviour
         Player agent = transform.root.GetComponent<CameraInterface>().player;
         if (AllFilled(q, qfilled))
         {
-            StartCoroutine(SendFilledQuestionnaire(agent, qfilled));
+            if (agent.questionnaireData == null)
+                agent.questionnaireData = new QFilledList();
+            agent.questionnaireData.qlist.Add(qfilled);
+            print(JsonUtility.ToJson(qfilled));
+
+            //StartCoroutine(SendFilledQuestionnaire(agent, qfilled));
             foreach (Transform t in q.content.transform)
             {
                 Destroy(t.gameObject);
@@ -76,7 +81,6 @@ public class QuestionnaireSequence : MonoBehaviour
     {
         WWWForm form = new WWWForm();
         form.AddField("ID", agent.id);
-        form.AddField("Task", qfilled.task);
         form.AddField("Data", JsonUtility.ToJson(qfilled));
 
         string url = API.urls.postQuestionnaire;

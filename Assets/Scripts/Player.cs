@@ -87,6 +87,7 @@ public class Player : MonoBehaviour, IPlayer
     public StringParts friendParts;
     public static bool gameOverCalled;
     public bool noMenu;
+    public QFilledList questionnaireData;
     private int totalAnnotatedDialogues, totalAnnotatedGraffiti;
     public int TotalAnnotatedDialogues { get => totalAnnotatedDialogues; 
         set 
