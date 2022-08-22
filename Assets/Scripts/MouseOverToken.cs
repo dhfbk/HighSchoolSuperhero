@@ -48,8 +48,16 @@ public class MouseOverToken : MonoBehaviour
                             tok.GetComponent<TextMeshPro>().faceColor = new Color(1f, 1f, 1f, 1f);
 
                     //activate iF
-                    agent.cameraInterface.mouseButton.SetActive(false);
-                    agent.cameraInterface.enterButton.SetActive(true);
+                    if (!MultiplatformUtility.Mobile)
+                    {
+                        agent.cameraInterface.mouseButton.SetActive(false);
+                        agent.cameraInterface.enterButton.SetActive(true);
+                    }
+                    else
+                    {
+                        agent.cameraInterface.touchIcon.SetActive(false);
+                        agent.cameraInterface.okCircle.SetActive(true);
+                    }
                     agent.playerLogger.StopSentenceAnnotationSW();
                     //agent.AddEnergy(-1);
                     ifParent.SetActive(true);

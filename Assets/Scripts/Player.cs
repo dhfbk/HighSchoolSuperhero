@@ -436,7 +436,6 @@ public class Player : MonoBehaviour, IPlayer
         }
         area = 1;
         playerLog = new PlayerLog();
-        transform.position = GameObject.Find("PlayerPos").transform.position;
         SaveManager.gameLoaded = true;
         if (LoadingManager.config.guest == true)
             SetID(Password.Generate() + "Guest");

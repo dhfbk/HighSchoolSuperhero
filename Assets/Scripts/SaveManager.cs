@@ -330,65 +330,6 @@ public class SaveManager : MonoBehaviour
         }
     }
 
-    public static void SavePrefs(Player agent)
-    {
-        //Position
-        PlayerPrefs.SetFloat("x", agent.transform.position.x);
-        PlayerPrefs.SetFloat("y", agent.transform.position.y);
-        PlayerPrefs.SetFloat("z", agent.transform.position.z);
-
-        //Rotation
-        PlayerPrefs.SetFloat("qx", agent.transform.rotation.x);
-        PlayerPrefs.SetFloat("qy", agent.transform.rotation.y);
-        PlayerPrefs.SetFloat("qz", agent.transform.rotation.z);
-        PlayerPrefs.SetFloat("qw", agent.transform.rotation.w);
-
-        //Appearance
-        Parts parts = agent.GetComponent<Parts>();
-        PlayerPrefs.SetString("Hair", parts.hair.GetComponent<SkinnedMeshRenderer>().sharedMesh.name);
-        PlayerPrefs.SetString("Glasses", parts.glasses.GetComponent<SkinnedMeshRenderer>().sharedMesh.name);
-        PlayerPrefs.SetString("Eyes", parts.eyes.GetComponent<SkinnedMeshRenderer>().sharedMesh.name);
-        PlayerPrefs.SetString("Shirt", parts.shirt.GetComponent<SkinnedMeshRenderer>().sharedMesh.name);
-        PlayerPrefs.SetString("Pants", parts.pants.GetComponent<SkinnedMeshRenderer>().sharedMesh.name);
-        PlayerPrefs.SetString("Shoes", parts.shoes.GetComponent<SkinnedMeshRenderer>().sharedMesh.name);
-
-        //Crystals
-        PlayerPrefs.SetInt("Crystals", agent.Crystals);
-
-        //Experience
-        PlayerPrefs.SetFloat("Exp", agent.Exp);
-        PlayerPrefs.SetInt("Level", agent.Level);
-
-        //Logic
-        PlayerPrefs.SetInt("Saved", 1);
-        PlayerPrefs.Save();
-    }
-    public static void LoadPrefs(Player agent)
-    {
-        agent.Level = PlayerPrefs.GetInt("Level");
-        agent.Exp = PlayerPrefs.GetFloat("Exp");
-        agent.transform.position = new Vector3(PlayerPrefs.GetFloat("x"), PlayerPrefs.GetFloat("y"), PlayerPrefs.GetFloat("z"));
-        agent.transform.rotation = new Quaternion(PlayerPrefs.GetFloat("qx"), PlayerPrefs.GetFloat("qy"), PlayerPrefs.GetFloat("qz"), PlayerPrefs.GetFloat("qw"));
-        Mesh mesh;
-        mesh = (Mesh)Resources.Load(PlayerPrefs.GetString("Hair"), typeof(Mesh));
-        agent.gameObject.GetComponent<Parts>().hair.GetComponent<SkinnedMeshRenderer>().sharedMesh = agent.avatar.GetComponent<Parts>().hair.GetComponent<SkinnedMeshRenderer>().sharedMesh = mesh;
-
-        mesh = (Mesh)Resources.Load(PlayerPrefs.GetString("Eyes"), typeof(Mesh));
-        agent.GetComponent<Parts>().eyes.GetComponent<SkinnedMeshRenderer>().sharedMesh = agent.avatar.GetComponent<Parts>().eyes.GetComponent<SkinnedMeshRenderer>().sharedMesh = mesh;
-
-        mesh = (Mesh)Resources.Load(PlayerPrefs.GetString("Glasses"), typeof(Mesh));
-        agent.GetComponent<Parts>().glasses.GetComponent<MeshFilter>().sharedMesh = agent.avatar.GetComponent<Parts>().glasses.GetComponent<MeshFilter>().sharedMesh = mesh;
-
-        mesh = (Mesh)Resources.Load(PlayerPrefs.GetString("Shirt"), typeof(Mesh));
-        agent.GetComponent<Parts>().shirt.GetComponent<SkinnedMeshRenderer>().sharedMesh = agent.avatar.GetComponent<Parts>().shirt.GetComponent<SkinnedMeshRenderer>().sharedMesh = mesh;
-
-        mesh = (Mesh)Resources.Load(PlayerPrefs.GetString("Pants"), typeof(Mesh));
-        agent.GetComponent<Parts>().pants.GetComponent<SkinnedMeshRenderer>().sharedMesh = agent.avatar.GetComponent<Parts>().pants.GetComponent<SkinnedMeshRenderer>().sharedMesh = mesh;
-
-        mesh = (Mesh)Resources.Load(PlayerPrefs.GetString("Shoes"), typeof(Mesh));
-        agent.GetComponent<Parts>().shoes.GetComponent<SkinnedMeshRenderer>().sharedMesh = agent.avatar.GetComponent<Parts>().shoes.GetComponent<SkinnedMeshRenderer>().sharedMesh = mesh;
-    }
-
     public static void SavePlayerStats(Player agent) //to be moved
     {
         Save(agent, agent.saveName);

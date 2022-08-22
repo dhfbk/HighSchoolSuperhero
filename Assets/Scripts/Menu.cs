@@ -92,6 +92,7 @@ public class Menu : MonoBehaviour
 
         if (agent.friends > 0)
         {
+            friendInstructions.text = "";
             friendParts.gameObject.SetActive(true);
             SaveManager.LoadLook(friendParts, agent.friendParts);
         }

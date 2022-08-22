@@ -16,6 +16,7 @@ public class Intro : MonoBehaviour
     public float sleepTime;
     private bool allSet;
     bool introSet;
+    public bool overrideAdminSkip;
     Quaternion sitUp = new Quaternion(0, 1, 0, 0);
     Quaternion turn = new Quaternion(0, 1, 0, 0);
     private bool noPhone;
@@ -30,14 +31,14 @@ public class Intro : MonoBehaviour
     {
         if (LoadUtility.AllLoaded)
         {
-            if (!Player.admin)
+            if (!Player.admin || overrideAdminSkip)
             {
                 if (!introSet)
                 {
                     //this.enabled = false;
                     scientistHouseHandle.SetActive(true);
                     houseCamPos = camPos.transform.position;
-                    GameObject.Find("PlayerPos").transform.position = new Vector3(295.29f, 10.52f, -12.22f);
+                    transform.position = GameObject.Find("PlayerPos").transform.position;
                     scientist.SetActive(true);
                     introSet = true;
                 }
@@ -90,6 +91,7 @@ public class Intro : MonoBehaviour
             }
             else
             {
+                transform.position = GameObject.Find("PlayerPosAdmin").transform.position;
                 this.enabled = false;
             }           
         }
