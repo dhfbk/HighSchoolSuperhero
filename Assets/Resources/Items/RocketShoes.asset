@@ -19,4 +19,6 @@ MonoBehaviour:
   engDescription: Put these on to jump really high. You cannot fly though (yet!).
   itaDescription: "Metti queste scarpe per saltare molto in alto. Per\xF2 non pensare
     di poter volare (per ora!)."
+  fraDescription: "Mettez-les pour sauter tr\xE8s haut. Vous ne pouvez pas voler
+    cependant (encore!)."
   level: 4

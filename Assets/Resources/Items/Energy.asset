@@ -18,4 +18,5 @@ MonoBehaviour:
   price: 1
   engDescription: Recharge your Bully-o-Matic by 1 notch.
   itaDescription: Ricarica il tuo Bully-o-Matic di 1 tacca.
+  fraDescription: Rechargez votre Bully-o-Matic d'1 cran.
   level: 0

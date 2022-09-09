@@ -18,4 +18,5 @@ MonoBehaviour:
   price: 5
   engDescription: A special type of soap. Use it to change the graffiti.
   itaDescription: Un sapone speciale. Usalo per modificare i murales.
+  fraDescription: "Un type sp\xE9cial de savon. Utilisez-le pour changer le graffiti."
   level: 0

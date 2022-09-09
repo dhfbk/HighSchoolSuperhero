@@ -82,22 +82,6 @@ public class LoadingManager : MonoBehaviour
         API.readyToLoadGame = true;
         yield return StartCoroutine(API.GetSystemMessagesC());
 
-
-
-        //if (String.IsNullOrEmpty(PlayerPrefs.GetString("ID")))
-        //{
-        //    yield return StartCoroutine(PrepareNewGame());
-        //    SaveFound = false;
-        //}
-        //else
-        //{
-        //    yield return StartCoroutine(CheckSavedGame());
-        //}
-        //player.GetComponent<SequenceManager>().Next();
-        //this.gameObject.SetActive(false);
-        //}
-        //else
-        //{
         if (player.loaded == true)
         {
             SaveFound = true;
@@ -110,7 +94,7 @@ public class LoadingManager : MonoBehaviour
         API.logged = true;
         player.GetComponent<SequenceManager>().Next();
         this.gameObject.SetActive(false);
-        //}
+        
     }
     public static IEnumerator LoadConfig()
     {

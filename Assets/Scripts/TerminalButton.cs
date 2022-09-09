@@ -22,6 +22,8 @@ public class TerminalButton : MonoBehaviour
             description.text = itemSO.engDescription;
         else if (Player.language == ML.Lang.it)
             description.text = itemSO.itaDescription;
+        else if (Player.language == ML.Lang.fr)
+            description.text = itemSO.fraDescription;
         name.text = itemSO.name;
         icon.sprite = itemSO.icon;
     }

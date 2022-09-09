@@ -153,6 +153,7 @@ public class SaveManager : MonoBehaviour
     
     public static void DeployGameState(Player agent, GameState state)
     {
+        print("deploy called");
         if (PlayerPrefs.GetString("Name") != null)
             agent.name = PlayerPrefs.GetString("Name");
 
@@ -182,9 +183,11 @@ public class SaveManager : MonoBehaviour
         Graffiti.gameState = state;
         DialogueInstancer.uniqueLineIndex = state.dialogueIndex;
 
-        if (Player.condition == Condition.W3D)
-        {
+        //if (Player.condition == Condition.W3D)
+        //{
             agent.transform.position = state.playerPos;
+        print(state.playerPos);
+        print(agent.transform.position);
             agent.SetRocket(state.rocket);
             agent.SetGlider(state.glider);
             agent.transform.rotation = state.rotation;
@@ -199,13 +202,14 @@ public class SaveManager : MonoBehaviour
                 if ((o = GameObject.Find(os.name)) != null)
                 {
                     o.transform.position = os.position;
+
                     o.transform.rotation = os.rotation;
                     o.SetActive(os.active);
                     o.GetComponent<ISaveable>().State = os.state;
                     o.GetComponentInChildren<ISaveable>().State = os.state;
                 }
             }
-        }
+        //}
 
         if (Player.demo)
         {
@@ -222,6 +226,7 @@ public class SaveManager : MonoBehaviour
         //agent.SetSoap(100); //test
         agent.playerLogger.StartGameTimeSW();
         gameLoaded = true;
+        FindObjectOfType<Intro>().SetSkipIntro(true);
         LoadUtility.AllLoaded = true;
     }
     public static void LoadAvatarLook(GameObject avatar)

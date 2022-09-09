@@ -10,6 +10,7 @@ public class ItemScriptableObject : ScriptableObject
     public int price;
     public string engDescription;
     public string itaDescription;
+    public string fraDescription;
     public int level;
 
 }

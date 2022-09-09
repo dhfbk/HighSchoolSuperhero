@@ -324,7 +324,7 @@ public class API : MonoBehaviour
     // GET SAVE STATE
     //
     //----------------------------------------
-    public static void GetSave(Player agent)
+    public static void LoadGame(Player agent)
     {
         if (API.currentApi == Api.dev)
             agent.StartCoroutine(GetSaveC(agent));
@@ -340,6 +340,7 @@ public class API : MonoBehaviour
             }
         }
     }
+   
     public static IEnumerator GetSaveC(Player agent)
     {
         GameState state = null;
@@ -610,6 +611,7 @@ public class API : MonoBehaviour
                 else
                 {
                     dialogueSentences = sentres.sentences;
+                    DialogueInstancer.maxLineIndex = sentres.sentences.Count;
                 }
             }
             else

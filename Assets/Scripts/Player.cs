@@ -361,8 +361,9 @@ public class Player : MonoBehaviour, IPlayer
     {
 
     }
-    public void Initialize(bool load)
+    public void Initialize(bool load) //initialize the player according to presence or absence of game save
     {
+        ////This has to be done independently of the save game:
         //Setup player transform data
         transform.parent = null;
         GetComponent<CharacterCustomizationSetup>().enabled = false;
@@ -394,15 +395,18 @@ public class Player : MonoBehaviour, IPlayer
         //Temporary logger
         playerLogger = GetComponent<PlayerLogger>();
         //print(JsonUtility.ToJson(quest));
+        ////
 
+
+        ////Check if instructions are to load or create new
         if (load)
         {
             SetID(PlayerPrefs.GetString("ID"));
-            API.GetSave(this);
+            API.LoadGame(this); //Load
         }
         else
         {
-            StartCoroutine(NewPlayer());
+            StartCoroutine(NewPlayer()); //Create new player
         }
     }
 

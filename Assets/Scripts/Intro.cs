@@ -20,16 +20,21 @@ public class Intro : MonoBehaviour
     Quaternion sitUp = new Quaternion(0, 1, 0, 0);
     Quaternion turn = new Quaternion(0, 1, 0, 0);
     private bool noPhone;
+    private bool skipIntro;
     // Start is called before the first frame update
     void Start()
     {
 
     }
+    public void SetSkipIntro(bool v)
+    {
+        skipIntro = v;
+    }
 
     // Update is called once per frame
     void Update()
     {
-        if (LoadUtility.AllLoaded)
+        if (LoadUtility.AllLoaded && !skipIntro)
         {
             if (!Player.admin || overrideAdminSkip)
             {

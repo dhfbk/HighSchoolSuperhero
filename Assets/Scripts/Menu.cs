@@ -54,7 +54,10 @@ public class Menu : MonoBehaviour
                 Player.language = ML.Lang.en;
                 break;
             case 1:
-                Player.language= ML.Lang.it;
+                Player.language = ML.Lang.it;
+                break;
+            case 2:
+                Player.language = ML.Lang.fr;
                 break;
         }
         UpdateStrings();

@@ -20,4 +20,6 @@ MonoBehaviour:
     yourself into the sidewalk).
   itaDescription: "Usa questo deltaplano per saltare gi\xF9 dagli edifici con grazia
     (ed evitare di sfracellarti)."
+  fraDescription: "Utilisez ce planeur pour sauter des b\xE2timents avec gr\xE2ce
+    (et sans vous \xE9craser sur le trottoir)."
   level: 5

@@ -79,6 +79,7 @@ public class DialogueInstancer : MonoBehaviour, ITriggerable
     List<string> BadTags;
     List<string> GoodTags;
 
+    public static int maxLineIndex;
     public static bool deactivateDialoguesAndGraffiti;
 
     void Start()
@@ -688,7 +689,7 @@ public class DialogueInstancer : MonoBehaviour, ITriggerable
 
     public static void IncrementIndex()
     {
-        if (uniqueLineIndex + 1 >= LoadingManager.sentenceCount)
+        if (uniqueLineIndex + 1 >= DialogueInstancer.maxLineIndex)
         {
             uniqueLineIndex = 0;
         }
