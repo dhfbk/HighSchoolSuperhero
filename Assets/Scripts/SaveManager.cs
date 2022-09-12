@@ -384,6 +384,7 @@ public class SaveManager : MonoBehaviour
 
         state.playerLog = pl.playerLog;
 
+        state.friends = agent.friends;
         state.id = agent.id;
         state.graffitiTutorial = agent.graffitiTutorial;
         state.dialogueTutorial = agent.dialogueTutorial;
