@@ -17,7 +17,7 @@ public class FittingRoom : MonoBehaviour, ITriggerable
                 if (GetComponent<MouseOver>().on)
                 {
                     if (!activated && Agent != null)
-                    {//altrimenti prende il click anche sotto la finestra
+                    {//altrimenti prende il click anche sotto i pulsanti
                         Toggle(Agent);
                     }
                 }
@@ -52,10 +52,13 @@ public class FittingRoom : MonoBehaviour, ITriggerable
             activated = true;
             ci.hudCanvas.gameObject.SetActive(false);
             ci.editorCanvas.gameObject.SetActive(true);
+            
 
             cc.doNotMoveModel = true;
             cc.nameObj.SetActive(false);
             cc.fittingScript = this;
+            cc.LoadParts();
+            cc.InitializePartIndeces();
 
             //Place player
             Agent.GetComponent<CharacterCustomizationSetup>().enabled = true;

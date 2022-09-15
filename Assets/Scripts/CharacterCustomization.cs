@@ -74,52 +74,62 @@ public class CharacterCustomization : MonoBehaviour
             ConfirmButton();
         else
         {
-            currentNumber = new Dictionary<string, int>();
-            currentNumber["Hair"] = currentNumber["Eyes"] = currentNumber["Glasses"] = currentNumber["Pants"] = currentNumber["Shoes"] = currentNumber["Shirt"] = 0;
-            maxHair = maxShirt = maxEyes = maxGlasses = maxPants = maxShoes = maxBody = 0;
             dest = new Vector3(2F, 10F, -13F);
             startDest = dest;
 
             sliderObj = GameObject.FindGameObjectWithTag("Slider");
-            //Count options
 
-            Mesh[] objA = Resources.LoadAll<Mesh>("Parts/Player");
+            //Initialize customization parts
+            LoadParts();
+            InitializePartIndeces();
 
-            foreach (Mesh obj in objA)
-            {
-                if (obj.name.Contains("Hair"))
-                {
-                    maxHair += 1;
-                    hairPool.Add(obj);
-                }
-                else if (obj.name.Contains("Eyes"))
-                {
-                    maxEyes += 1;
-                    eyesPool.Add(obj);
-                }
-                else if (obj.name.Contains("Glasses"))
-                {
-                    maxGlasses += 1;
-                    glassesPool.Add(obj);
-                }
-                else if (obj.name.Contains("Shirt"))
-                {
-                    maxShirt += 1;
-                    shirtPool.Add(obj);
-                }
-                else if (obj.name.Contains("Pants"))
-                {
-                    maxPants += 1;
-                    pantsPool.Add(obj);
-                }
-                else if (obj.name.Contains("Shoes"))
-                {
-                    maxShoes += 1;
-                    shoesPool.Add(obj);
-                }
-            }
         }
 
+    }
+    public void InitializePartIndeces()
+    {
+        currentNumber = new Dictionary<string, int>();
+        currentNumber["Hair"] = currentNumber["Eyes"] = currentNumber["Glasses"] = currentNumber["Pants"] = currentNumber["Shoes"] = currentNumber["Shirt"] = 0;
+
+    }
+    public void LoadParts()
+    {
+        maxHair = maxShirt = maxEyes = maxGlasses = maxPants = maxShoes = maxBody = 0;
+        Mesh[] objA = Resources.LoadAll<Mesh>("Parts/Player");
+
+        foreach (Mesh obj in objA)
+        {
+            if (obj.name.Contains("Hair"))
+            {
+                maxHair += 1;
+                hairPool.Add(obj);
+            }
+            else if (obj.name.Contains("Eyes"))
+            {
+                maxEyes += 1;
+                eyesPool.Add(obj);
+            }
+            else if (obj.name.Contains("Glasses"))
+            {
+                maxGlasses += 1;
+                glassesPool.Add(obj);
+            }
+            else if (obj.name.Contains("Shirt"))
+            {
+                maxShirt += 1;
+                shirtPool.Add(obj);
+            }
+            else if (obj.name.Contains("Pants"))
+            {
+                maxPants += 1;
+                pantsPool.Add(obj);
+            }
+            else if (obj.name.Contains("Shoes"))
+            {
+                maxShoes += 1;
+                shoesPool.Add(obj);
+            }
+        }
     }
     public void UpdateStrings()
     {

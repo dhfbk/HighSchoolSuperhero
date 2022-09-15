@@ -591,7 +591,7 @@ public class API : MonoBehaviour
         }
     }
 
-    public static IEnumerator GetSentenceBulk(Player agent, int index, Variant variant, int limit = 0, int offset = 0)
+    public static IEnumerator GetSentenceBulk(Player agent, int index, Variant variant, int limit = 0, int offset = 0) //Executed only once at the beginning of the game
     {
         string set = variant == Variant.graffiti ? "gr" : "ch";
         //final API ?action=task&sub=sentences&session_id=cb3b3dff39a8e828572536cbb5d1d92e&type=hssh&set=ch
@@ -611,7 +611,9 @@ public class API : MonoBehaviour
                 else
                 {
                     dialogueSentences = sentres.sentences;
-                    DialogueInstancer.maxLineIndex = sentres.sentences.Count;
+                    DialogueInstancer.maxLineIndex = sentres.sentences.Last().id;
+                    DialogueInstancer.firstIndex = sentres.sentences[0].id;
+                    print("firstIndex " + DialogueInstancer.firstIndex);
                 }
             }
             else

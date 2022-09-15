@@ -80,6 +80,7 @@ public class DialogueInstancer : MonoBehaviour, ITriggerable
     List<string> GoodTags;
 
     public static int maxLineIndex;
+    public static int firstIndex;
     public static bool deactivateDialoguesAndGraffiti;
 
     void Start()
@@ -451,8 +452,12 @@ public class DialogueInstancer : MonoBehaviour, ITriggerable
     private IEnumerator ExecuteTurn(MessageDelegate nextTurn)
     {
         if (nextTurn == ShowCloud)
+        {
             //yield return StartCoroutine(API.GetSentence(Agent, uniqueLineIndex, variant));//-->
+            print(uniqueLineIndex);
+            print(DialogueInstancer.maxLineIndex);
             yield return StartCoroutine(API.GetSentenceSingleC(Agent, uniqueLineIndex, "ch"));//-->
+        }
         else
             yield return null;
         nextTurn();
@@ -691,7 +696,7 @@ public class DialogueInstancer : MonoBehaviour, ITriggerable
     {
         if (uniqueLineIndex + 1 >= DialogueInstancer.maxLineIndex)
         {
-            uniqueLineIndex = 0;
+            uniqueLineIndex = DialogueInstancer.firstIndex;
         }
         else
         {

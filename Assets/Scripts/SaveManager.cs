@@ -268,6 +268,11 @@ public class SaveManager : MonoBehaviour
     public static void LoadLook(Parts parts, GameState state)
     {
         List<string> meshes = state.playerParts;
+        print("Meshes: " + meshes[0]);
+        print("Meshes: " + meshes[1]);
+        print("Meshes: " + meshes[2]);
+        print("Meshes: " + meshes[3]);
+        print("Meshes: " + meshes[4]);
         //Meshes
         parts.hair.GetComponent<SkinnedMeshRenderer>().sharedMesh = Resources.Load<Mesh>("Parts/Player/" + meshes[1]);
         parts.eyes.GetComponent<SkinnedMeshRenderer>().sharedMesh = Resources.Load<Mesh>("Parts/Player/" + meshes[2]);
