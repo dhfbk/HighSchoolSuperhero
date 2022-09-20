@@ -271,7 +271,7 @@ public class API : MonoBehaviour
             yield return www.SendWebRequest();
             string text = www.downloadHandler.text;
             if (www.timeout > 5)
-                PopUpUtility.Open(FindObjectOfType<CameraInterface>().popUpCanvas, PopUpType.Error, "Timeout", 5);
+                PopUpUtility.Open(FindObjectOfType<CameraInterface>().popUpCanvas, PopUpType.LocalizedType(agent, PopUpType.Types.error), "Timeout", 5);
             if (www.result == UnityWebRequest.Result.Success)
             {
                 LoginState = 0;
@@ -312,9 +312,9 @@ public class API : MonoBehaviour
             {
                 ErrorResult erres = JsonUtility.FromJson<ErrorResult>(text);
                 if (erres != null)
-                    PopUpUtility.Open(FindObjectOfType<CameraInterface>().popUpCanvas, PopUpType.Error, www.error + "\n" + "Action: Login" + "\n" + erres.error, 5);
+                    PopUpUtility.Open(FindObjectOfType<CameraInterface>().popUpCanvas, PopUpType.LocalizedType(agent, PopUpType.Types.error), www.error + "\n" + "Action: Login" + "\n" + erres.error, 5);
                 else
-                    PopUpUtility.Open(FindObjectOfType<CameraInterface>().popUpCanvas, PopUpType.Error, www.error + "\n" + "Action: Login", 5);
+                    PopUpUtility.Open(FindObjectOfType<CameraInterface>().popUpCanvas, PopUpType.LocalizedType(agent, PopUpType.Types.error), www.error + "\n" + "Action: Login", 5);
             }
         }
     }

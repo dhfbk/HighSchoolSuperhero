@@ -96,7 +96,9 @@ public class Movement : MonoBehaviour
             GetComponent<Rigidbody>().useGravity = false;
         audio = GetComponent<AudioSource>();
         agent = GetComponent<Player>();
-        anim = GetComponent<Animator>();
+        anim = GameObject.Find("PlayerModelGroup").GetComponent<Animator>();
+        print("name" + anim.transform.gameObject.name);
+        print("name" + anim.name);
         if (Speed == 0)
             Speed = 1;
         r = GetComponent<Rigidbody>();
@@ -214,7 +216,7 @@ public class Movement : MonoBehaviour
                     {
                         //if (mouseMovementMask.All(x=>x != hit.transform.gameObject.layer))
                         //{
-                        GetComponent<Animator>().SetBool("Walk", true);
+                        anim.SetBool("Walk", true);
                         Vector3 sameHeightPoint = new Vector3(hit.point.x, transform.position.y, hit.point.z);
                         transform.LookAt(sameHeightPoint);
                         //transform.position = Vector3.MoveTowards(transform.position, new Vector3(hit.point.x, transform.position.y, hit.point.z), Time.deltaTime * 4 * Speed);
@@ -227,7 +229,7 @@ public class Movement : MonoBehaviour
                         float s = (p * 4) / d;
                         Vector3 vector = (sameHeightPoint - transform.position).normalized * 6 * Speed;
                         finalVec = new Vector3(vector.x * s, r.velocity.y, vector.z * s);
-                        GetComponent<Animator>().SetFloat("Speed", s);
+                        anim.SetFloat("Speed", s);
                         moveVec = new Vector2(finalVec.x, finalVec.z).normalized * s;
                         //}
                     }
@@ -259,7 +261,7 @@ public class Movement : MonoBehaviour
                 {
                     Vector2 input = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
                     if (!jumping)
-                        GetComponent<Animator>().SetBool("Walk", true);
+                        anim.SetBool("Walk", true);
                     moveVec = input;
                     Vector3 sameHeightCamera = new Vector3(Camera.main.transform.position.x, transform.position.y, Camera.main.transform.position.z);
                     Vector3 dir = (transform.position - sameHeightCamera).normalized;
@@ -414,12 +416,16 @@ public class Movement : MonoBehaviour
         {
             if (!gliding)
             {
+                Transform pmg = GameObject.Find("PlayerModelGroup").transform;
+                pmg.localRotation = Quaternion.Euler(pmg.localEulerAngles + new Vector3(60, 0, 0));
                 gliding = true;
                 gliderInstance = Instantiate(glider);
                 StartCoroutine(GliderPopUp());
                 gliderInstance.transform.position = this.transform.position;
                 gliderInstance.transform.parent = this.gameObject.transform;
+                gliderInstance.transform.localPosition += new Vector3(0, 0, 0.33f);
                 gliderInstance.transform.localRotation = Quaternion.Euler(new Vector3(0, 90, 0));
+                
                 GetComponent<Rigidbody>().drag = 7;
             }
             else
@@ -442,6 +448,8 @@ public class Movement : MonoBehaviour
 
     private void DestroyGlider()
     {
+        Transform pmg = GameObject.Find("PlayerModelGroup").transform;
+        pmg.localRotation = Quaternion.identity;
         gliding = false;
         Destroy(gliderInstance);
         gliderInstance = null;

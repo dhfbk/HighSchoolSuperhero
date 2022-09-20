@@ -53,5 +53,6 @@
    "youSavedAStudent":"Vous avez sauvé un étudiant!",
    "finishedGraffiti":"Vous avez fini de juger les graffitis! Vous pouvez continuer à corriger les phrases mais elles ne seront pas enregistrées.",
    "finishedDialogues":"Vous avez fini de juger les dialogues! Vous pouvez continuer à corriger les phrases mais elles ne seront pas enregistrées.",
-   "youCanMakeNewFriends":"Vous pouvez vous faire de nouveaux amis en les sauvant des casiers."
+   "youCanMakeNewFriends":"Vous pouvez vous faire de nouveaux amis en les sauvant des casiers.",
+   "finishedSoap":"Vous semblez être à court de savon. Récupérez des cristaux et rendez-vous dans un Terminal (T) pour en acheter!"
 }

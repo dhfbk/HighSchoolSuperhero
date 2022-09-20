@@ -53,5 +53,6 @@
    "youSavedAStudent":"You saved a student!",
    "finishedGraffiti":"You have judged all of the graffiti sentences! You can continue erasing the sentences but they will not be saved.",
    "finishedDialogues":"You have judged all of the dialogue sentences! You can continue erasing the sentences but they will not be saved.",
-   "youCanMakeNewFriends":"You can make new friends by saving them from the lockers."
+   "youCanMakeNewFriends":"You can make new friends by saving them from the lockers.",
+   "finishedSoap":"You seem to have run out of soap. Gather crystals and go to a Terminal (T) to buy some!"
 }

@@ -275,6 +275,7 @@ public class Graffiti : MonoBehaviour, ITriggerable
                     {
                         if (!hit.transform.name.Contains("Erase") && hit.transform.CompareTag("GraffitiToken"))
                         {
+                            print("I am currently hitting: " + hit.transform.name);
                             if (!reset)
                             {
                                 Erase(hit, tokens[0].GetComponent<TMP_Text>().fontSize / 3);
@@ -777,7 +778,7 @@ public class Graffiti : MonoBehaviour, ITriggerable
         else
         {
             NotificationUtility.ShowString(Agent, ML.systemMessages.notEnoughSoap);
-            PopUpUtility.Open(Agent.cameraInterface.popUpCanvas, PopUpType.Warning, "Sembra che tu non abbia più sapone. \n Raccogli cristalli e vai a un terminale (T) per comprarne ancora!", 4);
+            PopUpUtility.Open(Agent.cameraInterface.popUpCanvas, PopUpType.LocalizedType(Agent, PopUpType.Types.warning), ML.systemMessages.finishedSoap, 4);
         }
     }
 

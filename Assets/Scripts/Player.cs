@@ -267,6 +267,10 @@ public class Player : MonoBehaviour, IPlayer
         gameState.soap = GetSoap();
         condition = SceneManager.GetActiveScene().name == "SampleScene" ? Condition.W3D : Condition.NoW3D;
     }
+
+    //-------
+    // START
+    //-------
     private void Start()
     {
         annotationData = new List<AnnotationData>();
@@ -283,6 +287,10 @@ public class Player : MonoBehaviour, IPlayer
 
     }
 
+
+    //-------
+    // UPDATE
+    //-------
     void Update()
     {
         if (admin || Application.isEditor)
