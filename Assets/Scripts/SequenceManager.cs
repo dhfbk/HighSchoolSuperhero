@@ -16,6 +16,7 @@ public class SequenceManager : MonoBehaviour
     public GameObject customizeCanvas;
     public CameraInterface cameraInterface;
     public CharacterCustomizationSetup characterCustomizationSetup;
+    public Transform pmg;
 
     void Start()
     {
@@ -91,8 +92,9 @@ public class SequenceManager : MonoBehaviour
 
     public void ChangeLayer(GameObject player, int layer)
     {
+        
         player.layer = layer;
-        foreach (Transform child in transform)
+        foreach (Transform child in pmg)
         {
             if (!child.name.Contains("Invisible"))
             {

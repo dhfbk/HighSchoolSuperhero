@@ -59,4 +59,5 @@ public class CameraInterface : MonoBehaviour
     public GameObject touchIcon;
     public GameObject participateButton;
     public GameObject gameOver;
+    public TextMeshProUGUI demoMode;
 }

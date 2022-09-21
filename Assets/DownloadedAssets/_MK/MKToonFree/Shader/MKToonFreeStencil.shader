@@ -215,5 +215,5 @@
 		}
     }
 	FallBack "Hidden/MK/Toon/FreeMobile"
-	CustomEditor "MK.Toon.MKToonFreeEditor"
+	//CustomEditor "MK.Toon.MKToonFreeEditor"
 }

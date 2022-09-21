@@ -237,7 +237,8 @@ public class SaveManager : MonoBehaviour
         avatar.GetComponent<Parts>().hair.GetComponent<SkinnedMeshRenderer>().sharedMesh = originalParts.hair.GetComponent<SkinnedMeshRenderer>().sharedMesh;
         avatar.GetComponent<Parts>().hair.GetComponent<SkinnedMeshRenderer>().material.color = originalParts.hair.GetComponent<SkinnedMeshRenderer>().material.color;
         avatar.GetComponent<Parts>().shirt.GetComponent<SkinnedMeshRenderer>().sharedMesh = originalParts.shirt.GetComponent<SkinnedMeshRenderer>().sharedMesh;
-        avatar.GetComponent<Parts>().shirt.GetComponent<SkinnedMeshRenderer>().material.color = originalParts.shirt.GetComponent<SkinnedMeshRenderer>().material.color;
+        avatar.GetComponent<Parts>().shirt.GetComponent<SkinnedMeshRenderer>().materials[0].mainTexture = originalParts.shirt.GetComponent<SkinnedMeshRenderer>().materials[0].mainTexture;
+        avatar.GetComponent<Parts>().shirt.GetComponent<SkinnedMeshRenderer>().materials[0].color = originalParts.shirt.GetComponent<SkinnedMeshRenderer>().materials[0].color;
         avatar.GetComponent<Parts>().glasses.GetComponent<SkinnedMeshRenderer>().sharedMesh = originalParts.glasses.GetComponent<SkinnedMeshRenderer>().sharedMesh;
         avatar.GetComponent<Parts>().glasses.GetComponent<SkinnedMeshRenderer>().material.color = originalParts.glasses.GetComponent<SkinnedMeshRenderer>().material.color;
         avatar.GetComponent<Parts>().lenses.GetComponent<SkinnedMeshRenderer>().sharedMesh = originalParts.lenses.GetComponent<SkinnedMeshRenderer>().sharedMesh;
@@ -268,11 +269,7 @@ public class SaveManager : MonoBehaviour
     public static void LoadLook(Parts parts, GameState state)
     {
         List<string> meshes = state.playerParts;
-        print("Meshes: " + meshes[0]);
-        print("Meshes: " + meshes[1]);
-        print("Meshes: " + meshes[2]);
-        print("Meshes: " + meshes[3]);
-        print("Meshes: " + meshes[4]);
+
         //Meshes
         parts.hair.GetComponent<SkinnedMeshRenderer>().sharedMesh = Resources.Load<Mesh>("Parts/Player/" + meshes[1]);
         parts.eyes.GetComponent<SkinnedMeshRenderer>().sharedMesh = Resources.Load<Mesh>("Parts/Player/" + meshes[2]);

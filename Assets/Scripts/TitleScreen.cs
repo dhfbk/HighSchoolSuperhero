@@ -245,6 +245,7 @@ public class TitleScreen : MonoBehaviour
             Player.admin = true;
             player.sessionID = "no_session";
             Player.demo = false;
+            player.cameraInterface.demoMode.gameObject.SetActive(true);
             yield return StartCoroutine(LoadingManager.LoadSampleSentences());
             player.GetComponent<SequenceManager>().Next();
 
@@ -252,7 +253,7 @@ public class TitleScreen : MonoBehaviour
         else //User
         {
             Player.admin = false;
-
+            player.cameraInterface.demoMode.gameObject.SetActive(false);
             //If mobile, manual input of the API domain is needed
             if (MultiplatformUtility.Mobile)
             {

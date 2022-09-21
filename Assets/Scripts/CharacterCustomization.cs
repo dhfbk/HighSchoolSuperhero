@@ -473,8 +473,11 @@ public class CharacterCustomization : MonoBehaviour
         player.avatar.GetComponent<Parts>().body.GetComponent<SkinnedMeshRenderer>().material.color = body.GetComponent<SkinnedMeshRenderer>().material.color;
         player.avatar.GetComponent<Parts>().hair.GetComponent<SkinnedMeshRenderer>().sharedMesh = hair.GetComponent<SkinnedMeshRenderer>().sharedMesh;
         player.avatar.GetComponent<Parts>().hair.GetComponent<SkinnedMeshRenderer>().material.color = hair.GetComponent<SkinnedMeshRenderer>().material.color;
+
         player.avatar.GetComponent<Parts>().shirt.GetComponent<SkinnedMeshRenderer>().sharedMesh = shirt.GetComponent<SkinnedMeshRenderer>().sharedMesh;
-        player.avatar.GetComponent<Parts>().shirt.GetComponent<SkinnedMeshRenderer>().material.color = shirt.GetComponent<SkinnedMeshRenderer>().material.color;
+        player.avatar.GetComponent<Parts>().shirt.GetComponent<SkinnedMeshRenderer>().materials[0].mainTexture = shirt.GetComponent<SkinnedMeshRenderer>().materials[0].mainTexture;
+        player.avatar.GetComponent<Parts>().shirt.GetComponent<SkinnedMeshRenderer>().materials[0].color = shirt.GetComponent<SkinnedMeshRenderer>().materials[0].color;
+        
         player.avatar.GetComponent<Parts>().glasses.GetComponent<SkinnedMeshRenderer>().sharedMesh = glasses.GetComponent<SkinnedMeshRenderer>().sharedMesh;
         player.avatar.GetComponent<Parts>().glasses.GetComponent<SkinnedMeshRenderer>().material.color = glasses.GetComponent<SkinnedMeshRenderer>().material.color;
         player.avatar.GetComponent<Parts>().lenses.GetComponent<SkinnedMeshRenderer>().sharedMesh = lenses.GetComponent<SkinnedMeshRenderer>().sharedMesh;

@@ -89,6 +89,7 @@ public class Movement : MonoBehaviour
     bool pressingJump;
     Vector3 finalVec;
     public LayerMask jumpMask;
+    public AudioSource rocketSound;
 
     void Start()
     {
@@ -290,7 +291,10 @@ public class Movement : MonoBehaviour
                         if (jt <= 0)
                         {
                             foreach (ParticleSystem trail in trails)
+                            {
                                 trail.Stop();
+                                rocketSound.Stop();
+                            }
                         }
                     }
                     else
@@ -298,7 +302,10 @@ public class Movement : MonoBehaviour
                         if (jt > 0)
                         {
                             foreach (ParticleSystem trail in trails)
+                            {
                                 trail.Play();
+                                rocketSound.Play();
+                            }
                         }
                     }
                 }
@@ -312,11 +319,14 @@ public class Movement : MonoBehaviour
                     }
                 }
             }
-            else
+            else //not pressing jump
             {
                 if (GetComponent<Player>().ScarpeMolla)
                     foreach (ParticleSystem trail in trails)
+                    {
                         trail.Stop();
+                        rocketSound.Stop();
+                    }
                 if (IsGrounded(this.gameObject))
                     getJAxisOnce = false;
             }
@@ -423,7 +433,7 @@ public class Movement : MonoBehaviour
                 StartCoroutine(GliderPopUp());
                 gliderInstance.transform.position = this.transform.position;
                 gliderInstance.transform.parent = this.gameObject.transform;
-                gliderInstance.transform.localPosition += new Vector3(0, 0, 0.33f);
+                gliderInstance.transform.localPosition += new Vector3(0, -0.33f, 0.33f);
                 gliderInstance.transform.localRotation = Quaternion.Euler(new Vector3(0, 90, 0));
                 
                 GetComponent<Rigidbody>().drag = 7;
