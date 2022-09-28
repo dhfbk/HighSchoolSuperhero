@@ -15,10 +15,10 @@ MonoBehaviour:
   icon: {fileID: 21300000, guid: 63b302707ad66f94888f5423e686b8a1, type: 3}
   name: Rocket
   amount: 1
-  price: 75
+  price: 50
   engDescription: Put these on to jump really high. You cannot fly though (yet!).
   itaDescription: "Metti queste scarpe per saltare molto in alto. Per\xF2 non pensare
     di poter volare (per ora!)."
   fraDescription: "Mettez-les pour sauter tr\xE8s haut. Vous ne pouvez pas voler
     cependant (encore!)."
-  level: 4
+  level: 2

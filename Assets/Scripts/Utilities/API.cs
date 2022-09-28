@@ -146,6 +146,8 @@ public class API : MonoBehaviour
     public static bool graffitiFinishedWarningShown;
     public static bool dialoguesFinishedWarningShown;
     public static SystemDialogues systemDialogues;
+    public static bool graffitiFinished;
+    public static bool dialoguesFinished;
 
     //Login
     public static bool loggedIn;
@@ -400,8 +402,6 @@ public class API : MonoBehaviour
     {
         if (Player.admin)
         {
-            print(JsonUtility.ToJson(agent.gameState));
-            print("Demo mode: game was saved only temporarily");
             //PopUpUtility.Open(agent.cameraInterface.popUpCanvas, PopUpType.LocalizedType(agent, PopUpType.Types.warning), "Demo mode: game not saved", 2);
             yield break;
         }
@@ -500,14 +500,15 @@ public class API : MonoBehaviour
         }
         else
         {
-            if (variant == Variant.dialogues)
-            {
-                currentSentence = agent.dialogueSentences[index];
-            }
-            else
-            {
-                currentSentence = agent.graffitiSentences[index];
-            }
+            currentSentence = new APISentence(API.sampleSentences[UnityEngine.Random.Range(0, API.sampleSentences.Count)]);
+            //if (variant == Variant.dialogues)
+            //{
+            //    currentSentence = agent.dialogueSentences[index];
+            //}
+            //else
+            //{
+            //    currentSentence = agent.graffitiSentences[index];
+            //}
             yield return null;
         }
     }
@@ -535,10 +536,7 @@ public class API : MonoBehaviour
             }
             else
             {
-
-
-                currentSentence = new APISentence(API.sampleSentences[UnityEngine.Random.Range(0, API.sampleSentences.Count)]);
-                
+                currentSentence = new APISentence(API.sampleSentences[UnityEngine.Random.Range(0, API.sampleSentences.Count)]);            
             }
             yield break;
         }
@@ -555,14 +553,17 @@ public class API : MonoBehaviour
             {
                 SentenceResultSingle sentres = JsonUtility.FromJson<SentenceResultSingle>(text);
                 APISentence s = sentres.sentence;
-                if (s.annotated == true)
+                if (s.annotated == true) //If the server response contains an already annotated sentence it means that there are no more sentences to annotate
                 {
+                    yield return agent.StartCoroutine(LoadingManager.LoadSampleSentences());
                     if (set == "gr")
                     {
                         if (!API.graffitiFinishedWarningShown)
                         {
                             PopUpUtility.Open(agent.cameraInterface.popUpCanvas, PopUpType.LocalizedType(agent, PopUpType.Types.warning), ML.systemMessages.finishedGraffiti, 2);
                             API.graffitiFinishedWarningShown = true;
+                            API.graffitiFinished = true;
+                            
                         }
                     }
                     else
@@ -571,10 +572,12 @@ public class API : MonoBehaviour
                         {
                             PopUpUtility.Open(agent.cameraInterface.popUpCanvas, PopUpType.LocalizedType(agent, PopUpType.Types.warning), ML.systemMessages.finishedDialogues, 2);
                             API.dialoguesFinishedWarningShown = true;
+                            API.dialoguesFinished = true;
+                            DialogueInstancer.uniqueLineIndex = 0;
                         }
                     }
                 }
-                currentSentence = s;
+                currentSentence = s; //This is the final objective of this function
             }
             else
             {
@@ -600,7 +603,6 @@ public class API : MonoBehaviour
         {
             yield return www.SendWebRequest();
             string text = www.downloadHandler.text;
-            print(text);
             if (www.result == UnityWebRequest.Result.Success)
             {
                 SentenceResult sentres = JsonUtility.FromJson<SentenceResult>(text);
@@ -613,7 +615,6 @@ public class API : MonoBehaviour
                     dialogueSentences = sentres.sentences;
                     DialogueInstancer.maxLineIndex = sentres.sentences.Last().id;
                     DialogueInstancer.firstIndex = sentres.sentences[0].id;
-                    print("firstIndex " + DialogueInstancer.firstIndex);
                 }
             }
             else
@@ -623,6 +624,8 @@ public class API : MonoBehaviour
                     PopUpUtility.Open(agent.cameraInterface.popUpCanvas, PopUpType.LocalizedType(agent, PopUpType.Types.error), www.error + "\n" + "Action: Get sentence block" + "\n" + erres.error, 2);
                 else
                     PopUpUtility.Open(agent.cameraInterface.popUpCanvas, PopUpType.LocalizedType(agent, PopUpType.Types.error), www.error + "\n" + "Action: Get sentence block", 2);
+            
+            
             }
         }
     }
@@ -657,7 +660,6 @@ public class API : MonoBehaviour
 
         if (Player.admin)
         {
-            print("Demo mode: annotation not saved");
             //NotificationUtility.ShowString(agent, "Demo mode: annotation not saved");
             yield break;
         }
@@ -782,7 +784,7 @@ public class API : MonoBehaviour
                     }
                     else
                     {
-                        print("Could not load the system messages at path " + path);
+                        PopUpUtility.Open(FindObjectOfType<Player>().cameraInterface.popUpCanvas, PopUpType.LocalizedType(FindObjectOfType<Player>(), PopUpType.Types.error), www.error + "\n" + "Could not load the system messages at path " + path, 10);
                     }
                 }
             }

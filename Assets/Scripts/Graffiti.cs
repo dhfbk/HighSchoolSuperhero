@@ -275,7 +275,6 @@ public class Graffiti : MonoBehaviour, ITriggerable
                     {
                         if (!hit.transform.name.Contains("Erase") && hit.transform.CompareTag("GraffitiToken"))
                         {
-                            print("I am currently hitting: " + hit.transform.name);
                             if (!reset)
                             {
                                 Erase(hit, tokens[0].GetComponent<TMP_Text>().fontSize / 3);
@@ -368,37 +367,37 @@ public class Graffiti : MonoBehaviour, ITriggerable
     }
     public IEnumerator LoadGraffitiTokens() //This creates a series of AnnotationData objects with tokens and annotations from LoadUtility.annSO
     {
-        if (API.currentApi == Api.dev)
-        {
-            int selfIndex = uniqueGraffitiIndex; //API dev
-            if (gameState != null)
-            {
-                while (gameState.annotatedGraffitiIndeces.Contains(selfIndex))
-                {
-                    selfIndex += 1;
-                    yield return null;
-                }
-            }
+        //if (API.currentApi == Api.dev)
+        //{
+        //    int selfIndex = uniqueGraffitiIndex; //API dev
+        //    if (gameState != null)
+        //    {
+        //        while (gameState.annotatedGraffitiIndeces.Contains(selfIndex))
+        //        {
+        //            selfIndex += 1;
+        //            yield return null;
+        //        }
+        //    }
 
-            uniqueGraffitiIndex = selfIndex;
+        //    uniqueGraffitiIndex = selfIndex;
 
-            API.sentence = null;
-            yield return StartCoroutine(API.GetSentence(Agent, uniqueGraffitiIndex, variant));
-            sentenceDownloaded = true;
-            queueBusy = false;
+        //    API.sentence = null;
+        //    yield return StartCoroutine(API.GetSentence(Agent, uniqueGraffitiIndex, variant));
+        //    sentenceDownloaded = true;
+        //    queueBusy = false;
 
-            if (API.sentence != null)
-            {
-                currentAnnSent = new AnnotationData();
-                currentAnnSent.id = uniqueGraffitiIndex;
-                currentAnnSent.tokens = WordByWord.RegexTokenizer(API.sentence);
+        //    if (API.sentence != null)
+        //    {
+        //        currentAnnSent = new AnnotationData();
+        //        currentAnnSent.id = uniqueGraffitiIndex;
+        //        currentAnnSent.tokens = WordByWord.RegexTokenizer(API.sentence);
 
-                uniqueGraffitiIndex += 1;
-                currentStringLength = API.sentence.Length;
-            }
-        }
-        else
-        {
+        //        uniqueGraffitiIndex += 1;
+        //        currentStringLength = API.sentence.Length;
+        //    }
+        //}
+        //else
+        //{
             currentAnnSent = new AnnotationData();
             if (bulkMode == true)
             {
@@ -429,16 +428,21 @@ public class Graffiti : MonoBehaviour, ITriggerable
             }
             else
             {
-                yield return StartCoroutine(API.GetSentenceSingleC(FindObjectOfType<Player>(), lastGraffitiID, "gr"));
-
-                if (shownIndeces.Count > 0)
+                if (!API.graffitiFinished)
                 {
-                    if (shownIndeces.Contains(API.currentSentence.id))
+                    yield return StartCoroutine(API.GetSentenceSingleC(FindObjectOfType<Player>(), lastGraffitiID, "gr"));
+
+                    if (shownIndeces.Count > 0)
                     {
-                        lastGraffitiID = shownIndeces.Max();
-                        yield return StartCoroutine(API.GetSentenceSingleC(FindObjectOfType<Player>(), lastGraffitiID, "gr"));
+                        if (shownIndeces.Contains(API.currentSentence.id))
+                        {
+                            lastGraffitiID = shownIndeces.Max();
+                            yield return StartCoroutine(API.GetSentenceSingleC(FindObjectOfType<Player>(), lastGraffitiID, "gr"));
+                        }
                     }
                 }
+                else
+                    yield return StartCoroutine(API.GetSentence(FindObjectOfType<Player>(), 1, Variant.graffiti));
 
                 sentenceDownloaded = true;
 
@@ -451,7 +455,7 @@ public class Graffiti : MonoBehaviour, ITriggerable
             currentAnnSent.tokens = API.currentSentence.tokens.ToList();//WordByWord.RegexTokenizer(API.sentence);
             currentStringLength = API.currentSentence.tokens.Length;
             queueBusy = false;
-        }
+        //}
     }
     void SetRainbow()
     {
@@ -634,7 +638,6 @@ public class Graffiti : MonoBehaviour, ITriggerable
         agent.playerLogger.StopGraffitiAnnotationSW();
         
         agent.playerLog = agent.playerLogger.playerLog;
-        print(agent.playerLog.GraffitiTime);
 
         if (Player.condition == Condition.W3D)
         {
@@ -660,7 +663,6 @@ public class Graffiti : MonoBehaviour, ITriggerable
     private IEnumerator Annotate()
     {
         Player agent = Agent;
-        print("p" + agent.playerLog.GraffitiTime);
         agent.GetComponent<PlayerLogger>().playerLog.NumberOfAnnotatedGraffiti++;
         List<int> occludedTokens = CalculateOcclusion(tokens);
         float timePerToken = PlayerLogger.CalculateTimePerToken(currentAnnSent.tokens.Count, Agent.playerLogger.GetGraffitiAnnotationTime());
@@ -712,8 +714,12 @@ public class Graffiti : MonoBehaviour, ITriggerable
 
         if (!agent.gameState.annotatedGraffitiIndeces.Contains(currentAnnSent.id))
             agent.gameState.annotatedGraffitiIndeces.Add(currentAnnSent.id);
-        
-        API.PostAnnotation(agent, anndata);
+
+        //Post annotation to server
+        if (!API.graffitiFinished)
+        {
+            API.PostAnnotation(agent, anndata);
+        }
 
         if (!pointsAlreadyGiven)
         {
@@ -736,8 +742,6 @@ public class Graffiti : MonoBehaviour, ITriggerable
 
         //annotatedGraffitiIndex += 1;
 
-        print("Pl"+agent.playerLogger.playerLog.GraffitiTime);
-        print("p"+agent.playerLog.GraffitiTime);
         SaveManager.SaveGameState(agent);
         API.PostSave(agent, false);
     }

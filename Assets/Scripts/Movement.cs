@@ -86,6 +86,7 @@ public class Movement : MonoBehaviour
     bool readyToGlide;
     bool gliding;
     float jt;
+    public float maxRocketCharge;
     bool pressingJump;
     Vector3 finalVec;
     public LayerMask jumpMask;
@@ -98,8 +99,6 @@ public class Movement : MonoBehaviour
         audio = GetComponent<AudioSource>();
         agent = GetComponent<Player>();
         anim = GameObject.Find("PlayerModelGroup").GetComponent<Animator>();
-        print("name" + anim.transform.gameObject.name);
-        print("name" + anim.name);
         if (Speed == 0)
             Speed = 1;
         r = GetComponent<Rigidbody>();
@@ -292,7 +291,9 @@ public class Movement : MonoBehaviour
                         {
                             foreach (ParticleSystem trail in trails)
                             {
-                                trail.Stop();
+                                //trail.Stop();
+                                trail.startColor = Color.gray;
+
                                 rocketSound.Stop();
                             }
                         }
@@ -303,6 +304,8 @@ public class Movement : MonoBehaviour
                         {
                             foreach (ParticleSystem trail in trails)
                             {
+                                //trail.startColor = new Color(1.0f, 0.75f, 0.0f, 1f);
+                                
                                 trail.Play();
                                 rocketSound.Play();
                             }
@@ -313,7 +316,7 @@ public class Movement : MonoBehaviour
                 {
                     if (!getJAxisOnce)
                     {
-                        jt = 1;
+                        jt = maxRocketCharge;
                         jump = true;
                         getJAxisOnce = true;
                     }
@@ -322,11 +325,14 @@ public class Movement : MonoBehaviour
             else //not pressing jump
             {
                 if (GetComponent<Player>().ScarpeMolla)
+                {
                     foreach (ParticleSystem trail in trails)
                     {
-                        trail.Stop();
+                        //trail.Stop();
+                        trail.startColor = Color.gray;
                         rocketSound.Stop();
                     }
+                }
                 if (IsGrounded(this.gameObject))
                     getJAxisOnce = false;
             }
@@ -359,6 +365,10 @@ public class Movement : MonoBehaviour
                 }
                 anim.SetBool("Jump", false);
                 downForce = 0;
+                foreach (ParticleSystem trail in trails)
+                {
+                    trail.Stop();
+                }
             }
 
             if (!Input.GetMouseButton(0) && Input.GetAxisRaw("Vertical") == 0 && Input.GetAxisRaw("Horizontal") == 0)
@@ -411,7 +421,13 @@ public class Movement : MonoBehaviour
     {
         GetComponent<Animator>().SetBool("Walk", false);
         if (jt > 0)
+        {
             jt -= Time.deltaTime;
+            foreach (ParticleSystem trail in trails)
+            {
+                trail.startColor = new Color(1.0f, 0.75f, 0.0f, 1f);
+            }
+        }
         else
         {
             jt = 0;
@@ -437,10 +453,18 @@ public class Movement : MonoBehaviour
                 gliderInstance.transform.localRotation = Quaternion.Euler(new Vector3(0, 90, 0));
                 
                 GetComponent<Rigidbody>().drag = 7;
+                foreach (ParticleSystem trail in trails)
+                {
+                    trail.Stop();
+                }
             }
             else
             {
                 DestroyGlider();
+                foreach (ParticleSystem trail in trails)
+                {
+                    trail.Play();
+                }
             }
         }
     }
@@ -479,10 +503,19 @@ public class Movement : MonoBehaviour
     }
     private void FallMove()
     {
-        if (!gliding)
-            GetComponent<Rigidbody>().AddForce(new Vector3(moveVec.x * 4000, 0, moveVec.y * 4000), ForceMode.Force);
+        float mod = 0;
+        if (Input.GetAxisRaw("Horizontal") != 0 && Input.GetAxisRaw("Vertical") != 0)
+            mod = (float)Math.Sqrt(2);
         else
-            GetComponent<Rigidbody>().AddForce(new Vector3(moveVec.x * 15000, 0, moveVec.y * 15000), ForceMode.Force);
+            mod = 1;
+
+        float speed;
+        if (!gliding)
+            speed = 4000;
+        else
+            speed = 18000;
+
+        GetComponent<Rigidbody>().AddForce(new Vector3(moveVec.x * speed, 0, moveVec.y * speed)/mod, ForceMode.Force);
     }
     private bool IsGrounded(GameObject obj)
     {

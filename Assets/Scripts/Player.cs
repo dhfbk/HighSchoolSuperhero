@@ -79,7 +79,7 @@ public class Player : MonoBehaviour, IPlayer
     private bool dissolved;
     public bool graffitiTutorial, dialogueTutorial;
     public static Condition condition;
-    public static int pointMultiplier = 2;
+    public static int pointMultiplier = 4;
     public static int sentenceLimit = 30;
     public bool questionnaireFilled;
     public int friends;
@@ -274,13 +274,6 @@ public class Player : MonoBehaviour, IPlayer
     private void Start()
     {
         annotationData = new List<AnnotationData>();
-        if (GetComponent<Movement>())
-        {
-            if (scarpeMolla)
-                GetComponent<Movement>().jumpForce = 18;
-            else
-                GetComponent<Movement>().jumpForce = 4;
-        }
         Agent = this;
         if (!cameraInterface)
             cameraInterface = FindObjectOfType<CameraInterface>();
@@ -300,7 +293,6 @@ public class Player : MonoBehaviour, IPlayer
             {
                 if (Input.GetKey("r"))
                 {
-                    print("rocket");
                     SetRocket(true);
                 }
                 else if (Input.GetKey("g"))
@@ -550,6 +542,11 @@ public class Player : MonoBehaviour, IPlayer
             GetComponent<Movement>().Busy = true;
             StartCoroutine(TaskTutorial(cameraInterface.dialogueTutorialContainer));
         }
+        else
+        {
+
+                cameraInterface.participateButton.GetComponent<ParticipateButton>().Show();
+        }
     }
 
     public void SetAnnotating(bool annotating)
@@ -645,6 +642,8 @@ public class Player : MonoBehaviour, IPlayer
             GetComponent<Movement>().Busy = false;
             DialogueInstancer.deactivateDialoguesAndGraffiti = false;
             noMenu = false;
+
+            cameraInterface.participateButton.GetComponent<ParticipateButton>().Show();
     }
 
     public void GameOver()

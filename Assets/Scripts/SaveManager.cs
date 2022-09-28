@@ -81,6 +81,8 @@ public class GameState
     public float safety;
     public RCondition rCondition;
     public int totalAnnotatedDialogues, totalAnnotatedGraffiti;
+    public bool dialoguesFinished;
+    public bool graffitiFinished;
     public bool questionnaireFilled;
     public int storyProgress, area;
     public Vector3 playerPos;
@@ -153,7 +155,6 @@ public class SaveManager : MonoBehaviour
     
     public static void DeployGameState(Player agent, GameState state)
     {
-        print("deploy called");
         if (PlayerPrefs.GetString("Name") != null)
             agent.name = PlayerPrefs.GetString("Name");
 
@@ -179,6 +180,8 @@ public class SaveManager : MonoBehaviour
         agent.graffitiTutorial = state.graffitiTutorial;
         agent.dialogueTutorial = state.dialogueTutorial;
         agent.questionnaireData = state.questionnaireData;
+        API.graffitiFinished = state.graffitiFinished;
+        API.dialoguesFinished = state.dialoguesFinished;
 
         Graffiti.gameState = state;
         DialogueInstancer.uniqueLineIndex = state.dialogueIndex;
@@ -186,8 +189,6 @@ public class SaveManager : MonoBehaviour
         //if (Player.condition == Condition.W3D)
         //{
             agent.transform.position = state.playerPos;
-        print(state.playerPos);
-        print(agent.transform.position);
             agent.SetRocket(state.rocket);
             agent.SetGlider(state.glider);
             agent.transform.rotation = state.rotation;
@@ -412,6 +413,8 @@ public class SaveManager : MonoBehaviour
         state.battery = agent.GetEnergy();
         state.playerParts = new List<string>();
         state.dialogueIndex = DialogueInstancer.uniqueLineIndex;
+        state.dialoguesFinished = API.dialoguesFinished;
+        state.graffitiFinished = API.graffitiFinished;
 
         state.questionnaireData = agent.questionnaireData;
 

@@ -233,6 +233,7 @@ public class Scooter : MonoBehaviour, IPlayer, ITriggerable
         if (!active) {
             audio.Play();
             GameObject p = player.gameObject;
+            GameObject pmg = GameObject.Find("PlayerModelGroup");
             p.GetComponent<Movement>().Riding = true;
             p.GetComponent<Rigidbody>().isKinematic = true;
             GetComponent<Rigidbody>().drag = 0.2f;
@@ -245,11 +246,12 @@ public class Scooter : MonoBehaviour, IPlayer, ITriggerable
             p.transform.rotation = transform.rotation;
             active = true;
             this.Agent = player;
-            player.GetComponent<Animator>().SetBool("Scooter", true);
+            pmg.GetComponent<Animator>().SetBool("Scooter", true);
             transform.tag = "Player";
         }
         else {
             GameObject p = player.gameObject;
+            GameObject pmg = GameObject.Find("PlayerModelGroup");
             triggerArea.enabled = true;
             p.GetComponent<Movement>().Riding = false;
             p.GetComponent<Rigidbody>().isKinematic = false;
@@ -260,8 +262,8 @@ public class Scooter : MonoBehaviour, IPlayer, ITriggerable
             p.transform.parent = null;
             active = false;
             this.Agent = null;
-            player.GetComponent<Animator>().SetBool("Scooter", false);
-            player.GetComponent<Animator>().SetBool("Walk", true);
+            pmg.GetComponent<Animator>().SetBool("Scooter", false);
+            pmg.GetComponent<Animator>().SetBool("Walk", true);
             transform.tag = "Scooter";
 
         }

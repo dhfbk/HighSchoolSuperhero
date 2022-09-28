@@ -323,19 +323,23 @@ public class DialogueInstancer : MonoBehaviour, ITriggerable
         //author = GameObject.Find(dialogo.roles[iLine]);
     }
 
+    public void Activate()
+    {
+        //CreateDialogues();
+        noTags = true;
+        SpawnCharacters(LoadUtility.Nomi);
+        //Combine();
+        //AssignNamesToChildren(LoadUtility.Nomi, LoadUtility.Nomi);
+        StartDialogue();
+        //print(dialogo.lines[0]);
+        spawned = true;
+    }
+
     void Update()
     {
         if (LoadUtility.AllLoaded && API.readyToLoadGame && !spawned && lazyTrigger)
-        {
-            //CreateDialogues();
-            noTags = true;
-            SpawnCharacters(LoadUtility.Nomi);
-            //Combine();
-            //AssignNamesToChildren(LoadUtility.Nomi, LoadUtility.Nomi);
-            StartDialogue();
-            //print(dialogo.lines[0]);
-            spawned = true;
-
+        {           
+            Activate();
         }
         if (spawned)
         {
@@ -453,10 +457,12 @@ public class DialogueInstancer : MonoBehaviour, ITriggerable
     {
         if (nextTurn == ShowCloud)
         {
-            //yield return StartCoroutine(API.GetSentence(Agent, uniqueLineIndex, variant));//-->
-            print(uniqueLineIndex);
-            print(DialogueInstancer.maxLineIndex);
-            yield return StartCoroutine(API.GetSentenceSingleC(Agent, uniqueLineIndex, "ch"));//-->
+            if (!API.dialoguesFinished)
+                yield return StartCoroutine(API.GetSentenceSingleC(Agent, uniqueLineIndex, "ch"));
+            else
+                yield return StartCoroutine(API.GetSentence(Agent, 1, Variant.dialogues));
+            print(Agent.dialogueSentences.Count);
+
         }
         else
             yield return null;
@@ -550,7 +556,14 @@ public class DialogueInstancer : MonoBehaviour, ITriggerable
             Agent.currentlyRestricted = true;
         Player.overlays += 1;
         NotificationUtility.ShowString(Agent, string.Format(ML.systemMessages.closeConversation, MultiplatformUtility.PrimaryInteractionKey));
-        yield return StartCoroutine(API.GetSentenceSingleC(Agent, uniqueLineIndex, "ch"));
+
+        if (!API.dialoguesFinished)
+            yield return StartCoroutine(API.GetSentenceSingleC(Agent, uniqueLineIndex, "ch"));
+        else
+            yield return StartCoroutine(API.GetSentence(Agent, 1, Variant.dialogues));
+
+        print("kal " + API.dialoguesFinished + " " + 1);
+
         ShowCloud();
         nextTurn = ShowBox;
         charge = Agent.GetEnergy();
@@ -658,7 +671,10 @@ public class DialogueInstancer : MonoBehaviour, ITriggerable
             mb.GetComponent<NPCInteraction>().ColorStudent();
 
         //Save
-        API.PostAnnotation(Agent, anndata);
+        if (!API.dialoguesFinished)
+        {
+            API.PostAnnotation(Agent, anndata);
+        }
 
         DialogueInstancer.IncrementIndex();
 

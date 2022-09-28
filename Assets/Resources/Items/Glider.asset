@@ -15,11 +15,11 @@ MonoBehaviour:
   icon: {fileID: 21300000, guid: f9a7aaf8d8f5de942a2d10e64e5a2421, type: 3}
   name: Glider
   amount: 1
-  price: 120
+  price: 80
   engDescription: Use this glider to jump off buildings with grace (and without smashing
     yourself into the sidewalk).
   itaDescription: "Usa questo deltaplano per saltare gi\xF9 dagli edifici con grazia
     (ed evitare di sfracellarti)."
   fraDescription: "Utilisez ce planeur pour sauter des b\xE2timents avec gr\xE2ce
     (et sans vous \xE9craser sur le trottoir)."
-  level: 5
+  level: 3
