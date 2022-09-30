@@ -96,8 +96,8 @@ public class Player : MonoBehaviour, IPlayer
             UpdateProgress();
             if (totalAnnotatedDialogues >= 15 && totalAnnotatedGraffiti >= 15)
             {
-                if (Player.demo && !questionnaireFilled)
-                    cameraInterface.menuCanvas.GetComponent<Menu>().TakeMeToTheQuestionnaire(this);
+                //if (Player.demo && !questionnaireFilled)
+                //    cameraInterface.menuCanvas.GetComponent<Menu>().TakeMeToTheQuestionnaire(this);
             }
         } 
     }
@@ -110,8 +110,8 @@ public class Player : MonoBehaviour, IPlayer
             UpdateProgress();
             if (totalAnnotatedDialogues >= 15 && totalAnnotatedGraffiti >= 15)
             {
-                if (Player.demo && !questionnaireFilled)
-                    cameraInterface.menuCanvas.GetComponent<Menu>().TakeMeToTheQuestionnaire(this);
+                //if (Player.demo && !questionnaireFilled)
+                //    cameraInterface.menuCanvas.GetComponent<Menu>().TakeMeToTheQuestionnaire(this);
             }
         }
     }

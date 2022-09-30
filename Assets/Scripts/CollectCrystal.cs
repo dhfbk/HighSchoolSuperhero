@@ -23,7 +23,9 @@ public class CollectCrystal : MonoBehaviour, ISaveable, ITriggerable
         dir = 1;
         startPos = transform.position;
         endPos = transform.position + new Vector3(0, 0.5f, 0);
-        name = transform.name + transform.position.x + transform.position.z;
+
+        //name = transform.name + transform.position.x + transform.position.z;
+
         //if (State == "taken")
         //    Destroy(this.gameObject);
         //if (!FromChest)
@@ -49,7 +51,7 @@ public class CollectCrystal : MonoBehaviour, ISaveable, ITriggerable
         ObjectState s = new ObjectState(this.gameObject, false);
         s.active = false;
 
-        agent.gameState.saveableObjects.Add(s);
+        //agent.gameState.saveableObjects.Add(s);
     }
 
     IEnumerator CollectOverFrames(Player agent)

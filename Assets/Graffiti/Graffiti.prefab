@@ -384,7 +384,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   eraseMask:
     serializedVersion: 2
-    m_Bits: 40961
+    m_Bits: 2138113
   notTriggeredByArea: 0
   area: 0
   tokenContainer: {fileID: 8838315588136712778}

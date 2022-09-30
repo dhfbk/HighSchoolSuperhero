@@ -275,6 +275,7 @@ public class Graffiti : MonoBehaviour, ITriggerable
                     {
                         if (!hit.transform.name.Contains("Erase") && hit.transform.CompareTag("GraffitiToken"))
                         {
+                            print(hit.transform.name);
                             if (!reset)
                             {
                                 Erase(hit, tokens[0].GetComponent<TMP_Text>().fontSize / 3);
@@ -355,7 +356,7 @@ public class Graffiti : MonoBehaviour, ITriggerable
         foreach (Transform token in tokenContainer.transform)
             Destroy(token.gameObject);
 
-        Unerase(eraseContainer.transform);
+        Unerase(eraseContainer.transform, retrieveSoap:false);
 
         graffitiLoaded = false;
         sentenceDownloaded = false;
@@ -662,6 +663,7 @@ public class Graffiti : MonoBehaviour, ITriggerable
     //----------------------------
     private IEnumerator Annotate()
     {
+        print("Called");
         Player agent = Agent;
         agent.GetComponent<PlayerLogger>().playerLog.NumberOfAnnotatedGraffiti++;
         List<int> occludedTokens = CalculateOcclusion(tokens);
@@ -856,7 +858,7 @@ public class Graffiti : MonoBehaviour, ITriggerable
         return results;
     }
 
-    public void Unerase(Transform t)
+    public void Unerase(Transform t, bool retrieveSoap = true)
     {
 
         List<GameObject> eraseChildren = new List<GameObject>();
@@ -864,7 +866,8 @@ public class Graffiti : MonoBehaviour, ITriggerable
         {
             if (t.GetChild(i).gameObject.layer == 21)
                 eraseChildren.Add(t.GetChild(i).gameObject);
-            Agent.AddSoap(1);
+            if (retrieveSoap)
+                Agent.AddSoap(1);
         }
 
         foreach (GameObject obj in eraseChildren)

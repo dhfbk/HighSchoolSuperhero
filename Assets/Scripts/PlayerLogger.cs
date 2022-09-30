@@ -98,7 +98,7 @@ public class PlayerLogger : MonoBehaviour
     public void StopGraffitiAnnotationSW()
     {
         gasw.Stop();
-        playerLog.NumberOfAnnotatedGraffiti += 1;
+        //playerLog.NumberOfAnnotatedGraffiti += 1;
         playerLog.GraffitiTime += gasw.ElapsedMilliseconds / 1000f;
     }
 
