@@ -677,7 +677,7 @@ public class DialogueInstancer : MonoBehaviour, ITriggerable
         }
 
         DialogueInstancer.IncrementIndex();
-
+        Agent.gameState.annData.Add(new TinyAnnotationData() { id = API.currentSentence.id, timePerToken = timePerToken, type = "dialogue" });
         SaveManager.SaveGameState(Agent);
         API.PostSave(Agent, false);
     }

@@ -419,6 +419,8 @@ public class Movement : MonoBehaviour
     }
     private void AddToJump()
     {
+        if (!rocketSound.isPlaying)
+            rocketSound.Play();
         GetComponent<Animator>().SetBool("Walk", false);
         if (jt > 0)
         {

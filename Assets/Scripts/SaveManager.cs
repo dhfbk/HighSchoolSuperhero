@@ -110,11 +110,13 @@ public class GameState
     public List<string> playerParts;
     public List<string> friendParts;
     public QFilledList questionnaireData;
+    public List<TinyAnnotationData> annData; 
 
     public GameState()
     {
         annotatedGraffitiIndeces = new List<int>();
         saveableObjects = new List<ObjectState>();
+        annData = new List<TinyAnnotationData>();
         playerParts = new List<string>();
         playerHairMats = new List<string>();
         playerShoesMats = new List<string>();
@@ -180,6 +182,7 @@ public class SaveManager : MonoBehaviour
         agent.graffitiTutorial = state.graffitiTutorial;
         agent.dialogueTutorial = state.dialogueTutorial;
         agent.questionnaireData = state.questionnaireData;
+        agent.gameState.annData = state.annData;
         API.graffitiFinished = state.graffitiFinished;
         API.dialoguesFinished = state.dialoguesFinished;
 
@@ -417,6 +420,7 @@ public class SaveManager : MonoBehaviour
         state.graffitiFinished = API.graffitiFinished;
 
         state.questionnaireData = agent.questionnaireData;
+        state.annData = agent.gameState.annData;
 
         Parts parts = agent.GetComponent<Parts>();
         state.playerParts.Add(parts.body.GetComponent<SkinnedMeshRenderer>().sharedMesh.name);

@@ -677,18 +677,18 @@ public class Graffiti : MonoBehaviour, ITriggerable
         //    agreement = Annotation.GoldCompare(anndata, currentAnnSent);
         //else
         //    agreement = Annotation.SilverCompare(currentAnnSent);
-        if (API.currentApi == Api.dev)
-        {
-            WWWForm form = new WWWForm();
-            form.AddField("ID", anndata.id);
-            using (UnityWebRequest www = UnityWebRequest.Post(API.urls.getGoldGraffiti, form))
-            {
-                yield return www.SendWebRequest();
+        //if (API.currentApi == Api.dev)
+        //{
+        //    WWWForm form = new WWWForm();
+        //    form.AddField("ID", anndata.id);
+        //    using (UnityWebRequest www = UnityWebRequest.Post(API.urls.getGoldGraffiti, form))
+        //    {
+        //        yield return www.SendWebRequest();
 
-                if (www.error == null && !www.downloadHandler.text.Contains("errore"))
-                    goldann = www.downloadHandler.text;
-            }
-        }
+        //        if (www.error == null && !www.downloadHandler.text.Contains("errore"))
+        //            goldann = www.downloadHandler.text;
+        //    }
+        //}
 
         int selfAnnotated = anndata.annotations.Contains(1) ? 0 : 1;
 
@@ -744,8 +744,12 @@ public class Graffiti : MonoBehaviour, ITriggerable
 
         //annotatedGraffitiIndex += 1;
 
+        agent.gameState.annData.Add(new TinyAnnotationData() { id = currentAnnSent.id, timePerToken = timePerToken, type = "graffiti" });
+
         SaveManager.SaveGameState(agent);
+
         API.PostSave(agent, false);
+        yield return null;
     }
 
     private void MoveCameraToGraffiti()

@@ -34,6 +34,14 @@ public class MultiTypeTokens
 //    }
 //}
 [Serializable]
+public class TinyAnnotationData
+{
+    public int id;
+    public float timePerToken;
+    public string type;
+}
+
+[Serializable]
 public class AnnotationData
 {
     public int id;
@@ -43,6 +51,7 @@ public class AnnotationData
     public float timePerToken;
     public string task;
     public string gold;
+
     public AnnotationData() 
     {
         id = 0;
