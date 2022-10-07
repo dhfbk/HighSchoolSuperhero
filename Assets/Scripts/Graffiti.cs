@@ -667,9 +667,10 @@ public class Graffiti : MonoBehaviour, ITriggerable
         Player agent = Agent;
         agent.GetComponent<PlayerLogger>().playerLog.NumberOfAnnotatedGraffiti++;
         List<int> occludedTokens = CalculateOcclusion(tokens);
-        float timePerToken = PlayerLogger.CalculateTimePerToken(currentAnnSent.tokens.Count, Agent.playerLogger.GetGraffitiAnnotationTime());
+        float annotationTime = Agent.playerLogger.GetGraffitiAnnotationTime();
+        float timePerToken = PlayerLogger.CalculateTimePerToken(currentAnnSent.tokens.Count, annotationTime);
         string tasktype = Player.rCondition == RCondition.Restricted ? "GR" : "G";
-        AnnotationData anndata = new AnnotationData(currentAnnSent.id, currentAnnSent.tokens, occludedTokens, timePerToken, tasktype);
+        AnnotationData anndata = new AnnotationData(currentAnnSent.id, currentAnnSent.tokens, occludedTokens, timePerToken, tasktype, time:annotationTime);
         anndata.CleanSpaces();
         string goldann = "";
         float agreement = 0;

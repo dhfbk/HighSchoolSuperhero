@@ -616,9 +616,10 @@ public class DialogueInstancer : MonoBehaviour, ITriggerable
         Agent.playerLogger.playerLog.NumberOfAnnotatedSentences++;
         float agreement = 0;
         List<GameObject> tokens = MessageUtility.FindTokens();
-        float timePerToken = PlayerLogger.CalculateTimePerToken(tokens.Count, Agent.playerLogger.StopSentenceAnnotationSW());
+        float annotationTime = Agent.playerLogger.StopSentenceAnnotationSW();
+        float timePerToken = PlayerLogger.CalculateTimePerToken(tokens.Count, annotationTime);
         //AnnotationData anndata = Annotation.AnnotateModifiedText(DialogueInstancer.uniqueLineIndex, tokens, timePerToken, taskType);
-        AnnotationData anndata = Annotation.AnnotateModifiedText(API.currentSentence.id, tokens, timePerToken, taskType);
+        AnnotationData anndata = Annotation.AnnotateModifiedText(API.currentSentence.id, tokens, timePerToken, taskType, annotationTime);
 
         string goldann = "";
 

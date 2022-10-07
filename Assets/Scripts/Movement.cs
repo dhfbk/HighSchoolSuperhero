@@ -26,6 +26,27 @@ public class AudioUtility
 
 public class Movement : MonoBehaviour
 {
+    //Properties
+    public bool Busy
+    {
+        get => busy;
+        set
+        {
+            busy = value;
+            if (GetComponent<Animator>().GetBool("Jump"))
+                GetComponent<Animator>().SetBool("Jump", false);
+            if (busy == true)
+                GetComponent<Rigidbody>().velocity = Vector3.zero;
+        }
+    }
+    public bool Riding { get; set; }
+    public bool Frozen { get; set; }
+    public bool MouseFrozen { get; set; }
+    public bool KeyboardFrozen { get; set; }
+    float x, y, z;
+    public float Speed { get; set; }
+
+    //Variables
     private float walkSpeed = 1.25f;
     private float runSpeed = 2.25f;
 
@@ -49,22 +70,7 @@ public class Movement : MonoBehaviour
     private Vector3 moveVec;
     public Arrow arrow;
     public ParticleSystem[] trails;
-    public bool Busy { get => busy;
-        set
-        {
-            busy = value;
-            if (GetComponent<Animator>().GetBool("Jump"))
-                GetComponent<Animator>().SetBool("Jump", false);
-            if (busy == true)
-                GetComponent<Rigidbody>().velocity = Vector3.zero;
-        }
-    }
-    public bool Riding { get; set; }
-    public bool Frozen { get; set; }
-    public bool MouseFrozen { get; set; }
-    public bool KeyboardFrozen { get; set; }
-    float x, y, z;
-    public float Speed { get; set; }
+
     public LayerMask Mask;
     public LayerMask UIMask;
     Rigidbody r;
@@ -515,7 +521,7 @@ public class Movement : MonoBehaviour
         if (!gliding)
             speed = 4000;
         else
-            speed = 18000;
+            speed = 20000;
 
         GetComponent<Rigidbody>().AddForce(new Vector3(moveVec.x * speed, 0, moveVec.y * speed)/mod, ForceMode.Force);
     }

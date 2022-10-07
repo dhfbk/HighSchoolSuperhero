@@ -673,6 +673,7 @@ public class API : MonoBehaviour
         string tokenJson = JsonUtility.ToJson(sqlsent.multiTypeTokens);
         //tokenJson = tokenJson.Substring(1, tokenJson.Length-2);
         form.AddField("tokens", tokenJson);
+        print(tokenJson);
         using (UnityWebRequest www = UnityWebRequest.Post(API.url, form))
         {
             yield return www.SendWebRequest();

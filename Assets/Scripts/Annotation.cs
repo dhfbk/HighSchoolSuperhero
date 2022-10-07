@@ -17,6 +17,7 @@ public class AnnotationException : Exception
 public class MultiTypeTokens
 {
     public List<string> tokens;
+    public float annotationTime;
 
     public MultiTypeTokens()
     {
@@ -48,6 +49,7 @@ public class AnnotationData
     public List<string> tokens;
     public List<string> newTokens;
     public List<int> annotations;
+    public float time;
     public float timePerToken;
     public string task;
     public string gold;
@@ -59,11 +61,12 @@ public class AnnotationData
         annotations = new List<int>();
         newTokens = new List<string>();
     }
-    public AnnotationData(int id, List<string> tokens, List<int> annotations, float timePerToken, string task, List<string> newTokens = null, string gold ="")
+    public AnnotationData(int id, List<string> tokens, List<int> annotations, float timePerToken, string task, List<string> newTokens = null, string gold ="", float time = 0)
     {
         this.id = id;
         this.tokens = tokens;
         this.annotations = annotations;
+        this.time = time;
         this.timePerToken = timePerToken;
         this.task = task;
         this.gold = gold;
@@ -71,7 +74,7 @@ public class AnnotationData
         if (newTokens == null)
             this.newTokens = new List<string>();
     }
-    public AnnotationData(int id, string tokens, string annotations, float timePerToken=0, string task="", string newTokens = "", string gold="")
+    public AnnotationData(int id, string tokens, string annotations, float timePerToken=0, string task="", string newTokens = "", string gold="", float time = 0)
     {
         this.id = id;
         this.tokens = WordByWord.RegexTokenizer(tokens);
@@ -85,6 +88,7 @@ public class AnnotationData
             int[] values = new int[this.tokens.Count];
             this.annotations = values.ToList();
         }
+        this.time = time;
         this.timePerToken = timePerToken;
         this.task = task;
         if (!String.IsNullOrEmpty(newTokens))
@@ -116,6 +120,7 @@ public class SqlAnnotatedSentence
     public string tokens;
     public string newTokens;
     public string annotations;
+    public string time;
     public string timePerToken;
     public string task;
     public string gold;
@@ -131,7 +136,9 @@ public class SqlAnnotatedSentence
         this.task = "gr";
         this.multiTypeTokens = new MultiTypeTokens();
     }
-    public SqlAnnotatedSentence(int id, List<string> tokens, List<int> annotations, float timePerToken, string task, List<string> newTokens=null, string gold="")
+
+    //Constructor from raw data
+    public SqlAnnotatedSentence(int id, List<string> tokens, List<int> annotations, float timePerToken, string task, List<string> newTokens=null, string gold="", float time=0)
     {
         this.id = id.ToString();
         this.tokens = string.Join(",", tokens);
@@ -140,11 +147,13 @@ public class SqlAnnotatedSentence
         else
             this.newTokens = "";
         this.annotations = string.Join(",", annotations);
+        this.time = time.ToString();
         this.timePerToken = timePerToken.ToString();
         this.task = task;
         this.gold = gold;
+
         multiTypeTokens = new MultiTypeTokens();
-        if (task.Contains("D"))
+        if (task.Contains("D")) //if dialogues
         {
             for (int i = 0; i < tokens.Count; i++)
             {
@@ -164,6 +173,7 @@ public class SqlAnnotatedSentence
                     multiTypeTokens.tokens.Add(Annotation.falseLabel);
                 }
             }
+            multiTypeTokens.annotationTime = time;
         }
         else
         {
@@ -174,8 +184,11 @@ public class SqlAnnotatedSentence
                 else
                     multiTypeTokens.tokens.Add(Annotation.falseLabel);
             }
+            multiTypeTokens.annotationTime = time;
         }
     }
+
+    //Constructor from object
     public SqlAnnotatedSentence(AnnotationData anndata)
     {
         id = anndata.id.ToString();
@@ -185,12 +198,12 @@ public class SqlAnnotatedSentence
         else
             newTokens = "";
         annotations = string.Join(",", anndata.annotations);
+        time = anndata.time.ToString();
         timePerToken = anndata.timePerToken.ToString();
         task = anndata.task;
         gold = anndata.gold;
 
         multiTypeTokens = new MultiTypeTokens();
-
         if (anndata.task.Contains("D"))
         {
             for (int i = 0; i < anndata.tokens.Count; i++)
@@ -211,6 +224,7 @@ public class SqlAnnotatedSentence
                     multiTypeTokens.tokens.Add(Annotation.falseLabel);
                 }
             }
+            multiTypeTokens.annotationTime = anndata.time;
         }
         else
         {
@@ -221,6 +235,7 @@ public class SqlAnnotatedSentence
                 else
                     multiTypeTokens.tokens.Add(Annotation.falseLabel);
             }
+            multiTypeTokens.annotationTime = anndata.time;
         }
     }
 }
@@ -262,10 +277,11 @@ public class Annotation : MonoBehaviour {
             throw new AnnotationException("Annotations are missing or wrong format");
     }
 
-    public static AnnotationData AnnotateModifiedText(int id, List<GameObject> tokens, float timePerToken, string task)
+    public static AnnotationData AnnotateModifiedText(int id, List<GameObject> tokens, float timePerToken, string task, float time = 0)
     {
         AnnotationData anndata = new AnnotationData();
         anndata.id = id;
+        anndata.time = time;
         char[] charsToTrim = { ' ', '\u00A0' };
         foreach (GameObject tok in tokens)
         {
