@@ -183,6 +183,7 @@ public class Graffiti : MonoBehaviour, ITriggerable
         //Throw tutorial
         if (Agent && Vector3.Distance(transform.position, Agent.transform.position) < 3.0f)
         {
+            
             if (Agent.graffitiTutorial == false)
             {
                 Agent.ShowGraffitiTutorial();
@@ -231,8 +232,11 @@ public class Graffiti : MonoBehaviour, ITriggerable
             {
                 if (Input.GetKeyUp("e"))
                 {
-                    StartGraffiti(Agent);
-                    canErase = true;
+                    if (!DialogueInstancer.inDialogue)
+                    {
+                        StartGraffiti(Agent);
+                        canErase = true;
+                    }
                 }
                 else if (Input.GetMouseButtonDown(0))
                 {
@@ -246,6 +250,8 @@ public class Graffiti : MonoBehaviour, ITriggerable
             }
             else
             {
+                if (DialogueInstancer.inDialogue)
+                    StopAnnotation(Agent);
                 if (Input.GetMouseButtonDown(0))
                 {
                     Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
@@ -573,13 +579,13 @@ public class Graffiti : MonoBehaviour, ITriggerable
 
     private void HidePlayer()
     {
-        foreach (Transform t in Agent.transform)
+        foreach (Transform t in GameObject.Find("PlayerModelGroup").transform)
             if (t.gameObject.layer != 27)
                 t.gameObject.layer = 29;
     }
     private void ShowPlayer()
     {
-        foreach (Transform t in Agent.transform)
+        foreach (Transform t in GameObject.Find("PlayerModelGroup").transform)
             if (t.gameObject.layer != 27)
                 t.gameObject.layer = 10;
     }

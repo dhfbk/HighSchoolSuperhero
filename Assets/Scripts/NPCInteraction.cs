@@ -75,7 +75,7 @@ public class NPCInteraction : MonoBehaviour, ITriggerable
                                 if (Agent.interactingNPC == null)
                                 {
                                     Stop();
-
+                                    DialogueInstancer.inDialogue = true;
                                     StartCoroutine(GetSentenceAndShowCloud(DialogueInstancer.uniqueLineIndex));
                                     thinking = true;
                                     Agent.interactingNPC = this.gameObject;
@@ -195,6 +195,7 @@ public class NPCInteraction : MonoBehaviour, ITriggerable
     }
     private void ExitDialogue()
     {
+        DialogueInstancer.inDialogue = false;
         DeactivateIf();
         Agent.cameraInterface.enterButton.SetActive(false);
         Agent.cameraInterface.eButton.SetActive(false);

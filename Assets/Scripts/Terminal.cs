@@ -10,6 +10,7 @@ public class Terminal : MonoBehaviour, ITriggerable
     {
         if (Agent != null)
         {
+            float dot = Vector3.Dot(Agent.transform.forward, (this.transform.position - Agent.transform.position).normalized);
             if (Input.GetMouseButtonDown(0))
             {
                 if (GetComponent<MouseOver>().on)
@@ -22,14 +23,10 @@ public class Terminal : MonoBehaviour, ITriggerable
             }
             if (Input.GetKeyDown("e") && !Agent.cameraInterface.menuCanvas.gameObject.activeSelf)
             {
-
-                float dot = Vector3.Dot(Agent.transform.forward, (this.transform.position - Agent.transform.position).normalized);
                 if (dot < 1f && dot > 0)
                 {
-                    print(dot);
                     Toggle(Agent);
-                }
-                
+                }     
             }
             if (Input.GetKeyDown(KeyCode.Escape))
             {
@@ -39,7 +36,18 @@ public class Terminal : MonoBehaviour, ITriggerable
                     Toggle(Agent);
                 }
             }
-
+            if (!(dot < 1f) || !(dot > 0))
+            {
+                if (activated)
+                    Toggle(Agent);
+            }
+        }
+        else
+        {        
+            if (activated)
+            {
+                Toggle(Agent);
+            }
         }
     }
     public void Toggle(Player player)

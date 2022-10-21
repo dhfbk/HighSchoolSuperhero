@@ -73,6 +73,7 @@ public class DialogueInstancer : MonoBehaviour, ITriggerable
     bool lazyTrigger;
     public GameObject lazyTriggerArea;
     float agreement;
+    public static bool inDialogue;
 
     public bool Restriction;
     string tasktype;
@@ -543,6 +544,7 @@ public class DialogueInstancer : MonoBehaviour, ITriggerable
     }
     private IEnumerator EnterDialogue()
     {
+        inDialogue = true;
         Agent.cameraInterface.participateButton.GetComponent<ParticipateButton>().Hide();
         Agent.GetComponent<Rigidbody>().velocity = Vector3.zero;
         Agent.playerLogger.StartDialogueAnnotationSW();
@@ -576,6 +578,7 @@ public class DialogueInstancer : MonoBehaviour, ITriggerable
 
     private void ExitDialogue()
     {
+        inDialogue = false;
         DeactivateIf();
         enterButton.SetActive(false);
         if (eButton != null)

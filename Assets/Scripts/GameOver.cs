@@ -32,7 +32,6 @@ public class GameOver : MonoBehaviour
 
     public IEnumerator ActivateFade()
     {
-        print("activated");
         Color currentColor = text.color;
         float t = 0.0f;
         while (t < 1.0f)
@@ -43,7 +42,6 @@ public class GameOver : MonoBehaviour
             yield return null;
             print("activated3");
         }
-        print("activated2");
         yield return new WaitForSeconds(3);
         cameraInterface.player.AddCrystals(-50);
         cameraInterface.player.transform.position = new Vector3(0,0,0);
@@ -59,6 +57,7 @@ public class GameOver : MonoBehaviour
         //}
 
         Deactivate();
+        ShowPlayerIfHidden();
     }
 
     public void Deactivate()
@@ -68,5 +67,12 @@ public class GameOver : MonoBehaviour
         DialogueInstancer.deactivateDialoguesAndGraffiti = false;
         SafetyBar.CurrentSafety = SafetyBar.SafetyMax;
         Player.gameOverCalled = false;
+    }
+
+    public void ShowPlayerIfHidden()
+    {
+        foreach (Transform t in this.transform)
+            if (t.gameObject.layer != 27)
+                t.gameObject.layer = 10;
     }
 }

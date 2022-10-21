@@ -21,6 +21,7 @@ public class Intro : MonoBehaviour
     Quaternion turn = new Quaternion(0, 1, 0, 0);
     private bool noPhone;
     private bool skipIntro;
+    public bool skipIntroForAll;
     // Start is called before the first frame update
     void Start()
     {
@@ -36,7 +37,7 @@ public class Intro : MonoBehaviour
     {
         if (LoadUtility.AllLoaded && !skipIntro)
         {
-            if (!Player.admin || overrideAdminSkip)
+            if ((!Player.admin || overrideAdminSkip) && !skipIntroForAll) //intro shown
             {
                 if (!introSet)
                 {

@@ -269,6 +269,13 @@
     <Compile Include="Assets/Scripts/Quest.cs" />
     <Compile Include="Assets/Scripts/PointSystem.cs" />
     <Compile Include="Assets/Resources/DialogueManagerScriptableObject.cs" />
+    <Compile Include="Assets/WebGLSupport/WebGLInput/WebGLInput.cs" />
+    <Compile Include="Assets/WebGLSupport/WebGLInput/Detail/RebuildChecker.cs" />
+    <Compile Include="Assets/WebGLSupport/WebGLInput/Wrapper/IInputField.cs" />
+    <Compile Include="Assets/WebGLSupport/WebGLInput/Mobile/WebGLInputMobile.cs" />
+    <Compile Include="Assets/WebGLSupport/WebGLInput/Wrapper/WrappedTMPInputField.cs" />
+    <Compile Include="Assets/WebGLSupport/WebGLInput/Wrapper/WrappedInputField.cs" />
+    <Compile Include="Assets/WebGLSupport/WebGLWindow/WebGLWindow.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets/Resources/Questionnaires/IMI/Ita/Perceivede competence.txt" />
