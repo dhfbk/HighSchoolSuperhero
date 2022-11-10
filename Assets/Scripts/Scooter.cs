@@ -151,48 +151,50 @@ public class Scooter : MonoBehaviour, IPlayer, ITriggerable
                             r.AddForce(finalVec.normalized * 10, ForceMode.Force);
                         }
                     }
-                    if (Input.GetAxisRaw("Vertical") > 0)
-                    {
-                        signedMagnitude = Mathf.Lerp(signedMagnitude, speed, Time.fixedDeltaTime * acceleration * 3);
-                        if (r.velocity.magnitude < speed)
-                            r.AddForce(trueForward * signedMagnitude, ForceMode.Force);
 
-                        //Raddrizza se non ha niente sotto la ruota davanti
-                        if (CalcDistance(transform.position + transform.forward * 1.25f))
+                        if (Input.GetAxisRaw("Vertical") > 0)
+                        {
+                            signedMagnitude = Mathf.Lerp(signedMagnitude, speed, Time.fixedDeltaTime * acceleration * 3);
+                            if (r.velocity.magnitude < speed)
+                                r.AddForce(trueForward * signedMagnitude, ForceMode.Force);
+
+                            //Raddrizza se non ha niente sotto la ruota davanti
+                            if (CalcDistance(transform.position + transform.forward * 1.25f))
+                                initialRot = Quaternion.Euler(new Vector3(transform.eulerAngles.x, transform.eulerAngles.y, 0));
+                            else
+                                initialRot = Quaternion.Euler(new Vector3(0, transform.eulerAngles.y, 0));
+                        }
+                        else if (Input.GetAxisRaw("Vertical") < 0)
+                        {
+                            signedMagnitude = Mathf.Lerp(signedMagnitude, -speed, Time.fixedDeltaTime * acceleration * 3);
+                            if (r.velocity.magnitude < speed)
+                                r.AddForce(trueForward * signedMagnitude, ForceMode.Force);
                             initialRot = Quaternion.Euler(new Vector3(transform.eulerAngles.x, transform.eulerAngles.y, 0));
+                        }
                         else
+                        {
+                            signedMagnitude = Mathf.Lerp(signedMagnitude, 0, Time.fixedDeltaTime * acceleration);
                             initialRot = Quaternion.Euler(new Vector3(0, transform.eulerAngles.y, 0));
-                    }
-                    else if (Input.GetAxisRaw("Vertical") < 0)
-                    {
-                        signedMagnitude = Mathf.Lerp(signedMagnitude, -speed, Time.fixedDeltaTime * acceleration * 3);
-                        if (r.velocity.magnitude < speed)
-                            r.AddForce(trueForward * signedMagnitude, ForceMode.Force);
-                        initialRot = Quaternion.Euler(new Vector3(transform.eulerAngles.x, transform.eulerAngles.y, 0));
-                    }
-                    else
-                    {
-                        signedMagnitude = Mathf.Lerp(signedMagnitude, 0, Time.fixedDeltaTime * acceleration);
-                        initialRot = Quaternion.Euler(new Vector3(0, transform.eulerAngles.y, 0));
-                    }
+                        }
 
-                    //
-                    if (Input.GetAxisRaw("Horizontal") < 0)
-                    {
-                        transform.Rotate(0, -torque * Time.fixedDeltaTime * localVel.z / 2, 0);
-                        initialRot = Quaternion.Euler(new Vector3(transform.eulerAngles.x, transform.eulerAngles.y, 0));
-                    }
-                    else if (Input.GetAxisRaw("Horizontal") > 0)
-                    {
-                        transform.Rotate(0, torque * Time.fixedDeltaTime * localVel.z / 2, 0);
-                        initialRot = Quaternion.Euler(new Vector3(transform.eulerAngles.x, transform.eulerAngles.y, 0));
-                    }
+                        //
+                        if (Input.GetAxisRaw("Horizontal") < 0)
+                        {
+                            transform.Rotate(0, -torque * Time.fixedDeltaTime * localVel.z / 2, 0);
+                            initialRot = Quaternion.Euler(new Vector3(transform.eulerAngles.x, transform.eulerAngles.y, 0));
+                        }
+                        else if (Input.GetAxisRaw("Horizontal") > 0)
+                        {
+                            transform.Rotate(0, torque * Time.fixedDeltaTime * localVel.z / 2, 0);
+                            initialRot = Quaternion.Euler(new Vector3(transform.eulerAngles.x, transform.eulerAngles.y, 0));
+                        }
 
-                    //Apply friction
-                    frictionForce = Vector3.Dot(Vector3.ClampMagnitude(r.velocity, 1), trueForward);
-                    float dir = localVel.z > 0 ? 1 : -1;
+                        //Apply friction
+                        frictionForce = Vector3.Dot(Vector3.ClampMagnitude(r.velocity, 1), trueForward);
+                        float dir = localVel.z > 0 ? 1 : -1;
 
-                    r.velocity = Vector3.ClampMagnitude(r.velocity + trueForward * dir * 5, 1) * r.velocity.magnitude;
+                        r.velocity = Vector3.ClampMagnitude(r.velocity + trueForward * dir * 5, 1) * r.velocity.magnitude;
+                    
 
                 } else {
                     if (Input.GetAxisRaw("Vertical")>0) {
@@ -226,6 +228,16 @@ public class Scooter : MonoBehaviour, IPlayer, ITriggerable
         else {
             return false;
         }
+    }
+
+    public void Deactivate()
+    {
+        active = false;
+    }
+
+    public void Activate()
+    {
+        active = true;
     }
 
     public void Toggle(Player player)

@@ -64,6 +64,7 @@ public class CharacterCustomization : MonoBehaviour
         memMaterial["Shirt"] = Resources.Load<Material>("Materials/GenericRed");
         memMaterial["Pants"] = Resources.Load<Material>("Materials/GenericWhite");
         memMaterial["Shoes"] = Resources.Load<Material>("Materials/GenericGreen");
+        
         Player agent = transform.root.GetComponent<CameraInterface>().player;
         csw.Start();
 
@@ -143,6 +144,7 @@ public class CharacterCustomization : MonoBehaviour
         doneT.text = ML.systemMessages.editorDone;
         createT.text = ML.systemMessages.editorCreate;
         confirmT.text = ML.systemMessages.editorConfirm;
+        namebox.text = "";
     }
     public void Hover()
     {

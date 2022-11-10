@@ -31,7 +31,15 @@ public class Player : MonoBehaviour, IPlayer
     public static bool demo = false;
     public static bool admin;
     public static RCondition rCondition;
-    
+
+    public AudioClip ouch;
+    public AudioClip almost;
+    public AudioClip wellDone;
+    public AudioClip perfect;
+
+    public DialogueInstancer currentDialogueInstance;
+    public Graffiti currentGraffitiInstance;
+    public Terminal currentTerminalInstance;
     public bool currentlyRestricted;
     public List<AnnotationData> annotationData;
     public bool load;
@@ -396,6 +404,7 @@ public class Player : MonoBehaviour, IPlayer
         playerLogger = GetComponent<PlayerLogger>();
         //print(JsonUtility.ToJson(quest));
         ////
+        DialogueInstancer.deactivateDialoguesAndGraffiti = false;
 
 
         ////Check if instructions are to load or create new
@@ -420,6 +429,7 @@ public class Player : MonoBehaviour, IPlayer
         GetComponent<Movement>().enabled = false;
         GetComponent<Movement>().Busy = true;
         GetComponent<Rigidbody>().useGravity = false;
+        DialogueInstancer.deactivateDialoguesAndGraffiti = true;
         initialized = false;
         this.enabled = false;
     }
@@ -650,5 +660,68 @@ public class Player : MonoBehaviour, IPlayer
     {
         cameraInterface.gameOver.SetActive(true);
         cameraInterface.gameOver.GetComponent<GameOver>().Activate();
+    }
+
+    public void Praise(float v, MonoBehaviour mb = null)
+    {
+        if (!mb)
+            StartCoroutine(ShowPraise(v));
+        else
+            mb.StartCoroutine(ShowPraise(v));
+        
+    }
+
+    IEnumerator ShowPraise(float v)
+    {    
+        GameObject praiseObj;
+        if (v >= 0)
+        {
+            print("v = " + v);
+            if (v < 0.2f)
+            {
+                praiseObj = cameraInterface.ouch;
+                praiseObj.GetComponent<TextMeshProUGUI>().text = ML.systemMessages.ouch;
+                cameraInterface.FX.PlayOneShot(ouch);
+            }
+            else if (v < 0.6f)
+            {
+                praiseObj = cameraInterface.almost;
+                praiseObj.GetComponent<TextMeshProUGUI>().text = ML.systemMessages.almost;
+                cameraInterface.FX.PlayOneShot(almost);
+            }
+            else if (v < 0.95f)
+            {
+                praiseObj = cameraInterface.wellDone;
+                praiseObj.GetComponent<TextMeshProUGUI>().text = ML.systemMessages.welldone;
+                cameraInterface.FX.PlayOneShot(wellDone);
+            }
+            else
+            {
+                praiseObj = cameraInterface.perfect;
+                praiseObj.GetComponent<TextMeshProUGUI>().text = ML.systemMessages.perfect;
+                cameraInterface.FX.PlayOneShot(perfect);
+            }
+        }
+        else
+        {
+            praiseObj = cameraInterface.goodJob;
+            praiseObj.GetComponent<TextMeshProUGUI>().text = ML.systemMessages.goodjob;
+            cameraInterface.FX.PlayOneShot(wellDone);
+        }
+        praiseObj.SetActive(true);
+        yield return new WaitForSeconds(2);
+        praiseObj.SetActive(false);
+    }
+
+    public void Freeze(bool set)
+    {
+        if (set == true)
+        {
+            GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeAll;
+        }
+        else
+        {
+            GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeRotation;
+        }
     }
 }

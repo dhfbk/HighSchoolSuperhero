@@ -56,6 +56,7 @@
     <Analyzer Include="/Applications/Visual Studio.app/Contents/MonoBundle/Addins/MonoDevelop.Unity/Analyzers/Microsoft.Unity.Analyzers.dll" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets/Scripts/Graffiti.cs" />
     <Compile Include="Assets/Resources/MultiplatformUtility.cs" />
     <Compile Include="Assets/Scripts/CsvExtractor.cs" />
     <Compile Include="Assets/Scripts/NPCUtilities.cs" />
@@ -79,7 +80,9 @@
     <Compile Include="Assets/TextMesh Pro/Examples &amp; Extras/Scripts/SimpleScript.cs" />
     <Compile Include="Assets/Scripts/Utilities/LoadUtility.cs" />
     <Compile Include="Assets/Scripts/test.cs" />
+    <Compile Include="Assets/WebGLSupport/WebGLInput/WebGLInput.cs" />
     <Compile Include="Assets/Resources/RightClick.cs" />
+    <Compile Include="Assets/WebGLSupport/WebGLInput/Wrapper/WrappedInputField.cs" />
     <Compile Include="Assets/Scripts/InventoryS.cs" />
     <Compile Include="Assets/Scripts/WordInteraction.cs" />
     <Compile Include="Assets/Scripts/SwitchMusicTrigger.cs" />
@@ -135,6 +138,7 @@
     <Compile Include="Assets/Scripts/SoapItem.cs" />
     <Compile Include="Assets/Scripts/ReactionIcon.cs" />
     <Compile Include="Assets/TextMesh Pro/Examples &amp; Extras/Scripts/Benchmark03.cs" />
+    <Compile Include="Assets/Ping.cs" />
     <Compile Include="Assets/Scripts/OpenChest.cs" />
     <Compile Include="Assets/TextMesh Pro/Examples &amp; Extras/Scripts/VertexShakeA.cs" />
     <Compile Include="Assets/Scripts/ResetToggles.cs" />
@@ -162,6 +166,7 @@
     <Compile Include="Assets/Scripts/WebDebug.cs" />
     <Compile Include="Assets/TextMesh Pro/Examples &amp; Extras/Scripts/VertexJitter.cs" />
     <Compile Include="Assets/TextMesh Pro/Examples &amp; Extras/Scripts/TextMeshProFloatingText.cs" />
+    <Compile Include="Assets/WebGLSupport/WebGLInput/Mobile/WebGLInputMobile.cs" />
     <Compile Include="Assets/Scripts/CarTrigger.cs" />
     <Compile Include="Assets/Scripts/FollowMouse.cs" />
     <Compile Include="Assets/Scripts/SmartDissolve.cs" />
@@ -174,6 +179,7 @@
     <Compile Include="Assets/Scripts/GameOver.cs" />
     <Compile Include="Assets/Resources/QuestScriptableObject.cs" />
     <Compile Include="Assets/Scripts/CarMov.cs" />
+    <Compile Include="Assets/WebGLSupport/WebGLInput/Wrapper/WrappedTMPInputField.cs" />
     <Compile Include="Assets/TextMesh Pro/Examples &amp; Extras/Scripts/VertexShakeB.cs" />
     <Compile Include="Assets/Scripts/DevTools.cs" />
     <Compile Include="Assets/Scripts/MaterialsToChange.cs" />
@@ -200,15 +206,16 @@
     <Compile Include="Assets/Scripts/MouseOverToken.cs" />
     <Compile Include="Assets/Scripts/Menu.cs" />
     <Compile Include="Assets/Scripts/GraffitiAssignArea.cs" />
+    <Compile Include="Assets/FadeInFadeOut.cs" />
     <Compile Include="Assets/Scripts/SoapBar.cs" />
     <Compile Include="Assets/Scripts/DropDownSorting.cs" />
     <Compile Include="Assets/Scripts/FollowPlayer.cs" />
+    <Compile Include="Assets/WebGLSupport/WebGLWindow/WebGLWindow.cs" />
     <Compile Include="Assets/Scripts/CameraInterface.cs" />
     <Compile Include="Assets/Scripts/Utilities/RewardUtility.cs" />
     <Compile Include="Assets/Scripts/QuestionnaireSequence.cs" />
     <Compile Include="Assets/TextMesh Pro/Examples &amp; Extras/Scripts/CameraController.cs" />
     <Compile Include="Assets/Scripts/Parts.cs" />
-    <Compile Include="Assets/Scripts/Graffiti.cs" />
     <Compile Include="Assets/Scripts/No3DGraffiti.cs" />
     <Compile Include="Assets/Scripts/Fluctuate.cs" />
     <Compile Include="Assets/Scripts/PageTurn.cs" />
@@ -227,6 +234,7 @@
     <Compile Include="Assets/Scripts/Follow.cs" />
     <Compile Include="Assets/TextMesh Pro/Examples &amp; Extras/Scripts/TMP_PhoneNumberValidator.cs" />
     <Compile Include="Assets/Scripts/TrappedStudent.cs" />
+    <Compile Include="Assets/InteractionTriggerer.cs" />
     <Compile Include="Assets/Scripts/DayNight.cs" />
     <Compile Include="Assets/TextMesh Pro/Examples &amp; Extras/Scripts/TMPro_InstructionOverlay.cs" />
     <Compile Include="Assets/TextMesh Pro/Examples &amp; Extras/Scripts/VertexColorCycler.cs" />
@@ -247,6 +255,7 @@
     <Compile Include="Assets/Scripts/MenuObject.cs" />
     <Compile Include="Assets/Scripts/Annotation.cs" />
     <Compile Include="Assets/Scripts/UnsetParentOnLoad.cs" />
+    <Compile Include="Assets/WebGLSupport/WebGLInput/Wrapper/IInputField.cs" />
     <Compile Include="Assets/Scripts/Interaction.cs" />
     <Compile Include="Assets/Scripts/Car.cs" />
     <Compile Include="Assets/TextMesh Pro/Examples &amp; Extras/Scripts/TMP_TextInfoDebugTool.cs" />
@@ -266,16 +275,10 @@
     <Compile Include="Assets/Scripts/Utilities/NotificationUtility.cs" />
     <Compile Include="Assets/TextMesh Pro/Examples &amp; Extras/Scripts/TMP_TextEventCheck.cs" />
     <Compile Include="Assets/Scripts/NPCInteraction.cs" />
+    <Compile Include="Assets/WebGLSupport/WebGLInput/Detail/RebuildChecker.cs" />
     <Compile Include="Assets/Scripts/Quest.cs" />
     <Compile Include="Assets/Scripts/PointSystem.cs" />
     <Compile Include="Assets/Resources/DialogueManagerScriptableObject.cs" />
-    <Compile Include="Assets/WebGLSupport/WebGLInput/WebGLInput.cs" />
-    <Compile Include="Assets/WebGLSupport/WebGLInput/Detail/RebuildChecker.cs" />
-    <Compile Include="Assets/WebGLSupport/WebGLInput/Wrapper/IInputField.cs" />
-    <Compile Include="Assets/WebGLSupport/WebGLInput/Mobile/WebGLInputMobile.cs" />
-    <Compile Include="Assets/WebGLSupport/WebGLInput/Wrapper/WrappedTMPInputField.cs" />
-    <Compile Include="Assets/WebGLSupport/WebGLInput/Wrapper/WrappedInputField.cs" />
-    <Compile Include="Assets/WebGLSupport/WebGLWindow/WebGLWindow.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets/Resources/Questionnaires/IMI/Ita/Perceivede competence.txt" />

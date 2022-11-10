@@ -78,7 +78,7 @@ public class OpenChest : MonoBehaviour, ITriggerable, ISaveable
 
     void SpawnTreasure()
     {
-        GetComponent<SpawnCrystals>().Spawn(Agent);
+        GetComponent<SpawnCrystals>().Spawn(Agent, 10);
         Save();
     }
 

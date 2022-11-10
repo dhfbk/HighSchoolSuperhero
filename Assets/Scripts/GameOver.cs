@@ -32,6 +32,20 @@ public class GameOver : MonoBehaviour
 
     public IEnumerator ActivateFade()
     {
+        Player p = cameraInterface.player;
+        if (p.currentDialogueInstance != null)
+            p.currentDialogueInstance.ExitDialogue(p);
+
+        if (p.currentGraffitiInstance != null)
+            p.currentGraffitiInstance.StopAnnotation(cameraInterface.player);
+
+        cameraInterface.participateButton.GetComponent<ParticipateButton>().Hide();
+
+        if (p.currentTerminalInstance != null)
+            p.currentTerminalInstance.ToggleOff(p);
+
+        MessageUtility.CloseBoxedMessage(p);
+
         Color currentColor = text.color;
         float t = 0.0f;
         while (t < 1.0f)
@@ -40,10 +54,9 @@ public class GameOver : MonoBehaviour
             text.color = Color.Lerp(currentColor, new Color(currentColor.r, currentColor.g, currentColor.b, 1), t);
             black.color = Color.Lerp(new Color(0,0,0,0), new Color(0,0,0,1), t);
             yield return null;
-            print("activated3");
         }
         yield return new WaitForSeconds(3);
-        cameraInterface.player.AddCrystals(-50);
+        cameraInterface.player.AddCrystals(-20);
         cameraInterface.player.transform.position = new Vector3(0,0,0);
 
         text.color = new Color(currentColor.r, currentColor.g, currentColor.b, 0);
@@ -57,6 +70,16 @@ public class GameOver : MonoBehaviour
         //}
 
         Deactivate();
+        if (cameraInterface.player.transform.parent)
+        {
+            Scooter s = cameraInterface.player.transform.parent.GetComponent<Scooter>();
+            if (s)
+                s.Toggle(s.Agent);
+        }
+
+
+
+
         ShowPlayerIfHidden();
     }
 
@@ -71,7 +94,8 @@ public class GameOver : MonoBehaviour
 
     public void ShowPlayerIfHidden()
     {
-        foreach (Transform t in this.transform)
+        GameObject p = GameObject.Find("PlayerModelGroup");
+        foreach (Transform t in p.transform)
             if (t.gameObject.layer != 27)
                 t.gameObject.layer = 10;
     }

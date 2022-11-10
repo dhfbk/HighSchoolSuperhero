@@ -281,7 +281,6 @@ public class Graffiti : MonoBehaviour, ITriggerable
                     {
                         if (!hit.transform.name.Contains("Erase") && hit.transform.CompareTag("GraffitiToken"))
                         {
-                            print(hit.transform.name);
                             if (!reset)
                             {
                                 Erase(hit, tokens[0].GetComponent<TMP_Text>().fontSize / 3);
@@ -374,95 +373,49 @@ public class Graffiti : MonoBehaviour, ITriggerable
     }
     public IEnumerator LoadGraffitiTokens() //This creates a series of AnnotationData objects with tokens and annotations from LoadUtility.annSO
     {
-        //if (API.currentApi == Api.dev)
-        //{
-        //    int selfIndex = uniqueGraffitiIndex; //API dev
-        //    if (gameState != null)
-        //    {
-        //        while (gameState.annotatedGraffitiIndeces.Contains(selfIndex))
-        //        {
-        //            selfIndex += 1;
-        //            yield return null;
-        //        }
-        //    }
-
-        //    uniqueGraffitiIndex = selfIndex;
-
-        //    API.sentence = null;
-        //    yield return StartCoroutine(API.GetSentence(Agent, uniqueGraffitiIndex, variant));
-        //    sentenceDownloaded = true;
-        //    queueBusy = false;
-
-        //    if (API.sentence != null)
-        //    {
-        //        currentAnnSent = new AnnotationData();
-        //        currentAnnSent.id = uniqueGraffitiIndex;
-        //        currentAnnSent.tokens = WordByWord.RegexTokenizer(API.sentence);
-
-        //        uniqueGraffitiIndex += 1;
-        //        currentStringLength = API.sentence.Length;
-        //    }
-        //}
-        //else
-        //{
-            currentAnnSent = new AnnotationData();
-            if (bulkMode == true)
+        currentAnnSent = new AnnotationData();
+        if (bulkMode == true)
+        {
+            yield return StartCoroutine(API.GetSentence(FindObjectOfType<Player>(), uniqueGraffitiIndex, Variant.graffiti));
+            sentenceDownloaded = true;
+            currentAnnSent.id = FindObjectOfType<Player>().graffitiSentences[uniqueGraffitiIndex].id;
+            currentAnnSent.goldLabel = API.currentSentence.goldLabel;
+            currentAnnSent.goldOffensiveTokens = API.currentSentence.goldTokens.ToList();
+        }
+        else
+        {
+            if (!API.graffitiFinished)
             {
+                yield return StartCoroutine(API.GetSentenceSingleC(FindObjectOfType<Player>(), lastGraffitiID, "gr"));
 
-                yield return StartCoroutine(API.GetSentence(FindObjectOfType<Player>(), uniqueGraffitiIndex, Variant.graffiti));
-                //while (API.currentSentence.annotated == true)
-                //{
-                //    print("ignored: " + API.currentSentence.id + API.currentSentence.tokens[0]);
-                //    yield return StartCoroutine(API.GetSentence(FindObjectOfType<Player>(), uniqueGraffitiIndex, Variant.graffiti));
-                //    uniqueGraffitiIndex += 1;
-                //}
-                sentenceDownloaded = true;
-                
-                //int selfIndex = uniqueGraffitiIndex;
-                ////Check if already annotated
-                //if (gameState != null)
-                //{
-                //    while (gameState.annotatedGraffitiIndeces.Contains(selfIndex))
-                //    {
-                //        selfIndex += 1;
-                //        yield return null;
-                //    }
-                //}
-                //uniqueGraffitiIndex = selfIndex;
-                currentAnnSent.id = FindObjectOfType<Player>().graffitiSentences[uniqueGraffitiIndex].id;
-                
-                
+                if (shownIndeces.Count > 0)
+                {
+                    if (shownIndeces.Contains(API.currentSentence.id))
+                    {
+                        lastGraffitiID = shownIndeces.Max();
+                        yield return StartCoroutine(API.GetSentenceSingleC(FindObjectOfType<Player>(), lastGraffitiID, "gr"));
+                    }
+                }
             }
             else
             {
-                if (!API.graffitiFinished)
-                {
-                    yield return StartCoroutine(API.GetSentenceSingleC(FindObjectOfType<Player>(), lastGraffitiID, "gr"));
+                yield return StartCoroutine(API.GetSentence(FindObjectOfType<Player>(), 1, Variant.graffiti));
+            }
 
-                    if (shownIndeces.Count > 0)
-                    {
-                        if (shownIndeces.Contains(API.currentSentence.id))
-                        {
-                            lastGraffitiID = shownIndeces.Max();
-                            yield return StartCoroutine(API.GetSentenceSingleC(FindObjectOfType<Player>(), lastGraffitiID, "gr"));
-                        }
-                    }
-                }
-                else
-                    yield return StartCoroutine(API.GetSentence(FindObjectOfType<Player>(), 1, Variant.graffiti));
+            sentenceDownloaded = true;
 
-                sentenceDownloaded = true;
-
-                currentAnnSent.id = API.currentSentence.id;
+            currentAnnSent.id = API.currentSentence.id;
+            currentAnnSent.goldLabel = API.currentSentence.goldLabel;
+            if (API.currentSentence.goldTokens != null)
+                currentAnnSent.goldOffensiveTokens = API.currentSentence.goldTokens.ToList();
 #if UNITY_EDITOR
-                print("New sentence found that is not shown: " + currentAnnSent.id + " " + string.Join(" ", currentAnnSent.tokens));
+            print("New sentence found that is not shown: " + currentAnnSent.id + " " + string.Join(" ", currentAnnSent.tokens));
 #endif
 
-            }
-            currentAnnSent.tokens = API.currentSentence.tokens.ToList();//WordByWord.RegexTokenizer(API.sentence);
-            currentStringLength = API.currentSentence.tokens.Length;
-            queueBusy = false;
-        //}
+        }
+        currentAnnSent.tokens = API.currentSentence.tokens.ToList(); //WordByWord.RegexTokenizer(API.sentence);
+        currentStringLength = API.currentSentence.tokens.Length;
+        queueBusy = false;
     }
     void SetRainbow()
     {
@@ -593,6 +546,9 @@ public class Graffiti : MonoBehaviour, ITriggerable
     //Button press
     public void StartGraffiti(Player Agent)
     {
+        if (Agent.transform.parent != null)
+            Agent.transform.parent.GetComponent<Rigidbody>().velocity = Vector3.zero;
+        Agent.currentGraffitiInstance = GetComponent<Graffiti>();
         Agent.GetComponent<PlayerLogger>().playerLog.NumberOfGraffitiActivated++;
         HidePlayer();
         if (Agent != null && DialogueInstancer.deactivateDialoguesAndGraffiti == false)
@@ -630,6 +586,7 @@ public class Graffiti : MonoBehaviour, ITriggerable
     public void StopAnnotation(Player agent)
     {
         ShowPlayer();
+        Agent.currentGraffitiInstance = null;
         Agent.SetAnnotating(false);
         if (!MultiplatformUtility.Mobile)
         {
@@ -669,51 +626,33 @@ public class Graffiti : MonoBehaviour, ITriggerable
     //----------------------------
     private IEnumerator Annotate()
     {
-        print("Called");
-        Player agent = Agent;
-        agent.GetComponent<PlayerLogger>().playerLog.NumberOfAnnotatedGraffiti++;
-        List<int> occludedTokens = CalculateOcclusion(tokens);
-        float annotationTime = Agent.playerLogger.GetGraffitiAnnotationTime();
-        float timePerToken = PlayerLogger.CalculateTimePerToken(currentAnnSent.tokens.Count, annotationTime);
+        Player agent = Agent; //comodità
+        agent.GetComponent<PlayerLogger>().playerLog.NumberOfAnnotatedGraffiti++; //aumento numero annotazioni nelle statistiche
+        List<int> occludedTokens = CalculateOcclusion(tokens); //calcolo token cancellati
+        float annotationTime = Agent.playerLogger.GetGraffitiAnnotationTime(); //ottengo tempo di questa annotazione
+        float timePerToken = PlayerLogger.CalculateTimePerToken(currentAnnSent.tokens.Count, annotationTime); //calcolo tempo di annotazione per token
         string tasktype = Player.rCondition == RCondition.Restricted ? "GR" : "G";
-        AnnotationData anndata = new AnnotationData(currentAnnSent.id, currentAnnSent.tokens, occludedTokens, timePerToken, tasktype, time:annotationTime);
+
+        //AnnotationData è un formato che contiene tutte le informazioni relative alla frase, al suo gold e a come è stata annotata. Viene trasformata
+        //in sqlsentence per poterla mandare all'API.
+        AnnotationData anndata = new AnnotationData(currentAnnSent.id, currentAnnSent.tokens, occludedTokens, timePerToken, tasktype, time:annotationTime,
+            goldLabel:currentAnnSent.goldLabel,
+            goldOffensiveTokens:currentAnnSent.goldOffensiveTokens);
         anndata.CleanSpaces();
-        string goldann = "";
-        float agreement = 0;
-        //if (currentAnnSent.annotations.Count > 0) //if gold annotation data was found in LoadUtility.annSO at currentAnnSent index
-        //    agreement = Annotation.GoldCompare(anndata, currentAnnSent);
-        //else
-        //    agreement = Annotation.SilverCompare(currentAnnSent);
-        //if (API.currentApi == Api.dev)
-        //{
-        //    WWWForm form = new WWWForm();
-        //    form.AddField("ID", anndata.id);
-        //    using (UnityWebRequest www = UnityWebRequest.Post(API.urls.getGoldGraffiti, form))
-        //    {
-        //        yield return www.SendWebRequest();
 
-        //        if (www.error == null && !www.downloadHandler.text.Contains("errore"))
-        //            goldann = www.downloadHandler.text;
-        //    }
-        //}
+        //
+        // GOLD MANAGEMENT
+        //
+        float agreementMultiplier = Annotation.CalculateAccuracy(anndata);
+        //
+        //
+        //
+        print("Agreement multiplier: " + agreementMultiplier);
 
-        int selfAnnotated = anndata.annotations.Contains(1) ? 0 : 1;
+        agent.Praise(agreementMultiplier);
 
-        if (!String.IsNullOrEmpty(goldann))
-        {
-            //AnnotationData goldSentence = new AnnotationData(iLine, sqlSentence, goldann);
-            //agreement = Annotation.GoldCompare(anndata, goldSentence);
-            anndata.gold = goldann;
-
-            if (int.Parse(goldann) == selfAnnotated)
-                agreement = 1;
-            else
-                agreement = 0;
-        }
-        else
-        {
-            anndata.gold = "1";
-        }
+        if (agreementMultiplier == -1)
+            agreementMultiplier = 0.25f;
 
         if (exclamationIcon)
         {
@@ -732,13 +671,13 @@ public class Graffiti : MonoBehaviour, ITriggerable
 
         if (!pointsAlreadyGiven)
         {
-            GetComponent<SpawnCrystals>().Spawn(agent);
-            int points = 5 + (int)(15 * agreement);
+            GetComponent<SpawnCrystals>().Spawn(agent, (int)(agreementMultiplier*10));
+            int points = (int)(10 * agreementMultiplier);
             points *= Player.pointMultiplier;
             agent.TotalAnnotatedGraffiti += 1;
             PointSystem.AddPoints(this, agent, "Point", points);
             
-            SafetyBar.AddSafety((20 + 20 * agreement) * Player.pointMultiplier);
+            SafetyBar.AddSafety((30 * agreementMultiplier) * Player.pointMultiplier);
             if (Player.condition == Condition.W3D)
                 pointsAlreadyGiven = true;
         }
@@ -889,7 +828,6 @@ public class Graffiti : MonoBehaviour, ITriggerable
 
     public void TriggerOn(Player agent)
     {
-
         this.Agent = agent;
         NotificationUtility.ShowString(agent, string.Format(ML.systemMessages.eraseOrReset, MultiplatformUtility.PrimaryInteractionKey, MultiplatformUtility.Cancel));
         agent.overrideInteraction += 1;

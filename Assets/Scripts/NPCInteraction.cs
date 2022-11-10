@@ -317,6 +317,7 @@ public class NPCInteraction : MonoBehaviour, ITriggerable
 
     public void TriggerOff()
     {
+        print("prova");
         ExitDialogue();
         this.Agent = null;
     }

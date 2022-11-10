@@ -7,10 +7,8 @@ public class SpawnCrystals : MonoBehaviour
     public CrystalListSO clist;
     public int amount;
 
-    public void Spawn(Player target)
+    public void Spawn(Player target, int amount)
     {
-        if (amount == 0)
-            amount = 3;
         StartCoroutine(SpawnOverFrames(target, amount));
     }
     public IEnumerator SpawnOverFrames(Player target, int amount)

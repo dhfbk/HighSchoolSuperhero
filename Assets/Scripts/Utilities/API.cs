@@ -55,6 +55,8 @@ public class APISentence
     public int id;
     public string[] tokens;
     public bool annotated;
+    public int goldLabel; //0 = not gold, 1 = offensive, 2 = not offensive
+    public int[] goldTokens;
 
     public APISentence() { }
     public APISentence(string sent)
@@ -62,6 +64,7 @@ public class APISentence
         this.id = 0;
         this.tokens = WordByWord.RegexTokenizer(sent).ToArray();
         this.annotated = false;
+
     }
     public APISentence(string sent, int id)
     {
@@ -450,80 +453,51 @@ public class API : MonoBehaviour
 
     //----------------------------------------
     //
+    // PING
+    //
+    //----------------------------------------
+
+    public static IEnumerator Ping(Player agent)
+    {
+
+        string uri = $"{API.url}?action=task&type=hssh&session_id={agent.sessionID}&sub=ping";
+        using (UnityWebRequest www = UnityWebRequest.Get(uri))
+        {
+            yield return www.SendWebRequest();
+            string text = www.downloadHandler.text;
+
+            if (www.result == UnityWebRequest.Result.Success)
+            {
+            }
+            else
+            {
+                //ErrorResult erres = JsonUtility.FromJson<ErrorResult>(text);
+
+                agent.cameraInterface.menuCanvas.GetComponent<Menu>().Exit();
+
+            }
+        }
+    }
+
+    //----------------------------------------
+    //
     // GET SENTENCES
     //
     //----------------------------------------
 
     public static IEnumerator GetSentence(Player agent, int index, Variant variant, int offset=0, int limit=0)
     {
-
-        if (currentApi == Api.dev)
-        {
-            string url;
-            if (variant == Variant.dialogues)
-                url = API.urls.getSentenceDialogues;
-            else
-                url = API.urls.getSentenceGraffiti;
-            WWWForm form = new WWWForm();
-            form.AddField("ID", index);
-
-            using (UnityWebRequest www = UnityWebRequest.Post(url, form))
-            {
-                yield return www.SendWebRequest();
-
-                if (www.result == UnityWebRequest.Result.ConnectionError && Player.demo)
-                {
-                    int rand = UnityEngine.Random.Range(0, 2);
-                    if (variant == Variant.dialogues)
-                    {
-                        if (rand == 0)
-                            sentence = "Shut up you nerd";
-                        else
-                            sentence = "Get lost fat loser";
-                    }
-                    else
-                    {
-                        if (rand == 0)
-                            sentence = "Shut up you nerd";
-                        else
-                            sentence = "Get lost fat loser";
-                    }
-                }
-                else
-                {
-                    if (!String.IsNullOrEmpty(www.downloadHandler.text))
-                    {
-                        sentence = www.downloadHandler.text;
-                    }
-                }
-            }
-        }
-        else
-        {
-            currentSentence = new APISentence(API.sampleSentences[UnityEngine.Random.Range(0, API.sampleSentences.Count)]);
-            //if (variant == Variant.dialogues)
-            //{
-            //    currentSentence = agent.dialogueSentences[index];
-            //}
-            //else
-            //{
-            //    currentSentence = agent.graffitiSentences[index];
-            //}
-            yield return null;
-        }
+        //Only used in DEMO mode
+        currentSentence = new APISentence(API.sampleSentences[UnityEngine.Random.Range(0, API.sampleSentences.Count)]);
+        print("token0 " + currentSentence.tokens[0]);
+        currentSentence.goldLabel = 0;
+        currentSentence.goldTokens = null;
+        yield return null;     
     }
 
     
     public static IEnumerator GetSentenceSingleC(Player agent, int lastID, string set)
     {
-//         nextSentence (GET)
-// session_id
-// set = ch/gr
-// action = task
-// sub = nextSentence
-// [last_id = null]
-// RET sentence = {“id”: 1, tokens: [“Bla”, “bla”, “bla”], annotated: true/false}
-
         if (Player.admin)
         {
             if (API.useLocalDatasets)
@@ -552,6 +526,7 @@ public class API : MonoBehaviour
             if (www.result == UnityWebRequest.Result.Success)
             {
                 SentenceResultSingle sentres = JsonUtility.FromJson<SentenceResultSingle>(text);
+                print(text);
                 APISentence s = sentres.sentence;
                 if (s.annotated == true) //If the server response contains an already annotated sentence it means that there are no more sentences to annotate
                 {

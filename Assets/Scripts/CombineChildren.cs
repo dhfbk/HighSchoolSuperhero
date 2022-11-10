@@ -25,6 +25,7 @@ public class CombineChildren : MonoBehaviour
     }
     public void Combine()
     {
+        print("Now combining");
         //Create Rig
         GameObject rig = GameObject.Instantiate(myRig);
 
@@ -104,13 +105,10 @@ public class CombineChildren : MonoBehaviour
     {
         //foreach (Transform t in transform)
         //{
-        print("colorizing");
         //if (finalSMR != null)
         //{
             finalSMR.sharedMaterial = colorMaterial;
             colorized = true;
-            print("smr " + finalSMR);
-            print("colorized" + transform.name);
         GameObject cE = Instantiate(colorizeEffect);
         cE.transform.position = transform.position;
         cE.GetComponent<ParticleSystem>().Play();

@@ -120,7 +120,7 @@ public class Quest : MonoBehaviour, ITriggerable
                                 StopTask();
                                 isActive = false;
                                 MessageUtility.BoxedMessageSeriesStart(Agent, this.name, qso.rewardMessage);
-                                GetComponent<SpawnCrystals>().Spawn(Agent);
+                                GetComponent<SpawnCrystals>().Spawn(Agent, 10);
                                 SaveManager.saveDelegate += Save;
                             }
                         }

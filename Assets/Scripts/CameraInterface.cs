@@ -60,4 +60,9 @@ public class CameraInterface : MonoBehaviour
     public GameObject participateButton;
     public GameObject gameOver;
     public TextMeshProUGUI demoMode;
+    public GameObject ouch;
+    public GameObject almost;
+    public GameObject goodJob;
+    public GameObject wellDone;
+    public GameObject perfect;
 }

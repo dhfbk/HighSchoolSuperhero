@@ -5,7 +5,7 @@ using UnityEngine;
 public class SystemMessages
 {
     public string fillOutAllItems, gameSaved, goBackToGraffitiArea, yourID, IDNotFound, pressToTalk, enterConversation, eraseOrReset, closeConversation, didntMeanToSayThis, notEnoughSoap, insertYourNameFirst,
-    iShouldAnswer, youSavedAStudent, finishedGraffiti, finishedDialogues, youCanMakeNewFriends, finishedSoap;
+    iShouldAnswer, youSavedAStudent, finishedGraffiti, finishedDialogues, youCanMakeNewFriends, finishedSoap, ouch, almost, welldone, goodjob, perfect;
     public string hat, hair, chest, glasses, lenses, shoes, eyes, pants, body, help, editorConfirm, editorCreate, editorDone, language, controls, graphics, save, load, exit, imStuck, bindings, pressStart, answerThePhone, openDoor, important, importantInstructions, instructionsT, pressFToRide, WASDToMove, tutorialD0, tutorialD1, tutorialD1Tap, tutorialD2, tutorialD3, tutorialG0, tutorialG1, tutorialG1Tap, tutorialG2,
         touchIcon, loginWrong;
 }

@@ -54,5 +54,10 @@
 "finishedGraffiti":"Hai finito di giudicare tutti i graffiti! Puoi continuare a cancellare le frasi, ma non saranno salvate.",
 "finishedDialogues":"Hai finito di giudicare tutti i dialoghi! Puoi continuare a cancellare le frasi, ma non saranno salvate.",
 "youCanMakeNewFriends":"Puoi farti dei nuovi amici salvandoli dagli armadietti.",
-"finishedSoap":"Sembra che tu non abbia più sapone. \n Raccogli cristalli e vai a un terminale (T) per comprarne ancora!"
+"finishedSoap":"Sembra che tu non abbia più sapone. \n Raccogli cristalli e vai a un terminale (T) per comprarne ancora!",
+"ouch":"Non ci siamo...",
+    "welldone":"Ben fatto!",
+    "goodjob":"Bene!",
+    "almost":"Quasi!",
+    "perfect":"PERFETTO!"
 }

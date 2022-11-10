@@ -47,6 +47,7 @@ public class DialogueInstancer : MonoBehaviour, ITriggerable
     public List<string> bulli, vittime;
     public Dictionary<string, string> namedb;
 
+    private bool showingParticipantButton;
     private GameObject enterButton;
     private GameObject mouseButton;
     private GameObject eButton;
@@ -336,107 +337,129 @@ public class DialogueInstancer : MonoBehaviour, ITriggerable
         spawned = true;
     }
 
+    public void Toggle(Player Agent, bool mouse)
+    {
+        if (!talking)
+        {
+            StartCoroutine(EnterDialogue(Agent));
+        }
+        else if (nextTurn == ShowReaction || nextTurn == ShowCloud)
+        {
+            if (MessageUtility.BoxFinished)
+            {
+                StartCoroutine(ExecuteTurn(nextTurn));
+                //Erase iF...
+            }
+        }
+        else//if (cloudBlock <= 0)
+        {
+            if (!mouse)
+            {
+                if (!MouseOverToken.ifParent.activeSelf)
+                {
+                    //StartCoroutine(Annotate());
+                    if (!MouseOverToken.Changed)
+                        ExitDialogue(FindObjectOfType<Player>());
+                }
+            }
+        }
+    }
+
+    public void Enter()
+    {
+        if (talking && !GameObject.Find("IfBG") && cloudBlock <= 0)
+        {
+            if (!MessageUtility.Speaking)
+            {
+                StartCoroutine(ExecuteTurn(nextTurn));
+                //Erase iF...
+            }
+            else
+            {
+                if (MessageUtility.BoxFinished)
+                {
+                    StartCoroutine(ExecuteTurn(nextTurn));
+                }
+            }
+        }
+    }
+
+    public void Escape(Player Agent)
+    {
+        if (talking)
+        {
+            if (GameObject.Find("IfBG"))
+                DeactivateIf();
+            ExitDialogue(Agent);
+        }
+    }
+
+
     void Update()
     {
         if (LoadUtility.AllLoaded && API.readyToLoadGame && !spawned && lazyTrigger)
         {           
             Activate();
+            
         }
+        cloudBlock -= Time.deltaTime;
         if (spawned)
         {
-            if (Agent && deactivateDialoguesAndGraffiti == false)
+            //if (Input.GetMouseButtonDown(0))//FLAG
+            //{
+
+            //    Player Agent = FindObjectOfType<Player>();
+            //    Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+            //    Ray rayUI = Agent.cameraInterface.uicam.ScreenPointToRay(Input.mousePosition);
+
+            //    RaycastHit hit;
+            //    RaycastHit hitUI;
+            //    if (!talking)
+            //    {
+            //        if (Physics.Raycast(ray, out hit, Mathf.Infinity, dialogueTouchMask) ||
+            //            Agent.cameraInterface.participateButton.GetComponent<ParticipateButton>().IsOver())
+            //        {
+            //            StartCoroutine(EnterDialogue(Agent));
+            //        }
+            //    }
+            //    else
+            //    {
+            //        Physics.Raycast(ray, out hit, Mathf.Infinity, dialogueEscapeLayers);
+            //        Physics.Raycast(rayUI, out hitUI, Mathf.Infinity, dialogueEscapeLayersUI);
+
+            //        if (hit.transform == null &&
+            //            hitUI.transform == null)
+            //        {
+            //            if (nextTurn == ShowBox)
+            //                ExitDialogue(FindObjectOfType<Player>());
+            //            else
+            //                StartCoroutine(ExecuteTurn(nextTurn));
+            //        }
+            //        else
+
+            //        {
+
+            //            if (Agent.cameraInterface.okCircle.GetComponent<DialogueOkButton>().IsOver() && !GameObject.Find("IfBG"))
+            //            {
+            //                StartCoroutine(ExecuteTurn(nextTurn));
+            //            }
+            //        }
+            //    }
+            //}
+            
+            if (!Agent)//FLAG
             {
-                cloudBlock -= Time.deltaTime;
-                if (Input.GetKeyUp("e"))
+                if (inDialogue == true)
                 {
-                    if (!talking)
-                    {
-                        StartCoroutine(EnterDialogue());
-                    }
-                    else if (nextTurn == ShowReaction || nextTurn == ShowCloud)
-                    {
-                        if (MessageUtility.BoxFinished)
-                        {
-                            StartCoroutine(ExecuteTurn(nextTurn));
-                            //Erase iF...
-                        }
-                    }
-                    else//if (cloudBlock <= 0)
-                    {
-                        if (!MouseOverToken.ifParent.activeSelf)
-                        {
-                            //StartCoroutine(Annotate());
-                            if (!MouseOverToken.Changed)
-                                ExitDialogue();
-                        }
-                    }
+                    ExitDialogue(FindObjectOfType<Player>());
                 }
-                else if (Input.GetMouseButtonDown(0))
+                else
                 {
-                    Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-                    Ray rayUI = Agent.cameraInterface.uicam.ScreenPointToRay(Input.mousePosition);
-
-                    RaycastHit hit;
-                    RaycastHit hitUI;
-                    if (!talking)
+                    if (showingParticipantButton)
                     {
-                        if (Physics.Raycast(ray, out hit, Mathf.Infinity, dialogueTouchMask) ||
-                            Agent.cameraInterface.participateButton.GetComponent<ParticipateButton>().IsOver())
-                        {
-                            StartCoroutine(EnterDialogue());
-                        }
+                        FindObjectOfType<Player>().cameraInterface.participateButton.GetComponent<ParticipateButton>().Hide();
+                        showingParticipantButton = false;
                     }
-                    else
-                    {
-                        Physics.Raycast(ray, out hit, Mathf.Infinity, dialogueEscapeLayers);
-                        Physics.Raycast(rayUI, out hitUI, Mathf.Infinity, dialogueEscapeLayersUI);
-
-                        if (hit.transform == null &&
-                            hitUI.transform == null)
-                        {
-                            if (nextTurn == ShowBox)
-                                ExitDialogue();
-                            else
-                                StartCoroutine(ExecuteTurn(nextTurn));
-                        }
-                        else
-
-                        {
-
-                            if (Agent.cameraInterface.okCircle.GetComponent<DialogueOkButton>().IsOver() && !GameObject.Find("IfBG"))
-                            {
-                                StartCoroutine(ExecuteTurn(nextTurn));
-                            }
-                        }
-                    }
-                }
-                else if ((Input.GetKeyDown(KeyCode.Return)) && !GameObject.Find("IfBG"))
-                {
-                    if (talking && cloudBlock <= 0)
-                    {
-                        if (!MessageUtility.Speaking)
-                        {
-                            StartCoroutine(ExecuteTurn(nextTurn));
-                            //Erase iF...
-                        }
-                        else
-                        {
-                            if (MessageUtility.BoxFinished)
-                            {
-                                StartCoroutine(ExecuteTurn(nextTurn));
-                            }
-                        }
-                    }
-                }
-                else if (Input.GetKeyUp(KeyCode.Escape))
-                {
-                    if (talking)
-                    {
-                        if (GameObject.Find("IfBG"))
-                            DeactivateIf();
-                        ExitDialogue();
-                    }
-                    
                 }
             }
         }
@@ -449,21 +472,25 @@ public class DialogueInstancer : MonoBehaviour, ITriggerable
         {
             ifo.GetComponentInChildren<TMP_InputField>().text = "";
             ifo.SetActive(false);
+
+            if (mouseButton)
+                mouseButton.SetActive(true);
+
+            if (enterButton)
+                enterButton.SetActive(false);
         }
-        mouseButton.SetActive(true);
-        enterButton.SetActive(false);
     }
 
     private IEnumerator ExecuteTurn(MessageDelegate nextTurn)
     {
+        print("Prova9");
         if (nextTurn == ShowCloud)
         {
+            print("Prova8");
             if (!API.dialoguesFinished)
                 yield return StartCoroutine(API.GetSentenceSingleC(Agent, uniqueLineIndex, "ch"));
             else
                 yield return StartCoroutine(API.GetSentence(Agent, 1, Variant.dialogues));
-            print(Agent.dialogueSentences.Count);
-
         }
         else
             yield return null;
@@ -533,6 +560,7 @@ public class DialogueInstancer : MonoBehaviour, ITriggerable
         else
             nextTurn = ShowCloud;
     }
+
     private void ShowReaction()
     {
         MouseOverToken.Changed = false;
@@ -542,10 +570,16 @@ public class DialogueInstancer : MonoBehaviour, ITriggerable
         MessageUtility.SingleBoxedMessageStay(Agent, currentAuthor, ML.systemMessages.didntMeanToSayThis);
         nextTurn = ShowCloud;
     }
-    private IEnumerator EnterDialogue()
+
+    private IEnumerator EnterDialogue(Player Agent)
     {
+        if (Agent.transform.parent != null)
+            Agent.transform.parent.GetComponent<Rigidbody>().velocity = Vector3.zero;
+        Agent.GetComponent<Movement>().Busy = true;
         inDialogue = true;
+        Agent.currentDialogueInstance = GetComponent<DialogueInstancer>();
         Agent.cameraInterface.participateButton.GetComponent<ParticipateButton>().Hide();
+        showingParticipantButton = false;
         Agent.GetComponent<Rigidbody>().velocity = Vector3.zero;
         Agent.playerLogger.StartDialogueAnnotationSW();
         if (!Restriction)
@@ -564,21 +598,21 @@ public class DialogueInstancer : MonoBehaviour, ITriggerable
         else
             yield return StartCoroutine(API.GetSentence(Agent, 1, Variant.dialogues));
 
-        print("kal " + API.dialoguesFinished + " " + 1);
 
         ShowCloud();
         nextTurn = ShowBox;
         charge = Agent.GetEnergy();
         talking = true;
-        Agent.GetComponent<Movement>().Busy = true;
+        
         toReset = true;
         PhoneUtility.Hide(Agent);
         MessageUtility.OverrideBusy = true;
     }
 
-    private void ExitDialogue()
+    public void ExitDialogue(Player Agent)
     {
         inDialogue = false;
+        Agent.currentDialogueInstance = null;
         DeactivateIf();
         enterButton.SetActive(false);
         if (eButton != null)
@@ -591,7 +625,6 @@ public class DialogueInstancer : MonoBehaviour, ITriggerable
                 Agent.cameraInterface.battery.GetComponent<Rainbow>().StopRainbow();
         }
         Player.overlays -= 1;
-        MessageUtility.OverrideBusy = false;
         MessageUtility.ResetMessages(Agent, this.gameObject);
         Agent.GetComponent<Movement>().Busy = false;
         talking = false;
@@ -599,6 +632,7 @@ public class DialogueInstancer : MonoBehaviour, ITriggerable
         PhoneUtility.Down(Agent);
 
         Agent.cameraInterface.participateButton.GetComponent<ParticipateButton>().Show();
+        showingParticipantButton = true;
 
         //if (API.currentApi == Api.final && Player.admin == false)
         //    uniqueLineIndex -= 1;
@@ -617,47 +651,39 @@ public class DialogueInstancer : MonoBehaviour, ITriggerable
     public static IEnumerator Annotate(Player Agent, string taskType, MonoBehaviour mb)
     {
         Agent.playerLogger.playerLog.NumberOfAnnotatedSentences++;
-        float agreement = 0;
         List<GameObject> tokens = MessageUtility.FindTokens();
         float annotationTime = Agent.playerLogger.StopSentenceAnnotationSW();
         float timePerToken = PlayerLogger.CalculateTimePerToken(tokens.Count, annotationTime);
         //AnnotationData anndata = Annotation.AnnotateModifiedText(DialogueInstancer.uniqueLineIndex, tokens, timePerToken, taskType);
         AnnotationData anndata = Annotation.AnnotateModifiedText(API.currentSentence.id, tokens, timePerToken, taskType, annotationTime);
 
-        string goldann = "";
+        ////DEV TEST
+        //API.currentSentence.goldLabel = 1;
+        //API.currentSentence.goldOffensiveTokens = new List<int> { 1, 2 };
+        ////
 
-        if (API.currentApi == Api.dev)
+        anndata.goldLabel = API.currentSentence.goldLabel;
+
+        if (API.currentSentence.goldTokens != null)
         {
-            WWWForm form = new WWWForm();
-            form.AddField("ID", anndata.id);
-            using (UnityWebRequest www = UnityWebRequest.Post(API.urls.getGoldDialogues, form))
-            {
-                yield return www.SendWebRequest();
 
-                if (www.error == null && !www.downloadHandler.text.Contains("errore"))
-                    goldann = www.downloadHandler.text;
-            }
-
-            int annotated = anndata.annotations.Contains(1) ? 0 : 1;
-
-
-            if (!String.IsNullOrEmpty(goldann))
-            {
-                //AnnotationData goldSentence = new AnnotationData(iLine, sqlSentence, goldann);
-                //agreement = Annotation.GoldCompare(anndata, goldSentence);
-                anndata.gold = goldann;
-                if (int.Parse(goldann) == annotated)
-                    agreement = 1;
-                else
-                    agreement = 0;
-            }
-            else
-            {
-                anndata.gold = "1";
-            }
+            if (API.currentSentence.goldTokens.Length > 0)
+                anndata.goldOffensiveTokens = API.currentSentence.goldTokens.ToList();
         }
 
-        int points = 5 + (int)(10 * agreement);
+        //
+        // GOLD MANAGEMENT
+        //
+        float agreementMultiplier = Annotation.CalculateAccuracy(anndata);
+        //
+        //
+        //
+        Agent.Praise(agreementMultiplier, mb.GetComponent<DialogueInstancer>());
+
+        if (agreementMultiplier == -1)
+            agreementMultiplier = 0.25f;
+
+        int points = (int)(10 * agreementMultiplier);
 
         if (timePerToken > 0.15f)
         {
@@ -666,7 +692,7 @@ public class DialogueInstancer : MonoBehaviour, ITriggerable
             PointSystem.AddPoints(mb, Agent, "Heart", points);
             //mb.GetComponent<SpawnCrystals>().Spawn(Agent);
         }
-        SafetyBar.AddSafety((20 + 20 * agreement) * Player.pointMultiplier);
+        SafetyBar.AddSafety((30 * agreementMultiplier) * Player.pointMultiplier);
         Agent.TotalAnnotatedDialogues += 1;
 
         if (mb.GetComponent<DialogueInstancer>())
@@ -684,7 +710,10 @@ public class DialogueInstancer : MonoBehaviour, ITriggerable
         Agent.gameState.annData.Add(new TinyAnnotationData() { id = API.currentSentence.id, timePerToken = timePerToken, type = "dialogue" });
         SaveManager.SaveGameState(Agent);
         API.PostSave(Agent, false);
+        yield return null;
     }
+
+    
 
     public void ColorRandomStudent()
     {
@@ -739,12 +768,14 @@ public class DialogueInstancer : MonoBehaviour, ITriggerable
         else
         {
             agent.cameraInterface.participateButton.GetComponent<ParticipateButton>().Show();
+            showingParticipantButton = true;
         }
     }
 
     public void TriggerOff()
     {
         Agent.cameraInterface.participateButton.GetComponent<ParticipateButton>().Hide();
+        showingParticipantButton = false;
         NotificationUtility.Hide(this.Agent);
         this.Agent = null;
         toReset = false;
@@ -754,5 +785,4 @@ public class DialogueInstancer : MonoBehaviour, ITriggerable
     {
         lazyTrigger = true;
     }
-
 }

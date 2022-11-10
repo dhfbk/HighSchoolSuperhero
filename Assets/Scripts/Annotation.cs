@@ -49,10 +49,12 @@ public class AnnotationData
     public List<string> tokens;
     public List<string> newTokens;
     public List<int> annotations;
+    public List<int> goldOffensiveTokens;
     public float time;
     public float timePerToken;
     public string task;
     public string gold;
+    public int goldLabel; //0 = not gold, 1 = offensive, 2 = not offensive
 
     public AnnotationData() 
     {
@@ -60,8 +62,9 @@ public class AnnotationData
         tokens = new List<string>();
         annotations = new List<int>();
         newTokens = new List<string>();
+        goldOffensiveTokens = new List<int>();
     }
-    public AnnotationData(int id, List<string> tokens, List<int> annotations, float timePerToken, string task, List<string> newTokens = null, string gold ="", float time = 0)
+    public AnnotationData(int id, List<string> tokens, List<int> annotations, float timePerToken, string task, int goldLabel, List<int> goldOffensiveTokens, List<string> newTokens = null, string gold ="", float time = 0)
     {
         this.id = id;
         this.tokens = tokens;
@@ -70,11 +73,15 @@ public class AnnotationData
         this.timePerToken = timePerToken;
         this.task = task;
         this.gold = gold;
+        this.goldLabel = goldLabel;
+        this.goldOffensiveTokens = goldOffensiveTokens;
 
         if (newTokens == null)
             this.newTokens = new List<string>();
+
+
     }
-    public AnnotationData(int id, string tokens, string annotations, float timePerToken=0, string task="", string newTokens = "", string gold="", float time = 0)
+    public AnnotationData(int id, string tokens, string annotations, int goldLabel, List<int> goldOffensiveTokens, float timePerToken=0, string task="", string newTokens = "", string gold="", float time = 0)
     {
         this.id = id;
         this.tokens = WordByWord.RegexTokenizer(tokens);
@@ -96,6 +103,8 @@ public class AnnotationData
         else
             this.newTokens = new List<string>();
         this.gold = gold;
+        this.goldLabel = goldLabel;
+
     }
 
     public void CleanSpaces()
@@ -353,130 +362,66 @@ public class Annotation : MonoBehaviour {
         return 0;
     }
 
+    public static float CalculateAccuracy(AnnotationData anndata)
+    {
 
-    //public static IEnumerator Annotate(Player agent, MonoBehaviour mb, string taskType = "R", Variant variant)
-    //{
-    //    if (variant == Variant.D)
-    //    {
-    //        float agreement = 0;
-    //        List<GameObject> tokens = MessageUtility.FindTokens();
-    //        float timePerToken = PlayerLogger.CalculateTimePerToken(tokens.Count, agent.playerLogger.StopSentenceAnnotationSW());
-    //        AnnotationData anndata = Annotation.AnnotateModifiedText(DialogueInstancer.uniqueLineIndex, tokens, timePerToken, Player.condition + taskType);
+        int userLabel = anndata.annotations.Contains(1) ? 1 : 2;
 
-    //        string goldann = "";
-    //        WWWForm form = new WWWForm();
-    //        form.AddField("ID", anndata.id);
-    //        using (UnityWebRequest www = UnityWebRequest.Post(API.urls.getGoldDialogues, form))
-    //        {
-    //            yield return www.SendWebRequest();
-
-    //            if (www.error == null && !www.downloadHandler.text.Contains("errore"))
-    //                goldann = www.downloadHandler.text;
-    //        }
-
-    //        int annotated = anndata.annotations.Contains(1) ? 0 : 1;
-
-    //        if (!String.IsNullOrEmpty(goldann))
-    //        {
-    //            //AnnotationData goldSentence = new AnnotationData(iLine, sqlSentence, goldann);
-    //            //agreement = Annotation.GoldCompare(anndata, goldSentence);
-    //            anndata.gold = goldann;
-    //            if (int.Parse(goldann) == annotated)
-    //                agreement = 1;
-    //            else
-    //                agreement = 0;
-    //        }
-    //        else
-    //        {
-    //            anndata.gold = "1";
-    //        }
-
-    //        int points = 5 + (int)(10 * agreement);
-
-    //        if (timePerToken > 0.25f)
-    //        {
-    //            points *= Player.pointMultiplier;
-    //            PointSystem.AddPoints(mb, agent, points);
-    //            mb.GetComponent<SpawnCrystals>().Spawn(agent);
-    //        }
-    //        SafetyBar.AddSafety((20 + 20 * agreement) * Player.pointMultiplier);
-    //        agent.TotalAnnotatedDialogues += 1;
-
-    //        //Save
-    //        API.PostAnnotation(agent, anndata);
-
-    //        DialogueInstancer.IncrementIndex();
-
-    //        API.PostSave(agent, false);
-    //    }
-    //    else
-    //    {
-    //        List<int> occludedTokens = CalculateOcclusion(tokens);
-    //        float timePerToken = PlayerLogger.CalculateTimePerToken(currentAnnSent.tokens.Count, agent.playerLogger.GetGraffitiAnnotationTime());
-    //        string tasktype = Restriction ? "GR" : "G";
-    //        tasktype = Player.condition + tasktype;
-    //        AnnotationData anndata = new AnnotationData(currentAnnSent.id, currentAnnSent.tokens, occludedTokens, timePerToken, tasktype);
-    //        anndata.CleanSpaces();
-    //        string goldann = "";
-    //        float agreement = 0;
-    //        //if (currentAnnSent.annotations.Count > 0) //if gold annotation data was found in LoadUtility.annSO at currentAnnSent index
-    //        //    agreement = Annotation.GoldCompare(anndata, currentAnnSent);
-    //        //else
-    //        //    agreement = Annotation.SilverCompare(currentAnnSent);
-    //        WWWForm form = new WWWForm();
-    //        form.AddField("ID", anndata.id);
-    //        using (UnityWebRequest www = UnityWebRequest.Post(API.urls.getGoldGraffiti, form))
-    //        {
-    //            yield return www.SendWebRequest();
-
-    //            if (www.error == null && !www.downloadHandler.text.Contains("errore"))
-    //                goldann = www.downloadHandler.text;
-    //        }
-
-    //        int annotated = anndata.annotations.Contains(1) ? 0 : 1;
-
-    //        if (!String.IsNullOrEmpty(goldann))
-    //        {
-    //            //AnnotationData goldSentence = new AnnotationData(iLine, sqlSentence, goldann);
-    //            //agreement = Annotation.GoldCompare(anndata, goldSentence);
-    //            anndata.gold = goldann;
-
-    //            if (int.Parse(goldann) == annotated)
-    //                agreement = 1;
-    //            else
-    //                agreement = 0;
-    //        }
-    //        else
-    //        {
-    //            anndata.gold = "1";
-    //        }
-
-    //        if (exclamationIcon)
-    //        {
-    //            DestroyImmediate(exclamationIcon);
-    //            questSatisfied = true;
-    //        }
-
-    //        if (!agent.gameState.annotatedGraffitiIndeces.Contains(currentAnnSent.id))
-    //            agent.gameState.annotatedGraffitiIndeces.Add(currentAnnSent.id);
-
-    //        API.PostAnnotation(agent, anndata);
+        List<int> offensiveIndeces = new List<int>();
+        for (int i = 0; i < anndata.annotations.Count; i++)
+        {
+            if (anndata.annotations[i] == 1)
+                offensiveIndeces.Add(i);
+        }
+        print("goldlabel = " + anndata.goldLabel);
 
 
-    //        if (!pointsAlreadyGiven)
-    //        {
-    //            GetComponent<SpawnCrystals>().Spawn(agent);
-    //            int points = 5 + (int)(15 * agreement);
-    //            points *= Player.pointMultiplier;
-    //            Agent.TotalAnnotatedGraffiti += 1;
-    //            PointSystem.AddPoints(this, agent, points);
-    //            SafetyBar.AddSafety((20 + 20 * agreement) * Player.pointMultiplier);
-    //            if (Player.condition == Condition.W3D)
-    //                pointsAlreadyGiven = true;
-    //        }
+        if (anndata.goldLabel != 0)
+        {
+            if (userLabel == anndata.goldLabel)
+            {
+                if (anndata.goldOffensiveTokens == null || anndata.goldOffensiveTokens.Count == 0)
+                {
+                    print("No gold TOKEN information");
+                    return -1;
+                }
+                //Check agreement span
+                foreach (int i in offensiveIndeces)
+                    print("offensive index: " + i);
 
-    //        API.PostSave(agent, false);
-    //    }
-    //}
+                List<int> intersect = anndata.goldOffensiveTokens.Intersect(offensiveIndeces).ToList();
+
+                int p = anndata.goldOffensiveTokens.Count;
+                int n = anndata.annotations.Count - p;
+
+                int tp = intersect.Count;
+                int fn = p - tp;
+                int fp = offensiveIndeces.Count - tp;
+                int tn = n - fp;
+
+                float prec = (float)tp / (tp + fp);
+                float rec = (float)tp / (tp + fn);
+
+                float acc = ((float)(tp + tn) / (tp + tn + fp + fn));
+                float f1 = (2 * prec * rec) / (prec + rec);
+
+                if (rec == 0)
+                    f1 = 0;
+                print(f1);
+                print(acc);
+                return f1;
+            }
+            else
+            {
+                return 0;
+            }
+
+        }
+        else //if goldLabel == 0
+        {
+            print("No gold information found for this sentence");
+            return -1f; //if no gold is available, multiplier is default
+        }
+    }
 
 }
