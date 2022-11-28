@@ -12,11 +12,11 @@ using System.Linq;
 
 public class Config
 {
+    public string[] langList;
     public string lang;
     public string domain;
     public bool guest;
     public bool collectibles;
-    public string api;
     public string url;
     public bool useLocalDatasets;
 }
@@ -55,7 +55,7 @@ public class LoadingManager : MonoBehaviour
         //Player.language = (ML.Lang)Enum.Parse(typeof(ML.Lang), config.lang);
         //API.domain = config.domain;
         //API.url = config.url;
-        API.currentApi = (Api)Enum.Parse(typeof(Api), config.api);
+        API.currentApi = Api.final;
 
         if (API.currentApi == Api.dev)
         {
@@ -123,7 +123,7 @@ public class LoadingManager : MonoBehaviour
 
         //Setup / Load CONFIG
         LoadingManager.config = JsonUtility.FromJson<Config>(file);
-        API.currentApi = (Api)Enum.Parse(typeof(Api), LoadingManager.config.api);
+        API.currentApi = Api.final;
         API.useLocalDatasets = LoadingManager.config.useLocalDatasets;
         Player.rCondition = LoadingManager.config.collectibles == true ? RCondition.Restricted : RCondition.NonRestricted;
         API.url = LoadingManager.config.url;

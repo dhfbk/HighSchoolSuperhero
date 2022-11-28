@@ -8,8 +8,6 @@ public class MouseOverToken : MonoBehaviour
 {
     public Player agent;
     public bool on;
-    public static GameObject ifParent;
-    GameObject iF;
     static GameObject currentToken;
     public static bool Changed { get; set; }
     public static bool Editing
@@ -20,8 +18,6 @@ public class MouseOverToken : MonoBehaviour
     void Start()
     {
         agent = transform.root.GetComponent<FollowPlayer>().target.GetComponent<Player>();
-        ifParent = agent.cameraInterface.ifParent;
-        iF = ifParent.transform.GetChild(0).gameObject;
     }
     // Update is called once per frame
     void Update()
@@ -111,7 +107,7 @@ public class MouseOverToken : MonoBehaviour
                 GetComponent<TextMeshPro>().text = iF.GetComponent<TMP_InputField>().text + "\u00A0";
             //Deactivate if
             iF.GetComponent<TMP_InputField>().text = "";
-            ifParent.SetActive(false);
+            iF.transform.parent.gameObject.SetActive(false);
 
 
             transform.parent.GetComponent<ContentSizeFitter>().enabled = false;

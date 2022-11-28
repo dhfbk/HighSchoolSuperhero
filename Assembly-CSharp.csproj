@@ -56,7 +56,6 @@
     <Analyzer Include="/Applications/Visual Studio.app/Contents/MonoBundle/Addins/MonoDevelop.Unity/Analyzers/Microsoft.Unity.Analyzers.dll" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets/Scripts/Graffiti.cs" />
     <Compile Include="Assets/Resources/MultiplatformUtility.cs" />
     <Compile Include="Assets/Scripts/CsvExtractor.cs" />
     <Compile Include="Assets/Scripts/NPCUtilities.cs" />
@@ -142,6 +141,7 @@
     <Compile Include="Assets/Scripts/OpenChest.cs" />
     <Compile Include="Assets/TextMesh Pro/Examples &amp; Extras/Scripts/VertexShakeA.cs" />
     <Compile Include="Assets/Scripts/ResetToggles.cs" />
+    <Compile Include="Assets/DialogueNames.cs" />
     <Compile Include="Assets/Scripts/DialogueOkButton.cs" />
     <Compile Include="Assets/TextMesh Pro/Examples &amp; Extras/Scripts/Benchmark04.cs" />
     <Compile Include="Assets/Scripts/Utilities/HintUtility.cs" />
@@ -216,6 +216,7 @@
     <Compile Include="Assets/Scripts/QuestionnaireSequence.cs" />
     <Compile Include="Assets/TextMesh Pro/Examples &amp; Extras/Scripts/CameraController.cs" />
     <Compile Include="Assets/Scripts/Parts.cs" />
+    <Compile Include="Assets/Scripts/Graffiti.cs" />
     <Compile Include="Assets/Scripts/No3DGraffiti.cs" />
     <Compile Include="Assets/Scripts/Fluctuate.cs" />
     <Compile Include="Assets/Scripts/PageTurn.cs" />

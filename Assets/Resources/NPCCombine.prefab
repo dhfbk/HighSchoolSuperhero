@@ -698,6 +698,7 @@ GameObject:
   - component: {fileID: 4777718147429253557}
   - component: {fileID: 753532879129216314}
   - component: {fileID: -3998968767043059461}
+  - component: {fileID: 6143225764611710165}
   m_Layer: 0
   m_Name: NPCCombine
   m_TagString: NPC
@@ -862,6 +863,18 @@ MonoBehaviour:
   speed: 0
   i: 0
   maximumDistance: 90
+--- !u!114 &6143225764611710165
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1136771860714638202}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e8c4b2c06fe744cd89a9d366aff16fed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1136771860714638204
 GameObject:
   m_ObjectHideFlags: 0

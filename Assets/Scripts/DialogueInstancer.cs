@@ -78,12 +78,12 @@ public class DialogueInstancer : MonoBehaviour, ITriggerable
 
     public bool Restriction;
     string tasktype;
-    List<string> BadTags;
-    List<string> GoodTags;
 
     public static int maxLineIndex;
     public static int firstIndex;
     public static bool deactivateDialoguesAndGraffiti;
+
+    private DialogueNames dialogueNames;
 
     void Start()
     {
@@ -96,125 +96,8 @@ public class DialogueInstancer : MonoBehaviour, ITriggerable
         victimSpawns = new List<GameObject>();
         roles = new List<string>();
         children = new List<GameObject>();
+        dialogueNames = GetComponent<DialogueNames>();
 
-        LoadUtility.Nomi = new List<string>() { "Mark", "Lukas", "Michael", "Louis", "Brad", "Akim", "Marco" };
-        LoadUtility.Nomif = new List<string>() { "Adele", "Susan", "Sofia", "Yasmin", "Ingrid", "Jennifer", "Giorgia" };
-
-
-        BadTags = new List<string>();
-        GoodTags = new List<string>();
-        BadTags.Add("Bullo");
-        BadTags.Add("Bullo1");
-        BadTags.Add("Bullo2");
-        BadTags.Add("SupportoBullo1");
-        BadTags.Add("SupportoBullo2");
-        BadTags.Add("SupportoBullo3");
-        GoodTags.Add("Vittima");
-        GoodTags.Add("Vittima1");
-        GoodTags.Add("SupportoVittima1");
-        GoodTags.Add("SupportoVittima2");
-        GoodTags.Add("SupportoVittima3");
-    }
-    public void CreateDialogues()
-    {
-        WebDebug.Print($"{transform.name} Initializing...");
-        //dialogo.turns.Clear();
-        dialogo.roles.Clear();
-        dialogo.lines.Clear();
-        dialogo.annotations.Clear();
-        tokens = new List<string>();
-        WebDebug.Print($"{transform.name} Creating dialogues...");
-
-        ExtractTurns();
-        WebDebug.Print($"{transform.name} Turns extracted!");
-
-        SubstituteNames();
-        WebDebug.Print($"{transform.name} Names substituted!");
-    }
-
-    public void SearchTurns(bool defined)
-    {
-        for (int i = 0; i < LoadUtility.annSO.lines.Count; i++)
-        {
-            string line = LoadUtility.annSO.lines[i];
-            string role = LoadUtility.annSO.roles[i];
-            string annotation = LoadUtility.annSO.annotations[i];
-            line = Regex.Replace(line, @"\p{C}+", string.Empty); //remove annoying non-printable characters
-            if (!string.IsNullOrEmpty(role) && !string.IsNullOrEmpty(line))
-            {
-                if (defined)
-                {
-                    if (BadTags.Contains(role) || GoodTags.Contains(role))
-                    {
-                        dialogo.roles.Add(role);
-                        dialogo.lines.Add(line);
-                        if (!String.IsNullOrEmpty(annotation))
-                            dialogo.annotations.Add(annotation);
-                        else
-                            dialogo.annotations.Add("");
-                    }
-                }
-                else
-                {
-                    dialogo.roles.Add(role);
-                    dialogo.lines.Add(line);
-                    if (!String.IsNullOrEmpty(annotation))
-                        dialogo.annotations.Add(annotation);
-                    else
-                        dialogo.annotations.Add("");
-                }
-            }
-        }
-    }
-
-    public void ExtractTurns()
-    {
-        SearchTurns(true);
-
-        //Se non sono stati trovati ruoli...
-        if (dialogo.roles.Count == 0)
-        {
-            SearchTurns(false);
-            noTags = true;
-        }
-        
-        foreach (string role in dialogo.roles)
-        {
-            if (!roles.Contains(role))
-                roles.Add(role);
-        }
-    }
-
-    public void SubstituteNames()
-    {
-        bulli = new List<string>();
-        vittime = new List<string>();
-        namedb = new Dictionary<string, string>();
-
-        for (int i = 0; i < roles.Count; i++) //per ogni ruolo estratto
-        {
-            namedb.Add(roles[i], LoadUtility.Nomi[i]); //assegna uno dei nomi. Tabella di corrispondenze
-            if (BadTags.Contains(roles[i]))
-                bulli.Add(LoadUtility.Nomi[i]);
-            else
-                vittime.Add(LoadUtility.Nomi[i]);
-        }
-
-        for (int i = 0; i < dialogo.roles.Count; i++) //per ogni turno
-            dialogo.roles[i] = namedb[dialogo.roles[i]]; //sostituisci ruolo con nome
-
-        for (int i = 0; i < roles.Count; i++) //per ogni ruolo estratto controlla ogni linea di messaggio e sostituisce le chiamate dei nomi
-        {
-            for (int i2 = 0; i2 < dialogo.lines.Count; i2++)
-            {
-                //dialogoAnn.lines[i2] = dialogo.lines[i2];
-                if (dialogo.lines[i2].Contains(roles[i]))
-                {
-                    if (!String.IsNullOrEmpty(dialogo.lines[i2]))
-                        dialogo.lines[i2] = dialogo.lines[i2].Replace(roles[i], namedb[roles[i]]);
-                }
-            }
-        }
     }
 
     public void SpawnCharacters(List<string> roles)
@@ -249,7 +132,7 @@ public class DialogueInstancer : MonoBehaviour, ITriggerable
         GameObject participant;
         foreach (string role in roles)
         {
-            if (BadTags.Contains(role))
+            if (DialogueNames.BadTags.Contains(role))
             {
                 if (bullySpawns.Count > 0)
                 {
@@ -271,7 +154,7 @@ public class DialogueInstancer : MonoBehaviour, ITriggerable
                     transform.GetComponent<DialogueInstancer>().children.Add(participant);
                 }
             }
-            else if (noTags == true || (noTags == false && GoodTags.Contains(role)))
+            else if (noTags == true || (noTags == false && DialogueNames.GoodTags.Contains(role)))
             {
                 if (victimSpawns.Count > 0)
                 {
@@ -297,27 +180,6 @@ public class DialogueInstancer : MonoBehaviour, ITriggerable
 
     }
 
-    public void AssignNamesToChildren(List<string> bullyNames, List<string> victimNames)
-    {
-
-        //Assign names
-        foreach (Transform child in transform)
-        {
-            if (child.CompareTag("Bully"))
-            {
-                int randomvar2 = UnityEngine.Random.Range(0, bullyNames.Count);
-                child.name = bullyNames[randomvar2];
-                bullyNames.Remove(bullyNames[randomvar2]); //exclude from further renaming the name that was just given
-            }
-            else if (child.CompareTag("Victim"))
-            {
-                int randomvar2 = UnityEngine.Random.Range(0, victimNames.Count);
-                child.name = victimNames[randomvar2];
-                victimNames.Remove(victimNames[randomvar2]);
-            }
-        }
-    }
-
     public void StartDialogue()
     {
         iLine = uniqueLineIndex;
@@ -331,7 +193,6 @@ public class DialogueInstancer : MonoBehaviour, ITriggerable
         noTags = true;
         SpawnCharacters(LoadUtility.Nomi);
         //Combine();
-        //AssignNamesToChildren(LoadUtility.Nomi, LoadUtility.Nomi);
         StartDialogue();
         //print(dialogo.lines[0]);
         spawned = true;
@@ -355,7 +216,7 @@ public class DialogueInstancer : MonoBehaviour, ITriggerable
         {
             if (!mouse)
             {
-                if (!MouseOverToken.ifParent.activeSelf)
+                if (!GameObject.Find("IfBG"))
                 {
                     //StartCoroutine(Annotate());
                     if (!MouseOverToken.Changed)
@@ -499,6 +360,7 @@ public class DialogueInstancer : MonoBehaviour, ITriggerable
 
     private void ShowCloud()
     {
+        Player Agent = FindObjectOfType<Player>();
         if (noTags)
         {
             iLine = uniqueLineIndex;
@@ -512,10 +374,7 @@ public class DialogueInstancer : MonoBehaviour, ITriggerable
             currentAuthor = dialogo.roles[iLine];
         }
 
-        if (API.currentApi == Api.dev)
-            MessageUtility.ThinkCloud(Agent, currentAuthor, this.gameObject);
-        else
-            MessageUtility.ThinkCloud(Agent, currentAuthor, this.gameObject);
+        MessageUtility.ThinkCloud(Agent, currentAuthor, this.gameObject);
         cloudBlock = 1;
         nextTurn = ShowBox;
         Agent.playerLogger.StartSentenceAnnotationSW();
@@ -614,10 +473,12 @@ public class DialogueInstancer : MonoBehaviour, ITriggerable
         inDialogue = false;
         Agent.currentDialogueInstance = null;
         DeactivateIf();
-        enterButton.SetActive(false);
+        if (enterButton != null)
+            enterButton.SetActive(false);
         if (eButton != null)
             eButton.SetActive(false);
-        mouseButton.SetActive(false);
+        if (mouseButton != null)
+            mouseButton.SetActive(false);
         Agent.playerLogger.StopDialogueAnnotationSW();
         if (!Restriction)
         {
