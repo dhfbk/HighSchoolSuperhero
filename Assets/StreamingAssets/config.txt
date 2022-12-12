@@ -1,6 +1,7 @@
 {
 	"langList":["en", "it", "fr"],
 	"lang":"en",
+    "overrideLanguage":"false",
 	"guest":"true",
 	"collectibles":"true",
 	"url":"https://kidactions.fbk.eu/api/",

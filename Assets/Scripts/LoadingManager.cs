@@ -14,6 +14,7 @@ public class Config
 {
     public string[] langList;
     public string lang;
+    public bool overrideLanguage;
     public string domain;
     public bool guest;
     public bool collectibles;

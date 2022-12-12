@@ -308,7 +308,10 @@ public class API : MonoBehaviour
                 yield return agent.StartCoroutine(GetSentenceBulk(agent, 0, Variant.dialogues, limit, offset));
                 agent.graffitiSentences = graffitiSentences;
 
-                Player.language = (ML.Lang)Enum.Parse(typeof(ML.Lang), loginres.language);
+                if (LoadingManager.config.overrideLanguage == true)
+                    Player.language = (ML.Lang)Enum.Parse(typeof(ML.Lang), LoadingManager.config.lang);
+                else
+                    Player.language = (ML.Lang)Enum.Parse(typeof(ML.Lang), loginres.language);
                 Annotation.trueLabel = loginres.trueLabel;
                 Annotation.falseLabel = loginres.falseLabel;
 
