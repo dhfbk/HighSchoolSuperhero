@@ -15,7 +15,7 @@ The <i>config.txt</i> file is located under /StreamingAssets/ both in the projec
 <ul>
 	<li>"guest":"true" - if guest is true, no API is called. Selecting DEMO at the beginning of the game has a similar effect.</li>
 <li>"collectibles":"true" - this changes an option that makes the annotation mechanics rely on limited resources.</li>
-	<li>"url":"https://apiurl" - Insert the api url. The default api url is already configured.</li>
+	<li>"url":"http://localhost:8001/api" - Insert the api url. The default api url is already configured.</li>
 <li>"useLocalDatasets":"false" - You can decide to use local sentences (to be put inside <i>dialogues.txt</i> and <i>graffiti.txt</i> under /StreamingAssets/) instead of the API ones.</li>
 	</ul>
 Note: <i>dialogues.txt</i> and <i>graffiti.txt</i> should contain exactly one sentence per line, without any other information.
@@ -25,7 +25,7 @@ All changes to the API calls should be made inside the script API.cs located und
 <ul>
 <li>All changes should be made inside the coroutines identified by type IEnumerator or by a "C" at the end of the method signatures.</li>
 <li>Always refer to methods containing "Final". Methods containing "Dev" are backup/obsolete and do not interact with the API url contained in the configuration file.</li>
-Assuming all options, such as the port, are set do default when installing the platform Docker package, the address should be the following: http://localhost:8001/hssh
+Assuming all options, such as the port, are set do default when installing the platform Docker package, the address should be http://localhost:8001/api, while the address to actually open and run the game should be http://localhost:8001/hssh.
 </ul>
 
 <h2>The login system</h2>
