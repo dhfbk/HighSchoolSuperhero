@@ -25,7 +25,7 @@ All changes to the API calls should be made inside the script API.cs located und
 <ul>
 <li>All changes should be made inside the coroutines identified by type IEnumerator or by a "C" at the end of the method signatures.</li>
 <li>Always refer to methods containing "Final". Methods containing "Dev" are backup/obsolete and do not interact with the API url contained in the configuration file.</li>
-Current API url: https://kidactions.fbk.eu/api/
+Assuming all options, such as the port, are set do default when installing the platform Docker package, the address should be the following: http://localhost:8001/hssh
 </ul>
 
 <h2>The login system</h2>
