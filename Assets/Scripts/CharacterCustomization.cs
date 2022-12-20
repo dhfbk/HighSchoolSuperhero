@@ -304,9 +304,9 @@ public class CharacterCustomization : MonoBehaviour
         {
             if (currentItem == eyes)
                 smr.materials = new Material[4] { smr.materials[0],
-                smr.materials[1],
-                mat,
-                smr.materials[3]};
+                    smr.materials[1],
+                    mat,
+                    smr.materials[3]};
             else if (currentItem == shirt)
             {
                 if (smr.sharedMesh.name.Contains("Open"))
@@ -378,6 +378,10 @@ public class CharacterCustomization : MonoBehaviour
             else if (smr.sharedMesh.name.Contains("Jeans"))
             {
                 smr.materials = new Material[1] { (Material)Resources.Load<Material>("Materials/Jeans") };
+            }
+            else if (smr.sharedMesh.name.Contains("Eye"))
+            {
+                smr.materials = new Material[4] { smr.materials[0], smr.materials[1], memMaterial[currentItem.name], smr.materials[3] };
             }
             else
                 smr.materials = new Material[1] { memMaterial[currentItem.name] };
