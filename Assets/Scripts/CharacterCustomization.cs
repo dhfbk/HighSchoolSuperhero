@@ -321,16 +321,18 @@ public class CharacterCustomization : MonoBehaviour
         
     }
 
-    public void TypeRight()
+    public void Type(int dir)
     {
-        if (i == typeMax-1)
+        i += dir;
+        if (i > typeMax - 1)
         {
             i = 0;
         }
-        else
+        else if (i < 0)
         {
-            i += 1;
+            i = typeMax - 1;
         }
+
         text.GetComponent<Text>().text = i.ToString();
         currentNumber[currentItem.name] = i;
         if (typeMax > 0)
@@ -382,66 +384,6 @@ public class CharacterCustomization : MonoBehaviour
             else if (smr.sharedMesh.name.Contains("Eye"))
             {
                 smr.materials = new Material[4] { smr.materials[0], smr.materials[1], memMaterial[currentItem.name], smr.materials[3] };
-            }
-            else
-                smr.materials = new Material[1] { memMaterial[currentItem.name] };
-        }
-        if (currentItem.name == "Glasses")
-            CheckGlasses();
-    }
-
-    public void TypeLeft()
-    {
-        if (i == 0)
-        {
-            i = typeMax-1;
-        }
-        else
-        {
-            i -= 1;
-        }
-        text.GetComponent<Text>().text = i.ToString();
-        currentNumber[currentItem.name] = i;
-        if (typeMax > 0)
-        {
-            switch (currentItem.name)
-            {
-                case "Eyes":
-                    mesh = eyesPool[i];
-                    break;
-                case "Hair":
-                    mesh = hairPool[i];
-                    break;
-                case "Shirt":
-                    mesh = shirtPool[i];
-                    break;
-                case "Pants":
-                    mesh = pantsPool[i];
-                    break;
-                case "Shoes":
-                    mesh = shoesPool[i];
-                    break;
-                case "Glasses":
-                    mesh = glassesPool[i];
-                    break;
-            }
-            SkinnedMeshRenderer smr = currentItem.GetComponent<SkinnedMeshRenderer>();
-            smr.sharedMesh = mesh;
-            if (smr.sharedMesh.name.Contains("Fant"))
-            {
-                smr.materials = new Material[1] { (Material)Resources.Load<Material>("Materials/Fant") };
-            }
-            else if (smr.sharedMesh.name.Contains("Tex") && smr.sharedMesh.name.Contains("Open"))
-            {
-                smr.materials = new Material[2] { (Material)Resources.Load<Material>("Materials/Characters"), (Material)Resources.Load<Material>("Materials/GenericWhite") };
-            }
-            else if (smr.sharedMesh.name.Contains("Open") && smr.sharedMesh.name.Contains("Jeans"))
-                smr.materials = new Material[2] { (Material)Resources.Load<Material>("Materials/Jeans"), (Material)Resources.Load<Material>("Materials/GenericWhite") };
-            else if (smr.sharedMesh.name.Contains("Open"))
-                smr.materials = new Material[2] { memMaterial[currentItem.name], (Material)Resources.Load<Material>("Materials/GenericWhite") };
-            else if (smr.sharedMesh.name.Contains("Jeans"))
-            {
-                smr.materials = new Material[1] { (Material)Resources.Load<Material>("Materials/Jeans") };
             }
             else
                 smr.materials = new Material[1] { memMaterial[currentItem.name] };
